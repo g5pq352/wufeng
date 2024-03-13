@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="91.97" height="76.4" viewBox="0 0 91.97 76.4">
+  <g id="layout">
+    <g>
+      <rect x="8.28" y="16.77" width="80.89" height="55.2" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <rect x="33.03" y="5.12" width="31.39" height="11.65" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <circle cx="48.73" cy="44.37" r="16.4" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <circle cx="75.08" cy="26.09" r="3.32"/>
+      <path d="M91.97,13.04c-7.2,0-13.04-5.84-13.04-13.04,0,7.2-5.84,13.04-13.04,13.04,7.2,0,13.04,14.67,13.04,21.88,0-7.2,5.84-21.88,13.04-21.88Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      <path d="M30.78,47.72c-7.61,0-15.39-12.84-15.39-28.67,0,15.83-7.79,28.67-15.39,28.67,7.61,0,15.39,12.84,15.39,28.67,0-15.83,7.79-28.67,15.39-28.67Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+    </g>
+  </g>
+</svg>

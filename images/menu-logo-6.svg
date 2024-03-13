@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="47.44" height="35.66" viewBox="0 0 47.44 35.66">
+  <g id="c" data-name="menu">
+    <g>
+      <g>
+        <rect x="13.83" y="1" width="32.61" height="6.71" rx="3.36" ry="3.36" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        <circle cx="4.36" cy="4.36" r="3.36" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      </g>
+      <g>
+        <rect x="13.83" y="14.48" width="32.61" height="6.71" rx="3.36" ry="3.36" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        <circle cx="4.36" cy="17.83" r="3.36" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      </g>
+      <g>
+        <rect x="13.83" y="27.95" width="23.14" height="6.71" rx="3.36" ry="3.36" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.81px;"/>
+        <circle cx="4.36" cy="31.31" r="3.36" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+      </g>
+    </g>
+  </g>
+</svg>

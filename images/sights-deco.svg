@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="162.54" height="120.86" viewBox="0 0 162.54 120.86">
+  <g id="layout">
+    <g>
+      <ellipse cx="81.27" cy="91.12" rx="63.9" ry="18.65" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <ellipse cx="81.27" cy="91.12" rx="79.27" ry="27.74" style="fill: none; stroke: #000; stroke-dasharray: 0 0 4.38 7.89; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 4px;"/>
+      <g>
+        <path d="M113.25,33.97c0,17.66-31.97,53.05-31.97,53.05,0,0-31.97-35.39-31.97-53.05S63.61,2,81.27,2s31.97,14.32,31.97,31.97Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 4px;"/>
+        <circle cx="81.27" cy="30.28" r="10.29"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.31" height="48.91" viewBox="0 0 34.31 48.91">
+  <g id="c" data-name="layout">
+    <g>
+      <g>
+        <rect x="1.57" y="12.84" width="32.74" height="2.1" style="fill: #0082c2;"/>
+        <rect x="1.57" y="14.94" width="32.74" height="2.1" style="fill: #e94709;"/>
+        <rect x="1.57" y="17.04" width="32.74" height="2.1" style="fill: #00a44e;"/>
+      </g>
+      <g>
+        <rect y="28.25" width="32.74" height="2.1" style="fill: #0082c2;"/>
+        <rect y="30.35" width="32.74" height="2.1" style="fill: #e94709;"/>
+        <rect y="32.45" width="32.74" height="2.1" style="fill: #00a44e;"/>
+      </g>
+      <g>
+        <polygon points="13.55 16.3 7.94 16.3 10.06 0 15.67 0 13.55 16.3" style="fill: #0082c2;"/>
+        <polygon points="11.48 32.61 5.87 32.61 7.94 16.3 13.55 16.3 11.48 32.61" style="fill: #e94709;"/>
+        <polygon points="9.27 48.91 3.66 48.91 5.87 32.61 11.48 32.61 9.27 48.91" style="fill: #00a44e;"/>
+      </g>
+      <g>
+        <polygon points="27.83 16.3 22.22 16.3 24.34 0 29.95 0 27.83 16.3" style="fill: #0082c2;"/>
+        <polygon points="25.76 32.61 20.15 32.61 22.22 16.3 27.83 16.3 25.76 32.61" style="fill: #e94709;"/>
+        <polygon points="23.55 48.91 17.94 48.91 20.15 32.61 25.76 32.61 23.55 48.91" style="fill: #00a44e;"/>
+      </g>
+    </g>
+  </g>
+</svg>

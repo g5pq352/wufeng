@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="25.41" height="19.09" viewBox="0 0 25.41 19.09">
+  <g id="menu">
+    <g>
+      <g>
+        <rect x="7.4" y=".5" width="17.52" height="3.61" rx="1.8" ry="1.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <circle cx="2.3" cy="2.3" r="1.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      </g>
+      <g>
+        <rect x="7.4" y="7.74" width="17.52" height="3.61" rx="1.8" ry="1.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <circle cx="2.3" cy="9.54" r="1.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      </g>
+      <g>
+        <rect x="7.4" y="14.98" width="12.43" height="3.61" rx="1.8" ry="1.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <circle cx="2.3" cy="16.78" r="1.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      </g>
+    </g>
+  </g>
+</svg>

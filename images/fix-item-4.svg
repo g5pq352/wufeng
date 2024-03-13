@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="34.2" height="22.69" viewBox="0 0 34.2 22.69">
+  <g id="menu">
+    <g>
+      <g>
+        <g>
+          <path d="M10.19,19.51L.75,22.16c-.17,.05-.31-.13-.23-.28L7.27,9.15s.06-.08,.11-.09l5.29-1.76c.14-.05,.28,.08,.25,.23l-2.59,11.84c-.02,.07-.07,.13-.14,.15Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+          <path d="M16.83,22.18l-6.37-2.64c-.09-.04-.14-.13-.12-.22l2.61-11.93c.02-.11,.14-.18,.24-.15l3.76,1.07c.08,.02,.14,.1,.14,.19v13.49c0,.14-.14,.23-.27,.18Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        </g>
+        <g>
+          <path d="M24.01,19.51l9.44,2.66c.17,.05,.31-.13,.23-.28l-6.75-12.73s-.06-.08-.11-.09l-5.29-1.76c-.14-.05-.28,.08-.25,.23l2.59,11.84c.02,.07,.07,.13,.14,.15Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+          <path d="M17.37,22.18l6.37-2.64c.09-.04,.14-.13,.12-.22l-2.61-11.93c-.02-.11-.14-.18-.24-.15l-3.76,1.07c-.08,.02-.14,.1-.14,.19v13.49c0,.14,.14,.23,.27,.18Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        </g>
+      </g>
+      <g>
+        <path d="M21.58,4.98c0,2.47-4.48,7.43-4.48,7.43,0,0-4.48-4.96-4.48-7.43S14.63,.5,17.1,.5s4.48,2.01,4.48,4.48Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <circle cx="17.1" cy="4.46" r="1.44"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="63.79" height="42.37" viewBox="0 0 63.79 42.37">
+  <g id="c" data-name="menu">
+    <g>
+      <g>
+        <g>
+          <path d="M19.04,36.38L1.46,41.32c-.31,.09-.57-.24-.42-.52L13.6,17.1c.04-.08,.12-.14,.21-.17l9.85-3.28c.27-.09,.53,.15,.47,.42l-4.83,22.04c-.03,.13-.13,.24-.26,.27Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+          <path d="M31.39,41.35l-11.86-4.91c-.16-.07-.25-.24-.22-.41l4.87-22.2c.04-.2,.25-.33,.45-.27l7,2c.16,.04,.26,.19,.26,.35v25.11c0,.26-.26,.43-.5,.34Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        </g>
+        <g>
+          <path d="M44.75,36.38l17.58,4.95c.31,.09,.57-.24,.42-.52l-12.56-23.7c-.04-.08-.12-.14-.21-.17l-9.85-3.28c-.27-.09-.53,.15-.47,.42l4.83,22.04c.03,.13,.13,.24,.26,.27Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+          <path d="M32.4,41.35l11.86-4.91c.16-.07,.25-.24,.22-.41l-4.87-22.2c-.04-.2-.25-.33-.45-.27l-7,2c-.16,.04-.26,.19-.26,.35v25.11c0,.26,.26,.43,.5,.34Z" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        </g>
+      </g>
+      <g>
+        <path d="M40.23,9.34c0,4.6-8.34,13.83-8.34,13.83,0,0-8.34-9.23-8.34-13.83S27.29,1,31.9,1s8.34,3.73,8.34,8.34Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 2px;"/>
+        <circle cx="31.9" cy="8.37" r="2.68"/>
+      </g>
+    </g>
+  </g>
+</svg>

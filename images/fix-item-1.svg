@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="37.41" height="26.02" viewBox="0 0 37.41 26.02">
+  <g id="menu">
+    <g>
+      <g>
+        <path d="M23.04,18.27L3.46,15.5c-.59-.08-1.06-.54-1.17-1.12L.52,4.63c-.13-.73,.33-1.43,1.05-1.6L12.4,.54c.55-.13,1.12,.09,1.44,.55l10.52,15.02c.69,.99-.13,2.33-1.33,2.16Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <line x1="13.43" y1=".71" x2="2.66" y2="15.1" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+        <line x1=".74" y1="3.6" x2="24.39" y2="17.65" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      </g>
+      <path d="M8.13,7.99c0,6.2-1.4,13.89-7.63,17.54" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      <path d="M24.53,17.8s1.05,3.12,3.95,3.73c3.03,.64,6.72-1.59,7.53-3.35" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      <path d="M24.05,17.58s3.16-.69,6.5,2.52c3.34,3.21,5.82,1.72,6.36,1.02" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+    </g>
+  </g>
+</svg>

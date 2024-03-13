@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="9.8" height="15.88" viewBox="0 0 9.8 15.88">
+  <g id="_燈箱" data-name="燈箱">
+    <g>
+      <path d="M9.8,4.9c0,2.71-4.9,10.98-4.9,10.98C4.9,15.88,0,7.61,0,4.9S2.19,0,4.9,0s4.9,2.19,4.9,4.9Z" style="fill: #251714;"/>
+      <circle cx="4.9" cy="4.66" r="1.99" style="fill: #fff;"/>
+    </g>
+  </g>
+</svg>

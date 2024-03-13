@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="47.01" height="47.01" viewBox="0 0 47.01 47.01">
+  <g id="c" data-name="layout">
+    <g>
+      <rect x="0" y="0" width="47.01" height="47.01" rx="23.5" ry="23.5" style="fill: #b4b4b5;"/>
+      <circle cx="30.55" cy="14.57" r="4.13" style="fill: #fff;"/>
+      <circle cx="30.55" cy="32.44" r="4.13" style="fill: #fff;"/>
+      <circle cx="12.18" cy="23.24" r="4.13" style="fill: #fff;"/>
+      <line x1="30.55" y1="14.57" x2="12.18" y2="23.24" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 2.22px;"/>
+      <line x1="12.18" y1="23.77" x2="30.55" y2="32.44" style="fill: none; stroke: #fff; stroke-miterlimit: 10; stroke-width: 2.22px;"/>
+    </g>
+  </g>
+</svg>

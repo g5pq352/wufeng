@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="57.21" height="57.21" viewBox="0 0 57.21 57.21">
+  <g id="_燈箱" data-name="燈箱">
+    <g>
+      <path d="M57.21,57.21H16C7.16,57.21,0,50.04,0,41.21V16C0,7.16,7.16,0,16,0h25.21c8.84,0,16,7.16,16,16V57.21Z" style="fill: #dd4426;"/>
+      <g>
+        <rect x="11.43" y="18.85" width="36.84" height="25.14" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <rect x="22.71" y="13.54" width="14.29" height="5.3" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <circle cx="29.85" cy="31.41" r="7.47" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <circle cx="41.85" cy="23.09" r="1.51"/>
+        <path d="M49.54,17.15c-3.28,0-5.94-2.66-5.94-5.94,0,3.28-2.66,5.94-5.94,5.94,3.28,0,5.94,6.68,5.94,9.96,0-3.28,2.66-9.96,5.94-9.96Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <path d="M21.68,32.94c-3.46,0-7.01-5.85-7.01-13.06,0,7.21-3.55,13.06-7.01,13.06,3.46,0,7.01,5.85,7.01,13.06,0-7.21,3.55-13.06,7.01-13.06Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+      </g>
+    </g>
+  </g>
+</svg>

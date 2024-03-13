@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="57.21" height="57.21" viewBox="0 0 57.21 57.21">
+  <g id="_燈箱" data-name="燈箱">
+    <g>
+      <path d="M16,0h25.21c8.83,0,16,7.17,16,16V57.21H16C7.17,57.21,0,50.04,0,41.21V16C0,7.17,7.17,0,16,0Z" style="fill: #231815;"/>
+      <g>
+        <g>
+          <g>
+            <path d="M19.23,39.67l-12.81,3.61c-.22,.06-.41-.17-.31-.38L15.27,25.63c.03-.06,.09-.11,.15-.13l7.18-2.39c.19-.06,.39,.11,.34,.31l-3.52,16.06c-.02,.1-.09,.17-.19,.2Z" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+            <path d="M28.24,43.29l-8.65-3.58c-.12-.05-.18-.18-.16-.3l3.55-16.18c.03-.15,.18-.24,.33-.2l5.1,1.46c.11,.03,.19,.14,.19,.25v18.3c0,.19-.19,.32-.37,.24Z" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+          </g>
+          <g>
+            <path d="M37.97,39.67l12.81,3.61c.22,.06,.41-.17,.31-.38l-9.15-17.27c-.03-.06-.09-.11-.15-.13l-7.18-2.39c-.19-.06-.39,.11-.34,.31l3.52,16.06c.02,.1,.09,.17,.19,.2Z" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+            <path d="M28.97,43.29l8.65-3.58c.12-.05,.18-.18,.16-.3l-3.55-16.18c-.03-.15-.18-.24-.33-.2l-5.1,1.46c-.11,.03-.19,.14-.19,.25v18.3c0,.19,.19,.32,.37,.24Z" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+          </g>
+        </g>
+        <g>
+          <path d="M34.68,19.97c0,3.36-6.08,10.08-6.08,10.08,0,0-6.08-6.72-6.08-10.08s2.72-6.08,6.08-6.08,6.08,2.72,6.08,6.08Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+          <circle cx="28.6" cy="19.26" r="1.96"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

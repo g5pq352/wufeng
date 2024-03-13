@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html,body{
+	-webkit-text-size-adjust: 100%;   // for mobile fontsize
+}
+body{
+	overflow-x: hidden;
+}
+
+:focus-visible{
+	outline: none;
+}
+
+
+@layer utilities {
+	.basic-show{
+		opacity: 0;
+		pointer-events: none;
+		&.is-show{
+		  opacity: 1;
+		  pointer-events: all;
+		}
+	}
+	.basic-hover{
+		cursor: pointer;
+		transition: all .3s;
+		&:hover{opacity: .6;}
+	}
+	.writing-vertical{
+		writing-mode: vertical-rl;
+	}
+	.writing-unset{
+		writing-mode: unset;
+	}
+	.img-cover{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.img-contain{
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	.img-fill{
+		width: 100%;
+		height: 100%;
+		object-fit: fill;
+	}
+	.img-scaledown{
+		width: 100%;
+		height: 100%;
+		object-fit: scale-down;
+	}
+	.tf{
+		top: 50%;
+		left: 50%;
+		--tw-translate-y: -50%;
+		--tw-translate-x: -50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+	.tf-x{
+		left: 50%;
+		--tw-translate-x: -50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+	.tf-y{
+		top: 50%;
+		--tw-translate-y: -50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+	.tf-x-auto{
+		left: auto;
+		transform: none;
+	}
+	.tf-y-auto{
+		top: auto;
+		transform: none;
+	}
+	.transform-none{
+		transform: none;
+	}
+	.clip-0{
+		clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+	}
+	.clip-x{
+		clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+	}
+	@for $i from 1 through 15 {
+		.zoom-#{$i * 10}{
+			zoom: $i * 0.1;
+		}
+		.zoom-#{$i * 10 + 5}{
+			zoom: $i * 0.1 + 0.05;
+		}
+	}
+	.scroll-around{
+		animation: rotate 18s infinite linear;
+	}
+	@keyframes rotate{
+		0%{
+			transform: rotate(0deg);
+		}
+		100%{
+			transform: rotate(360deg);
+		}
+	}
+	.anim-play{
+		animation-play-state: running;
+	}
+	.anim-pause{
+		animation-play-state: paused;
+	}
+}

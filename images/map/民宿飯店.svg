@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="57.21" height="57.21" viewBox="0 0 57.21 57.21">
+  <g id="_燈箱" data-name="燈箱">
+    <g>
+      <path d="M57.21,57.21H16C7.16,57.21,0,50.04,0,41.21V16C0,7.16,7.16,0,16,0h25.21c8.84,0,16,7.16,16,16V57.21Z" style="fill: #dd4426;"/>
+      <g>
+        <rect x="29.91" y="11.21" width="19" height="34.78" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <polygon points="37.28 29.8 29.74 19.38 15.84 19.38 8.3 29.8 8.3 46 37.28 46 37.28 29.8" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <polyline points="15.84 19.38 23.39 29.8 23.39 46" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <line x1="23.39" y1="29.8" x2="37.28" y2="29.8" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <line x1="20.99" y1="26.32" x2="34.88" y2="26.32" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <line x1="18.59" y1="22.85" x2="32.48" y2="22.85" style="fill: none; stroke: #000; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <path d="M15.84,37.06h0c1.46,0,2.64,1.18,2.64,2.64v6.3h-5.28v-6.3c0-1.46,1.18-2.64,2.64-2.64Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.5px;"/>
+        <rect x="29.15" y="35.81" width="2.36" height="4.47"/>
+        <rect x="39.04" y="14.35" width="2.36" height="4.47"/>
+        <rect x="43.78" y="14.35" width="2.36" height="4.47"/>
+        <rect x="43.78" y="22.2" width="2.36" height="4.47"/>
+        <rect x="43.78" y="30.06" width="2.36" height="4.47"/>
+        <rect x="39.04" y="22.2" width="2.36" height="4.47"/>
+        <rect x="39.04" y="30.06" width="2.36" height="4.47"/>
+      </g>
+    </g>
+  </g>
+</svg>

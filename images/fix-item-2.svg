@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="25.86" height="23.24" viewBox="0 0 25.86 23.24">
+  <g id="menu">
+    <g>
+      <polygon points=".5 15.76 12.93 5.68 25.36 15.76 25.36 10.72 12.93 .64 .5 10.72 .5 15.76" style="fill: #faf6ed; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      <path d="M23.69,14.93v7.81h-7.33v-5.94c0-.58-.47-1.06-1.06-1.06h-4.73c-.58,0-1.06,.47-1.06,1.06v5.94H2.17v-7.81c0-.32,.14-.62,.39-.82L12.93,5.7l10.37,8.4c.25,.2,.39,.5,.39,.82Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+      <line x1="14.02" y1="18.58" x2="14.02" y2="20.33" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10;"/>
+    </g>
+  </g>
+</svg>
