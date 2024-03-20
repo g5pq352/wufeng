@@ -38,7 +38,7 @@
 				pic: 'images/itinerary-slider-1-1.jpg',
 				title: '霧峰林家花園',
 			}],
-			link: `itinerary_detail.php`,
+			link: `itinerary/文旅`,
 		}, {
 			title: '食旅',
 			tags: [
@@ -63,7 +63,7 @@
 				pic: 'images/itinerary-slider-2-4.jpg',
 				title: '民生故事館',
 			}],
-			link: `itinerary_detail.php`,
+			link: `itinerary/食旅`,
 		}, {
 			title: '農旅',
 			tags: [
@@ -88,13 +88,11 @@
 				pic: 'images/itinerary-slider-3-4.jpg',
 				title: '初露吟釀',
 			}],
-			link: `itinerary_detail.php`,
+			link: `itinerary/農旅`,
 		}]
-	}" class="px-4 space-y-10 mb-[112px]">
+	}" class="itineraryList px-4 space-y-10 mb-[112px]">
 		<article v-for="(p, i) in posts" class="">
-			<div class="text-white category-border-radius py-7 px-4" :class="{
-				'bg-blue': i == 0, 'bg-orange': i == 1, 'bg-green': i == 2
-			}">
+			<div class="item text-white category-border-radius py-7 px-4">
 				<a :href="p.link">
 					<div class="font-bold text-[56px] leading-none mb-3">{{p.title}}</div>
 					<ul class="text-sm flex flex-wrap items-center space-y-1">

@@ -19,7 +19,7 @@
 <div class="searchWrap fixed top-0 w-full h-screen z-20 transition-all duration-500 opacity-0 pointer-events-none">
 	<div class="search-bg absolute w-full h-full top-0 left-0 bg-black-700 opacity-80"></div>
 
-	<form action="" method="POST" class="relative px-5 mt-[62px]">
+	<form action="" method="post" class="relative px-5 mt-[62px]">
 		<div class="relative">
 			<input type="text" name="search" placeholder="輸入景點關鍵字" class="w-full px-5 py-3">
 			<div class="absolute right-4 tf-y">
@@ -84,35 +84,35 @@
 				posts: [{
 					icon: 'images/recommend-1.svg',
 					title: '進入首頁',
-					link: './',
+					link: '<?= $baseurl ?>',
 				},{
 					icon: 'images/recommend-2.svg',
 					title: '關於霧峰',
-					link: '',
+					link: '<?= $baseurl ?>/about',
 				},{
 					icon: 'images/recommend-3.svg',
 					title: '活動情報',
-					link: 'news.php',
+					link: '<?= $baseurl ?>/news',
 				},{
 					icon: 'images/recommend-4.svg',
 					title: '在地美食',
-					link: 'cuisine.php',
+					link: '<?= $baseurl ?>/cuisine',
 				},{
 					icon: 'images/recommend-5.svg',
 					title: '景點探索',
-					link: 'sights.php',
+					link: '<?= $baseurl ?>/sights',
 				},{
 					icon: 'images/recommend-6.svg',
 					title: '地圖搜尋',
-					link: 'map.php',
+					link: '<?= $baseurl ?>/map',
 				},{
 					icon: 'images/recommend-7.svg',
 					title: '套裝行程',
-					link: 'itinerary.php',
+					link: '<?= $baseurl ?>/itinerary',
 				},{
 					icon: 'images/recommend-8.svg',
 					title: '交通資訊',
-					link: '',
+					link: '<?= $baseurl ?>/traffic',
 				}]
 			}" class="space-y-2">
 				<a v-for="p in posts" :href="p.link" class="flex items-center justify-between border-b border-gray-400 pb-1">
@@ -133,7 +133,7 @@
 					<div class=""><a href=""><span class="bg-green text-[14px] text-white p-2 rounded-t-[20px] rounded-br-[20px]">加入官方LINE</span></a></div>
 				</li>
 				<li class="bg-white pt-3 pb-5 category-border-radius">
-					<div class="inline-block mb-1"><img src="images/menu-quick-2.png"></div>
+					<div class="inline-block mb-1"><img src="images/menu-quick-2.png" width="40"></div>
 					<div class="font-bold mb-4">即刻前往</div>
 					<div class=""><a href=""><span class="bg-green text-[14px] text-white p-2 rounded-t-[20px] rounded-br-[20px]">打開地圖</span></a></div>
 				</li>
@@ -149,11 +149,11 @@
 
 <div class="small-menuWrap fixed bg-orange-100 w-full bottom-0 z-50">
 	<nav class="grid grid-cols-5 text-center">
-		<a href="news.php" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+		<a href="<?= $baseurl ?>/news" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-1.svg"></div>
 			<div class="font-medium text-xs tracking-normal">活動情報</div>
 		</a>
-		<a href="./" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+		<a href="<?= $baseurl ?>" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-2.svg"></div>
 			<div class="font-medium text-xs tracking-normal">進入首頁</div>
 		</a>
@@ -161,11 +161,11 @@
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-3.svg"></div>
 			<div class="font-medium text-xs tracking-normal">打開選單</div>
 		</a>
-		<a href="map.php" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+		<a href="<?= $baseurl ?>/map" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-4.svg"></div>
 			<div class="font-medium text-xs tracking-normal">地圖搜尋</div>
 		</a>
-		<a href="cuisine.php" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+		<a href="<?= $baseurl ?>/cuisine" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-5.svg"></div>
 			<div class="font-medium text-xs tracking-normal">在地美食</div>
 		</a>

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ['./*.php'],
+	content: ['./views/*.php'],
 	theme: {
 		screens: {
 			sm: { 'max': '600px' },
@@ -12,6 +12,7 @@ module.exports = {
 			'sans': ['Noto Sans TC', 'sans-serif'],
 			'serif': ['Noto Serif SC', 'Noto Serif TC', 'serif'],
 			'en': ['Roboto', 'serif'],
+			'mono': ['Noto Sans Mono', 'serif'],
 		},
 		extend: {
 			colors: {

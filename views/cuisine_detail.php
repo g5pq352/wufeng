@@ -59,7 +59,7 @@
 					<div class=""><a href=""><span class="bg-green text-[14px] text-white p-2 rounded-t-[20px] rounded-br-[20px]">加入官方LINE</span></a></div>
 				</li>
 				<li class="bg-white pt-3 pb-5 category-border-radius">
-					<div class="inline-block mb-1"><img src="images/menu-quick-2.png"></div>
+					<div class="inline-block mb-1"><img src="images/menu-quick-2.png" width="40"></div>
 					<div class="font-bold mb-4">即刻前往</div>
 					<div class=""><a href=""><span class="bg-green text-[14px] text-white p-2 rounded-t-[20px] rounded-br-[20px]">打開地圖</span></a></div>
 				</li>

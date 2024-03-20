@@ -6,58 +6,57 @@
 <body>
 	<?php include 'topmenu.php'; ?>
 
-	<div class="mt-[132px] mb-[92px]">
-		<div class="-ml-3 -mb-[112px]"><img src="images/news-deco.svg"></div>
+	<div class="mt-[132px] mb-[86px]">
+		<div class="mb-7"><img src="images/sights-deco-1.svg" class="mx-auto" width="130"></div>
 		<div class="text-center">
-			<div class="font-bold text-[28px]">活動情報</div>
-			<div class="font-en text-gray-400 text-4xl">#News</div>
+			<div class="font-bold text-[28px]">在地美食</div>
+			<div class="font-en text-gray-400 text-4xl">#Local Cuisine</div>
 		</div>
 	</div>
 
 	<div class="px-4 mb-[112px]">
 		<ul v-scope="{
 			posts: [{
-				pic: 'images/news-1.jpg',
-				title: `迎接霧峰，<br>共襄文化盛宴！`,
-				note: `在全世界最大戲台<br>辦文化祭。`,
-				link: `news_detail.php`,
-			}, {
-				pic: 'images/news-2.jpg',
-				title: `最新活動!<br>一日農夫!!`,
-				note: `小公務員不可能的<br>清酒任務`,
-				link: `news_detail.php`,
-			}, {
-				pic: 'images/news-3.jpg',
-				title: `2023霧峰必吃美食`,
-				note: `一場以農為本的<br>創意餐點。`,
-				link: `news_detail.php`,
-			}, {
-				pic: 'images/news-4.jpg',
-				title: `農旅開跑了!`,
-				note: `了解更多<br>霧峰農業與生態。`,
-				link: `news_detail.php`,
-			}, {
-				pic: 'images/news-5.jpg',
-				title: `國際賞鳥活動!`,
-				note: `獨特的生態系統<br>黑翅鳶與霧峰米。`,
-				link: `news_detail.php`,
-			}, {
-				pic: 'images/news-6.jpg',
-				title: `宮保第<br>最新活動`,
-				note: `在花廳，度曲臨風Ⅳ<br>女怕嫁錯郎`,
-				link: `news_detail.php`,
-			}, {
-				pic: 'images/news-7.jpg',
+				pic: 'images/chosen-1.jpg',
 				title: `初霧純米吟釀`,
-				note: `初露周年慶<br>兩人同行一人免費!<br>一同見證霧峰香米傳奇`,
-				link: `news_detail.php`,
+				note: `小公務員不可能的<br>清酒任務`,
+				link: 'cuisine/初霧純米吟釀',
+			}, {
+				pic: 'images/chosen-2.jpg',
+				title: `森川火鍋`,
+				note: `吃到飽火鍋，超人氣麻油燒酒烏骨雞`,
+				link: 'cuisine/森川火鍋',
+			}, {
+				pic: 'images/chosen-3.jpg',
+				title: `農學食堂`,
+				note: `一場以農為本的<br>創意之路`,
+				link: 'cuisine/農學食堂',
+			}, {
+				pic: 'images/chosen-4.jpg',
+				title: `肉尬`,
+				note: `益全香米<br>尬上肉`,
+				link: 'cuisine/肉尬',
+			}, {
+				pic: 'images/cuisine-1.jpg',
+				title: `雞排本色`,
+				note: `全台獨賣厚實飽滿多汁天然“有色”雞排`,
+				link: 'cuisine/雞排本色',
+			}, {
+				pic: 'images/cuisine-2.jpg',
+				title: `甘田果園`,
+				note: `荔之甘精緻農園<br>天然體驗農場`,
+				link: 'cuisine/甘田果園',
+			}, {
+				pic: 'images/cuisine-3.jpg',
+				title: `胡同李`,
+				note: `最在地的<br>東北大餡水餃`,
+				link: 'cuisine/胡同李',
 			}]
 		}" class="space-y-4">
 			<li v-for="p in posts" class="category-border-radius bg-white p-3"><a :href="p.link">
-				<div class="flex">
-					<div class="mr-3 max-w-[45%]"><img :src="p.pic" class="rounded-2xl"></div>
+				<div class="flex items-center">
+					<div class="mr-3 max-w-[45%]"><img :src="p.pic" class="rounded-lg"></div>
 					<div class="">
-						<div class="font-en text-sm font-light text-gray-300 mb-4">Oct 19, 2013</div>
 						<div class="font-bold text-xl mb-2" v-html="p.title"></div>
 						<div class="text-sm text-gray-300" v-html="p.note"></div>
 					</div>
@@ -91,7 +90,7 @@
 		</div>
 
 		<div class="">
-			<div class="text-white font-en bg-gray-400 py-4 rounded-t-[28px] rounded-br-[28px]"><a href="javascript:;" class="flex items-center justify-center">
+			<div class="text-white font-en bg-gray-400 py-4 rounded-t-[28px] rounded-br-[28px]"><a href="javascript:;" class="flex items-center justify-center" onclick="history.back()">
 				<div class="flex items-center justify-center leading-none border-b border-dashed min-w-[100px]">
 					<span><svg width="13.72" height="5.78" viewBox="0 0 13.72 5.78">
 						<rect x="6.15" y="2.15" width="7.57" height="1.48" style="fill: #fff;"/>

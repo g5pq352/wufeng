@@ -72,8 +72,9 @@ body{
 	}
 }
 .menuSlide{
+	transform: rotate(180deg);
 	&.is-open{
-	    transform: rotate(180deg);
+	    transform: rotate(0);
 	}
 }
 input[name="search"]{
@@ -96,4 +97,66 @@ input[name="search"]{
 }
 #contactForm{
 
+}
+.sightsList{
+	article{
+		&:nth-child(3n+1){
+			background-color: theme('colors.orange.DEFAULT');
+		}
+		&:nth-child(3n+2){
+			background-color: theme('colors.green.DEFAULT');
+		}
+		&:nth-child(3n){
+			background-color: theme('colors.blue.DEFAULT');
+		}
+	}
+}
+.itineraryList{
+	article{
+		&:nth-child(3n+1){
+			.item{
+				background-color: theme('colors.orange.DEFAULT');
+			}
+		}
+		&:nth-child(3n+2){
+			.item{
+				background-color: theme('colors.green.DEFAULT');
+			}
+		}
+		&:nth-child(3n){
+			.item{
+				background-color: theme('colors.blue.DEFAULT');
+			}
+		}
+	}
+}
+.trafficList{
+	li{
+		&:nth-child(3n+1){
+			background-color: theme('colors.blue.DEFAULT');
+		}
+		&:nth-child(3n+2){
+			background-color: theme('colors.green.DEFAULT');
+		}
+		&:nth-child(3n){
+			background-color: theme('colors.orange.DEFAULT');
+		}
+	}
+}
+.timetableList{
+	li{
+		.title{
+			position: relative;
+			&:before{
+				position: absolute;
+				content: "";
+				width: 25px;
+				height: 8px;
+				background-color: theme('colors.blue.DEFAULT');
+				top: 50%;
+				transform: translateY(-50%);
+				left: -50px;
+			}
+		}
+	}
 }

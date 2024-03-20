@@ -24,7 +24,7 @@
 				'有機米',
 			],
 			pic: 'images/sights-deco-1.svg',
-			link: `cuisine.php`,
+			link: `cuisine`,
 		}, {
 			title: '霧峰商圈',
 			tags: [
@@ -33,7 +33,7 @@
 				'最在地的商圈',
 			],
 			pic: 'images/sights-deco-2.svg',
-			link: `cuisine.php`,
+			link: `cuisine`,
 		}, {
 			title: '民宿飯店',
 			tags: [
@@ -43,7 +43,7 @@
 				'最古老',
 			],
 			pic: 'images/sights-deco-3.svg',
-			link: `cuisine.php`,
+			link: `cuisine`,
 		}, {
 			title: '自然景點',
 			tags: [
@@ -53,7 +53,7 @@
 				'貓頭鷹',
 			],
 			pic: 'images/sights-deco-4.svg',
-			link: `cuisine.php`,
+			link: `cuisine`,
 		}, {
 			title: '人文歷史',
 			tags: [
@@ -63,7 +63,7 @@
 				'故事館',
 			],
 			pic: 'images/sights-deco-5.svg',
-			link: `cuisine.php`,
+			link: `cuisine`,
 		}, {
 			title: '熱門打卡',
 			tags: [
@@ -73,9 +73,9 @@
 				'民主發源地',
 			],
 			pic: 'images/sights-deco-6.svg',
-			link: `cuisine.php`,
+			link: `cuisine`,
 		}]
-	}" class="px-4 space-y-4 mb-[112px]">
+	}" class="sightsList px-4 space-y-4 mb-[112px]">
 	<!-- 'bg-orange': i == 3*i+1, 'bg-green': i == 3*i+2, 'bg-blue': i == 3*i -->
 		<article v-for="(p, i) in posts" class="category-border-radius text-white p-7 bg-orange">
 			<div class="flex items-center mr-4">
