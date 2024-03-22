@@ -1,4 +1,7 @@
 <?php
+
+    $m_title = $_POST['title'];
+    
     require_once('PHPMailer/PHPMailerAutoload.php');
     include 'smtpsetting.php';
     /////////////////////////////////////////////////////////////////
@@ -12,7 +15,7 @@
 
     $mailContent = "<div style='max-width: 500px; letter-spacing: 1px;'>"
 
-        ."測試文字： $_POST['title'] <br><br>"
+        ."測試文字： $m_title <br><br>"
 
         ."</div>";
 
