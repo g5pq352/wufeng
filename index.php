@@ -123,10 +123,6 @@ $app->post("/search", function () use ($app) {
   $app->render('search.php', array( 'txt' => $_POST['search'] ));
 });
 
-$app->get("/mail", function () use ($app) {
-  $app->render('testMail.php');
-});
-
 // $app->get('/case(/:p)', function ($p = null) use ($app) {
 //   $app->render('case.php', [
 //     'p' => $p,
