@@ -23,3 +23,4 @@ _gsdata_
 logs
 .sublime-gulp.cache
 *.lock
+vendor
