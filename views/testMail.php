@@ -1,6 +1,6 @@
 <?php
-    require_once('PHPMailer/PHPMailerAutoload.php');
-    include 'smtpsetting.php';
+    require_once('../PHPMailer/PHPMailerAutoload.php');
+    include '../smtpsetting.php';
     /////////////////////////////////////////////////////////////////
 
     $phpmailer->SetFrom('maysuregun@gmail.com', 'test');
