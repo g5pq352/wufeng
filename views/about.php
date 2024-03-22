@@ -37,6 +37,15 @@
 		</div>
 	</div>
 
+
+	<form action="javascript:;" method="POST" id="contactForm">
+		<input type="text" name="title" placeholder="輸入一些啥啊">
+
+		<button id="send">
+			下去就是囉
+		</button>
+	</form>
+
 	<?php include 'footer.php'; ?>
 </body>
 
@@ -48,5 +57,21 @@ $(window).on("scroll", function () {
 	if ($(this).scrollTop() > 250){
 		$(".pop").removeClass("opacity-0 pointer-events-none")
 	}
+})
+
+$("#send").on("click", function () {
+    if($("#contactForm").valid() == true){
+        var answer = confirm("您確認要送出您所填寫的資訊嗎？");
+        if (answer){
+        	$.ajax({
+				type: "POST",
+				url: "./testMail.php",
+				data: $("#contactForm").serialize(),
+				success: function(data) {
+					console.log('success!!!')
+				}
+			});
+        }
+    }
 })
 </script>

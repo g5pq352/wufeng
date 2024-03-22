@@ -10,7 +10,11 @@
 
     $phpmailer->Subject = "test";
 
-    $mailContent = "test";
+    $mailContent = "<div style='max-width: 500px; letter-spacing: 1px;'>"
+
+        ."測試文字： $_POST['title'] <br><br>"
+
+        ."</div>";
 
 
     $phpmailer->Body = $mailContent;
