@@ -13,7 +13,7 @@ $app->hook('slim.before', function () use ($app) {
   $host = $req->getHost();
   $port = $_SERVER['SERVER_PORT'] != 80 && $_SERVER['SERVER_PORT'] != 443 ? ':' . $_SERVER['SERVER_PORT'] : '';
   $root = $req->getRootUri();
-  $baseurl = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $host . $port . $root;
+  $baseurl = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $host . $root;
   $app->view()->appendData(array('baseurl' => $baseurl));
 });
 
