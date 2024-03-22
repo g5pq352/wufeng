@@ -15,4 +15,4 @@
 <meta name="description" content="網站簡述">
 
 
-<link rel="stylesheet" href="<?= $baseurl ?>/stylesheets/style.css">
+<link rel="stylesheet" href="<?= $baseurl ?>/css/style.css">

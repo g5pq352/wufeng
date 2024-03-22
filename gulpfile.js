@@ -41,7 +41,7 @@ function js(cb) {
     .pipe(babel())
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('js'))
     .pipe(browserSync.reload({stream:true}));
 
   cb()
@@ -63,7 +63,7 @@ function style(cb) {
       cascade: false
     }))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('stylesheets'))
+    .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({stream:true}));
 
   cb()
