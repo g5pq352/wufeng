@@ -38,13 +38,13 @@
 	</div>
 
 
-	<form action="javascript:;" method="POST" id="contactForm">
+	<!-- <form action="javascript:;" method="POST" id="contactForm">
 		<input type="text" name="title" placeholder="輸入一些啥啊">
 
 		<button id="send">
 			下去就是囉
 		</button>
-	</form>
+	</form> -->
 
 	<?php include 'footer.php'; ?>
 </body>
