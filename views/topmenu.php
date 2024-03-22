@@ -19,7 +19,7 @@
 <div class="searchWrap fixed top-0 w-full h-screen z-20 transition-all duration-500 opacity-0 pointer-events-none">
 	<div class="search-bg absolute w-full h-full top-0 left-0 bg-black-700 opacity-80"></div>
 
-	<form action="" method="post" class="relative px-5 mt-[62px]">
+	<form action="<?= $baseurl ?>/search" method="POST" enctype="multipart/form-data" class="relative px-5 mt-[62px]">
 		<div class="relative">
 			<input type="text" name="search" placeholder="輸入景點關鍵字" class="w-full px-5 py-3">
 			<div class="absolute right-4 tf-y">

@@ -14,7 +14,7 @@
 		<div class="px-9">
 			<div class="relative px-2 py-3">
 				<div class="bg-white absolute left-0 top-0 w-full h-full -z-10 opacity-70 category-border-radius"></div>
-				<div class="text-center text-black text-[15px]">霧峰香米</div>
+				<div class="font-bold text-center text-black text-[15px]"><?=$txt?></div>
 			</div>
 		</div>
 	</div>

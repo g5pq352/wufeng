@@ -31,9 +31,9 @@ $app->get('(/:path+)/images/:file', function ($path, $file) use ($app) {
 });
 
 
-$app->notFound(function () use ($app) {
-  $app->render('404.php');
-});
+// $app->notFound(function () use ($app) {
+//   $app->render('404.php');
+// });
 
 $app->get('/', function () use ($app) {
   $app->render('index.php');
@@ -115,11 +115,13 @@ $app->get('/traffic/U-Bike', function () use ($app) {
   $app->render('traffic_detail3.php');
 });
 
-// $app->get('/search/:name+', function ($name) use ($app) {
-//   $app->render('search.php', [
-//     'name' => $name,
-//   ]);
+// $app->get('/search/:search', function ($search) use ($app) {
+//   $app->render('search.php', array( 'txt' => $search ));
 // });
+
+$app->post("/search", function () use ($app) {
+  $app->render('search.php', array( 'txt' => $_POST['search'] ));
+});
 
 // $app->get('/case(/:p)', function ($p = null) use ($app) {
 //   $app->render('case.php', [

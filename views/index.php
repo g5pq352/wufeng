@@ -303,23 +303,23 @@
 				<div class="flex h-[190px]">
 					<div class="bg-orange-100 h-full flex items-center px-3 border border-white rounded-[12px] overflow-hidden"><img src="images/menu-logo.svg"></div>
 					<nav class="grid grid-cols-3 w-full h-[50%]">
-						<a href="./"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a href="<?= $baseurl ?>"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-1.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">進入首頁</div>
 						</div></a>
-						<a href="news"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a href="<?= $baseurl ?>/news"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf mt-2 -ml-2"><img src="images/menu-logo-2.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">活動情報</div>
 						</div></a>
-						<a href=""><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a href="javascript:;"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-3.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">熱點通知</div>
 						</div></a>
-						<a href="cuisine"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a href="<?= $baseurl ?>/cuisine"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-4.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">在地美食</div>
 						</div></a>
-						<a href="map"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a href="<?= $baseurl ?>/map"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-5.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">地圖搜尋</div>
 						</div></a>
@@ -355,13 +355,11 @@ TweenMax.to($(window), 1, {
 	onComplete: function() {}
 })
 
-
 gsap.set(".box-bg", {
 	y: "100%",
 })
 
 gsap.delayedCall(0.2, function () {
-
 	gsap.to(".box-bg", {
 		y: "-50%",
 		duration: 1.5,
@@ -395,11 +393,9 @@ function birdsreset() {
 			return gsap.utils.random($("main").height() * 0.85, $("main").height() * 0)
 		},
 	});
-
 	gsap.set($(".items-area .pic"), {
 		opacity: 0,
 	});
-
 
 	// bird fly
 	gsap.to($(".items-area .item"), {
@@ -408,7 +404,6 @@ function birdsreset() {
 		stagger: .18,
 	    ease: "power4.out",
 	});
-
 	gsap.to($(".items-area .pic"), {
 		opacity: 1,
 		stagger: .555,
