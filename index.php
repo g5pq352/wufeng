@@ -31,9 +31,9 @@ $app->get('(/:path+)/images/:file', function ($path, $file) use ($app) {
 });
 
 
-// $app->notFound(function () use ($app) {
-//   $app->render('404.php');
-// });
+$app->notFound(function () use ($app) {
+  $app->render('404.php');
+});
 
 $app->get('/', function () use ($app) {
   $app->render('index.php');
