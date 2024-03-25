@@ -112,6 +112,10 @@ gsap.to($(".items-area .item").eq(1), {
 	delay: 0.75,
 	opacity: 1,
 })
+gsap.to($(".items-area .item").eq(2), {
+	delay: 1.25,
+	opacity: 1,
+})
 
 $(".items-area").on("scroll", function () {
 	var _this = $(this).scrollTop()
