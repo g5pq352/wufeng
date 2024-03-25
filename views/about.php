@@ -54,7 +54,7 @@
 
 <script>
 $(window).on("scroll", function () {
-	if ($(this).scrollTop() > 250){
+	if ($(this).scrollTop() > 400){
 		$(".pop").removeClass("opacity-0 pointer-events-none")
 	}
 })

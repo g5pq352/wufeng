@@ -99,4 +99,29 @@ $("#back-scroll-top").on("click", function () {
 		ease: Power2.easeInOut,
 	});
 })
+
+gsap.set(".items-area .item", {
+	opacity: 0,
+})
+
+gsap.to($(".items-area .item").eq(0), {
+	delay: 0.25,
+	opacity: 1,
+})
+gsap.to($(".items-area .item").eq(1), {
+	delay: 0.75,
+	opacity: 1,
+})
+
+$(".items-area").on("scroll", function () {
+	var _this = $(this).scrollTop()
+
+	$(".items-area .item").each(function(i, el){
+		if(_this * 1.5  > $(el).offset().top){
+			gsap.to($(el), {
+				opacity: 1,
+			})
+		}
+	})
+})
 </script>
