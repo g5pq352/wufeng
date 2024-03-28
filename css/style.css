@@ -550,6 +550,240 @@ video {
 .top-\[62px\]{
   top: 62px;
 }
+.-top-6{
+  top: -1.5rem;
+}
+.-top-10{
+  top: -2.5rem;
+}
+.-top-16{
+  top: -4rem;
+}
+.top-40{
+  top: 10rem;
+}
+.top-24{
+  top: 6rem;
+}
+.-top-24{
+  top: -6rem;
+}
+.top-20{
+  top: 5rem;
+}
+.-top-32{
+  top: -8rem;
+}
+.top-28{
+  top: 7rem;
+}
+.top-16{
+  top: 4rem;
+}
+.-right-6{
+  right: -1.5rem;
+}
+.-right-4{
+  right: -1rem;
+}
+.-right-2{
+  right: -0.5rem;
+}
+.-top-4{
+  top: -1rem;
+}
+.top-6{
+  top: 1.5rem;
+}
+.top-10{
+  top: 2.5rem;
+}
+.top-32{
+  top: 8rem;
+}
+.top-8{
+  top: 2rem;
+}
+.top-12{
+  top: 3rem;
+}
+.top-36{
+  top: 9rem;
+}
+.top-52{
+  top: 13rem;
+}
+.top-48{
+  top: 12rem;
+}
+.top-56{
+  top: 14rem;
+}
+.top-64{
+  top: 16rem;
+}
+.top-96{
+  top: 24rem;
+}
+.top-\[270px\]{
+  top: 270px;
+}
+.top-\[280px\]{
+  top: 280px;
+}
+.right-6{
+  right: 1.5rem;
+}
+.right-8{
+  right: 2rem;
+}
+.top-\[264px\]{
+  top: 264px;
+}
+.top-\[268px\]{
+  top: 268px;
+}
+.left-10{
+  left: 2.5rem;
+}
+.left-5{
+  left: 1.25rem;
+}
+.left-\[18px\]{
+  left: 18px;
+}
+.left-\[60px\]{
+  left: 60px;
+}
+.top-\[324px\]{
+  top: 324px;
+}
+.top-\[338px\]{
+  top: 338px;
+}
+.top-\[394px\]{
+  top: 394px;
+}
+.top-\[396px\]{
+  top: 396px;
+}
+.top-\[436px\]{
+  top: 436px;
+}
+.top-\[456px\]{
+  top: 456px;
+}
+.top-\[500px\]{
+  top: 500px;
+}
+.top-\[510px\]{
+  top: 510px;
+}
+.top-\[520px\]{
+  top: 520px;
+}
+.top-\[550px\]{
+  top: 550px;
+}
+.top-\[572px\]{
+  top: 572px;
+}
+.top-\[590px\]{
+  top: 590px;
+}
+.top-\[600px\]{
+  top: 600px;
+}
+.top-\[530px\]{
+  top: 530px;
+}
+.top-\[534px\]{
+  top: 534px;
+}
+.top-\[532px\]{
+  top: 532px;
+}
+.top-\[576px\]{
+  top: 576px;
+}
+.top-\[606px\]{
+  top: 606px;
+}
+.bottom-10{
+  bottom: 2.5rem;
+}
+.-right-5{
+  right: -1.25rem;
+}
+.-top-\[3vh\]{
+  top: -3vh;
+}
+.top-\[14vh\]{
+  top: 14vh;
+}
+.top-\[15vh\]{
+  top: 15vh;
+}
+.top-\[16vh\]{
+  top: 16vh;
+}
+.top-\[23vh\]{
+  top: 23vh;
+}
+.top-\[28vh\]{
+  top: 28vh;
+}
+.top-\[35vh\]{
+  top: 35vh;
+}
+.top-\[38vh\]{
+  top: 38vh;
+}
+.top-\[44vh\]{
+  top: 44vh;
+}
+.top-\[46vh\]{
+  top: 46vh;
+}
+.top-\[54vh\]{
+  top: 54vh;
+}
+.top-\[56vh\]{
+  top: 56vh;
+}
+.top-\[5vh\]{
+  top: 5vh;
+}
+.top-\[61vh\]{
+  top: 61vh;
+}
+.top-\[67vh\]{
+  top: 67vh;
+}
+.top-\[68vh\]{
+  top: 68vh;
+}
+.top-\[72vh\]{
+  top: 72vh;
+}
+.top-\[73vh\]{
+  top: 73vh;
+}
+.top-\[76vh\]{
+  top: 76vh;
+}
+.top-\[78vh\]{
+  top: 78vh;
+}
+.top-\[84vh\]{
+  top: 84vh;
+}
+.top-\[88vh\]{
+  top: 88vh;
+}
+.top-\[90vh\]{
+  top: 90vh;
+}
 .-z-10{
   z-index: -10;
 }
@@ -773,6 +1007,9 @@ video {
 }
 .mt-\[92px\]{
   margin-top: 92px;
+}
+.ml-16{
+  margin-left: 4rem;
 }
 .inline-block{
   display: inline-block;
