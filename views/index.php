@@ -360,25 +360,25 @@ gsap.set(".box-bg", {
 })
 
 gsap.delayedCall(0.2, function () {
-	// gsap.to(".box-bg", {
-	// 	y: "-50%",
-	// 	duration: 1.5,
-	// 	delay: 4,
-	// 	ease: "none",
-	// 	onComplete: function () {
-	// 		$("main").fadeOut(1000)
-	// 		$("body").removeClass("is-lock")
+	gsap.to(".box-bg", {
+		y: "-50%",
+		duration: 1.5,
+		delay: 4,
+		ease: "none",
+		onComplete: function () {
+			$("main").fadeOut(1000)
+			$("body").removeClass("is-lock")
 
-	// 		TweenMax.to($(window), .5, {
-	// 			scrollTo: {
-	// 				y: $("#last-child"),
-	// 				offsetY: -$("#last-child").height()
-	// 			},
-	// 			ease:Power2.easeInOut,
-	// 			onComplete: function() {}
-	// 		})
-	// 	}
-	// })
+			TweenMax.to($(window), .5, {
+				scrollTo: {
+					y: $("#last-child"),
+					offsetY: -$("#last-child").height()
+				},
+				ease:Power2.easeInOut,
+				onComplete: function() {}
+			})
+		}
+	})
 });
 
 
