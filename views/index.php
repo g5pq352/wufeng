@@ -401,9 +401,12 @@ function birdsreset() {
 	gsap.to($(".items-area .item"), {
 		scale: 1,
 		// opacity: 1,
-		stagger: .1,
-		duration: .2,
-	    ease: "back.out",
+		stagger: {
+			each: .1,
+	    	ease: "power2.out",
+		},
+		duration: .25,
+		ease: "back.out",
 	});
 	gsap.to($(".items-area .pic"), {
 		opacity: 1,
