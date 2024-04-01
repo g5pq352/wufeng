@@ -363,7 +363,7 @@ gsap.delayedCall(0.2, function () {
 	gsap.to(".box-bg", {
 		y: "-50%",
 		duration: 1.5,
-		delay: 4,
+		delay: 3,
 		ease: "none",
 		onComplete: function () {
 			$("main").fadeOut(1000)
