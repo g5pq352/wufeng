@@ -16,7 +16,7 @@
 		<div class="fixed tf -z-20"><img src="images/index-logo.svg" class="max-w-none"></div>
 
 		<div class="box-area px-5 pt-7 pb-32 text-white text-sm relative h-screen">
-			<div class="box-bg absolute w-full h-[200%] top-0 left-0 z-10 bg-gradient-to-t from-orange-100 via-orange-100 to-transparent"></div>
+			<div class="box-bg absolute w-full h-[200%] top-0 left-0 z-30 bg-gradient-to-t from-orange-100 via-orange-100 to-transparent"></div>
 
 			<div class="items-area relative">
 				<div class="pic absolute -z-10 -top-32 right-3"><img src="images/fly-img-1.jpg"></div>
