@@ -1,7 +1,7 @@
 <div id="preload" style="z-index: 109; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 
 <header class="fixed top-0 z-50 bg-orange-100 w-full flex items-center justify-between px-5 py-3">
-	<div class="font-bold text-5xl tracking-wide"><a href="./">霧峰好玩</a></div>
+	<div class="font-bold text-5xl tracking-wide"><a href="<?= $baseurl ?>">霧峰好玩</a></div>
 
 	<div class="searcOpen">
 		<svg width="18.77" height="18.01" viewBox="0 0 18.77 18.01">
@@ -41,7 +41,7 @@
 	<div class="pt-[118px] mb-12"><img src="images/menu-big-logo.svg" class="mx-auto"></div>
 
 	<div class="px-9">
-		<form action="" method="POST" class="relative mb-7">
+		<form action="<?= $baseurl ?>/search" method="POST" enctype="multipart/form-data" class="relative mb-7">
 			<div class="relative">
 				<input type="text" name="search" placeholder="輸入景點關鍵字" class="text-center w-full px-5 py-3">
 				<div class="absolute right-4 tf-y">
@@ -57,18 +57,31 @@
 			<div class="font-bold mb-4">熱門搜尋</div>
 
 			<nav v-scope="{
-				posts: [
-					'菇的故鄉',
-					'台灣最大清代官宅',
-					'心魂傾注造酒精神',
-					'二戰後臺灣第一個新市鎮',
-					'民主發源地',
-					'國際巨星的MV場景',
-					'十分鐘登頂小百岳'
-				]
+				posts: [{
+					cat: '<?= $baseurl ?>/news',
+					title: '菇的故鄉',
+				},{
+					cat: '<?= $baseurl ?>/news',
+					title: '台灣最大清代官宅',
+				},{
+					cat: '<?= $baseurl ?>/news',
+					title: '心魂傾注造酒精神',
+				},{
+					cat: '<?= $baseurl ?>/news',
+					title: '二戰後臺灣第一個新市鎮',
+				},{
+					cat: '<?= $baseurl ?>/news',
+					title: '民主發源地',
+				},{
+					cat: '<?= $baseurl ?>/news',
+					title: '國際巨星的MV場景',
+				},{
+					cat: '<?= $baseurl ?>/news',
+					title: '十分鐘登頂小百岳',
+				}]
 			}" class="space-y-2">
-				<a v-for="p in posts" :href="p" class="flex items-center justify-between border-b border-gray-400 pb-1">
-					<span class="text-blue">{{p}}</span>
+				<a v-for="p in posts" :href="p.cat + '/' + p.title" class="flex items-center justify-between border-b border-gray-400 pb-1">
+					<span class="text-blue">{{p.title}}</span>
 					<span class="pr-7"><svg width="14.22" height="13.59" viewBox="0 0 14.22 13.59">
 						<circle cx="5.71" cy="5.71" r="5.33" style="fill: none; stroke: #0082c2; stroke-miterlimit: 10; stroke-width: .75px;"/>
 						<line x1="9.77" y1="9.15" x2="13.95" y2="13.33" style="fill: none; stroke: #0082c2; stroke-miterlimit: 10; stroke-width: .75px;"/>

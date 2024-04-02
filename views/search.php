@@ -25,37 +25,37 @@
 				pic: 'images/news-1.jpg',
 				title: `迎接霧峰，<br>共襄文化盛宴！`,
 				note: `在全世界最大戲台<br>辦文化祭。`,
-				link: `../news/迎接霧峰，共襄文化盛宴！`,
+				link: `<?= $baseurl ?>/news/迎接霧峰，共襄文化盛宴！`,
 			}, {
 				pic: 'images/news-2.jpg',
 				title: `最新活動!<br>一日農夫!!`,
 				note: `小公務員不可能的<br>清酒任務`,
-				link: `../news/最新活動!一日農夫!!`,
+				link: `<?= $baseurl ?>/news/最新活動!一日農夫!!`,
 			}, {
 				pic: 'images/news-3.jpg',
 				title: `2023霧峰必吃美食`,
 				note: `一場以農為本的<br>創意餐點。`,
-				link: `../news/2023霧峰必吃美食`,
+				link: `<?= $baseurl ?>/news/2023霧峰必吃美食`,
 			}, {
 				pic: 'images/news-4.jpg',
 				title: `農旅開跑了!`,
 				note: `了解更多<br>霧峰農業與生態。`,
-				link: `../news/農旅開跑了!`,
+				link: `<?= $baseurl ?>/news/農旅開跑了!`,
 			}, {
 				pic: 'images/news-5.jpg',
 				title: `國際賞鳥活動!`,
 				note: `獨特的生態系統<br>黑翅鳶與霧峰米。`,
-				link: `../news/國際賞鳥活動!`,
+				link: `<?= $baseurl ?>/news/國際賞鳥活動!`,
 			}, {
 				pic: 'images/news-6.jpg',
 				title: `宮保第<br>最新活動`,
 				note: `在花廳，度曲臨風Ⅳ<br>女怕嫁錯郎`,
-				link: `../news/宮保第最新活動`,
+				link: `<?= $baseurl ?>/news/宮保第最新活動`,
 			}, {
 				pic: 'images/news-7.jpg',
 				title: `初霧純米吟釀`,
 				note: `初露周年慶<br>兩人同行一人免費!<br>一同見證霧峰香米傳奇`,
-				link: `../news/初霧純米吟釀`,
+				link: `<?= $baseurl ?>/news/初霧純米吟釀`,
 			}]
 		}" class="space-y-4">
 			<li v-for="p in posts" class="category-border-radius bg-white p-3"><a :href="p.link">
