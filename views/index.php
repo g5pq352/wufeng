@@ -360,12 +360,13 @@ gsap.set(".box-bg", {
 })
 
 
+
 $(function() {
 	gsap.delayedCall(0.2, function () {
 		gsap.to(".box-bg", {
 			y: "-50%",
 			duration: 1.5,
-			delay: 3,
+			delay: 3.5,
 			ease: "none",
 			onComplete: function () {
 				$("main").fadeOut(1000)
@@ -409,7 +410,8 @@ function birdsreset() {
 			each: .1,
 	    	ease: "power2.out",
 		},
-		duration: .25,
+		// duration: .25,
+		duration: .4,
 		ease: "back.out",
 	});
 	gsap.to($(".items-area .pic"), {
