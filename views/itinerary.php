@@ -24,19 +24,23 @@
 				'最大戲台',
 			],
 			pic: 'images/itinerary-1.jpg',
-			date: '9:00',
+			date: '09:00',
 			sliders: [{
 				pic: 'images/itinerary-slider-1-1.jpg',
 				title: '霧峰林家花園',
+				time: '09:00',
 			}, {
 				pic: 'images/itinerary-slider-1-2.jpg',
 				title: '肉尬',
+				time: '12:00',
 			}, {
 				pic: 'images/itinerary-slider-1-3.jpg',
 				title: '省議會紀念園區',
+				time: '14:00',
 			}, {
 				pic: 'images/itinerary-slider-1-1.jpg',
 				title: '霧峰林家花園',
+				time: '16:00',
 			}],
 			link: `itinerary/文旅`,
 		}, {
@@ -49,19 +53,23 @@
 				'特有生態',
 			],
 			pic: 'images/itinerary-2.jpg',
-			date: '8:00',
+			date: '08:00',
 			sliders: [{
 				pic: 'images/itinerary-slider-2-1.jpg',
 				title: '在地早餐',
+				time: '08:00',
 			}, {
 				pic: 'images/itinerary-slider-2-2.jpg',
 				title: '肉粽嫂',
+				time: '12:00',
 			}, {
 				pic: 'images/itinerary-slider-2-3.jpg',
 				title: '木瓜牛乳大王',
+				time: '14:00',
 			}, {
 				pic: 'images/itinerary-slider-2-4.jpg',
 				title: '民生故事館',
+				time: '16:00',
 			}],
 			link: `itinerary/食旅`,
 		}, {
@@ -78,15 +86,19 @@
 			sliders: [{
 				pic: 'images/itinerary-slider-3-1.jpg',
 				title: '霧峰公園',
+				time: '10:00',
 			}, {
 				pic: 'images/itinerary-slider-3-2.jpg',
 				title: '五福黑翅鳶',
+				time: '11:00',
 			}, {
 				pic: 'images/itinerary-slider-3-3.jpg',
 				title: '肉尬',
+				time: '12:00',
 			}, {
 				pic: 'images/itinerary-slider-3-4.jpg',
 				title: '初露吟釀',
+				time: '15:00',
 			}],
 			link: `itinerary/農旅`,
 		}]
@@ -99,9 +111,9 @@
 						<li v-for="tag in (p.tags)" class="rounded-full border border-white px-2 mr-1">#{{tag}}</li>
 					</ul>
 					<div class="mt-7 mb-4"><img :src="p.pic" class="rounded-2xl"></div>
-					<div class="font-en font-medium text-[72px] leading-none relative z-10 -mb-4">{{p.date}}</div>
+					<div class="date font-en font-medium text-[72px] leading-none relative z-10 -mb-4">{{p.date}}</div>
 				</a>
-				<div class="relative">
+				<div class="relative" class="itinerarySlider">
 					<div class="absolute z-10 -top-[48px] right-0 flex space-x-2">
 						<div class="itinerary-prev"><svg width="44" height="44" viewBox="0 0 43.8 43.8">
 							<circle cx="21.9" cy="21.9" r="21.4" style="fill: none; stroke: #fff; stroke-miterlimit: 10;"/>
@@ -118,19 +130,18 @@
 							</g>
 						</svg></div>
 					</div>
-					<div class="relative">
-						<ul v-scope="" v-on:vue:mounted="itineraryHandler($el)" class="itinerarySlider">
-							<li v-for="(item, i) in (p.sliders)" class="w-[35%] mr-6">
-								<div class="relative pic rounded-3xl overflow-hidden"><img :src="item.pic"></div>
-								<div class="bg-white w-2 h-6 ml-2 -mt-2 relative"></div>
-								<div class="absolute w-[120%] left-0 top-[112px] border-b border-dashed opacity-70"></div>
-								<div class="ml-[7px] mt-1">
-									<div class="w-max font-bold text-lg">{{item.title}}</div>
-									<div class="font-en text-sm font-light opacity-70">0{{i+1}}</div>
-								</div>
-							</li>
-						</ul>
-					</div>
+
+					<ul v-scope="" v-on:vue:mounted="itineraryHandler($el)">
+						<li v-for="(item, i) in (p.sliders)" class="w-[35%] mr-6" :data-time="item.time">
+							<div class="relative pic rounded-3xl overflow-hidden"><img :src="item.pic"></div>
+							<div class="bg-white w-2 h-6 ml-2 -mt-2 relative"></div>
+							<div class="absolute w-[120%] left-0 top-[112px] border-b border-dashed opacity-70"></div>
+							<div class="ml-[7px] mt-1">
+								<div class="w-max font-bold text-lg">{{item.title}}</div>
+								<div class="font-en text-sm font-light opacity-70">0{{i+1}}</div>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="text-white font-en bg-gray-400 py-4 rounded-t-[28px] rounded-br-[28px]"><a :href="p.link" class="flex items-center justify-center">
@@ -165,11 +176,17 @@ function itineraryHandler(el) {
 		"arrowShape": ""
 	});
 
-	$(".itinerary-prev").on("click", () => {
+	$(el).closest("article").find(".itinerary-prev").on("click", () => {
 		$carousel.flickity('previous')
+		$carousel.flickity('stopPlayer');
 	})
-	$(".itinerary-next").on("click", () => {
+	$(el).closest("article").find(".itinerary-next").on("click", () => {
 		$carousel.flickity('next')
+		$carousel.flickity('stopPlayer');
 	})
+
+	$carousel.on( 'change.flickity', function( event, index ) {
+		$(el).closest("article").find(".date").text($("li", el).eq(index).data("time"))
+	});
 }
 </script>

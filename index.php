@@ -56,7 +56,7 @@ $app->get('/chosen', function () use ($app) {
 });
 
 $app->get('/map', function () use ($app) {
-  $app->render('map.php');
+  $app->render('map.php', array( 'now' => 'map' ));
 });
 
 $app->get('/message/:slug', function ($slug) use ($app) {
@@ -66,22 +66,24 @@ $app->get('/message/:slug', function ($slug) use ($app) {
 });
 
 $app->get('/news', function () use ($app) {
-  $app->render('news.php');
+  $app->render('news.php', array( 'now' => 'news' ));
 });
 
 $app->get('/news/:slug', function ($slug) use ($app) {
   $app->render('news_detail.php', [
     'slug' => $slug,
+    'now' => 'news',
   ]);
 });
 
 $app->get('/cuisine', function () use ($app) {
-  $app->render('cuisine.php');
+  $app->render('cuisine.php', array( 'now' => 'cuisine' ));
 });
 
 $app->get('/cuisine/:slug', function ($slug) use ($app) {
   $app->render('cuisine_detail.php', [
     'slug' => $slug,
+    'now' => 'cuisine',
   ]);
 });
 

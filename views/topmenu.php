@@ -1,3 +1,11 @@
+<?php
+if(isset($now)){
+
+}else{
+	$now = '';
+}
+?>
+
 <div id="preload" style="z-index: 109; position: fixed; top: 0; right: 0; bottom: 0; left: 0; background-color: #fff;"></div>
 
 <header class="fixed top-0 z-50 bg-orange-100 w-full flex items-center justify-between px-5 py-3">
@@ -161,8 +169,10 @@
 </div>
 
 <div class="small-menuWrap fixed bg-orange-100 w-full bottom-0 z-50">
-	<nav class="grid grid-cols-5 text-center">
-		<a href="<?= $baseurl ?>/news" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+	<nav class="grid grid-cols-5 text-center" v-scope="{}">
+		<a href="<?= $baseurl ?>/news" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]" :class="[
+			'<?=$now?>' == 'news' ? 'border-white bg-[#E2DED7]' : ''
+		]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-1.svg"></div>
 			<div class="font-medium text-xs tracking-normal">活動情報</div>
 		</a>
@@ -174,11 +184,15 @@
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-3.svg"></div>
 			<div class="font-medium text-xs tracking-normal">打開選單</div>
 		</a>
-		<a href="<?= $baseurl ?>/map" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+		<a href="<?= $baseurl ?>/map" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]" :class="[
+			'<?=$now?>' == 'map' ? 'border-white bg-[#E2DED7]' : ''
+		]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-4.svg"></div>
 			<div class="font-medium text-xs tracking-normal">地圖搜尋</div>
 		</a>
-		<a href="<?= $baseurl ?>/cuisine" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]">
+		<a href="<?= $baseurl ?>/cuisine" class="pb-4 border-2 border-orange-100 rounded-lg hover:border-white hover:bg-[#E2DED7]" :class="[
+			'<?=$now?>' == 'cuisine' ? 'border-white bg-[#E2DED7]' : ''
+		]">
 			<div class="h-10 flex items-center justify-center"><img src="images/fix-item-5.svg"></div>
 			<div class="font-medium text-xs tracking-normal">在地美食</div>
 		</a>

@@ -8,6 +8,15 @@
 
 	<div class="relative rounded-b-[32px] overflow-hidden mt-[50px] mb-[34px]">
 		<div class=""><img src="images/chosen-pic.jpg"></div>
+		<div class="flex items-end absolute bottom-12 left-7">
+			<div class="mr-4"><svg width="61.28" height="87.36" viewBox="0 0 61.28 87.36">
+				<path d="M50.51,22.94L53.49,0h-10.02l-2.98,22.94h-15.48L27.98,0h-10.02l-2.98,22.94H2.8v11.25H13.54l-2.06,16.26H0v11.25H10.02l-3.49,25.66h10.02l3.49-25.66h15.48l-3.49,25.66h10.02l3.49-25.66h12.93v-11.25h-11.47l2.06-16.26h12.21v-11.25h-10.77Zm-13.53,27.51h-15.48l2.06-16.26h15.48l-2.06,16.26Z" style="fill: #fff;"/>
+			</svg></div>
+			<div class="font-bold text-6xl text-white leading-tight tracking-normal">
+				走進霧峰的<br>
+				時光隧道
+			</div>
+		</div>
 		<div class="absolute bottom-0 w-full h-3">
 			<div class="w-full h-[33.33333%] bg-blue"></div>
 			<div class="w-full h-[33.33333%] bg-orange"></div>

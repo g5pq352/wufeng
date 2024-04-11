@@ -76,7 +76,7 @@
 			<div class="space-y-12">
 				<article>
 					<div class="category-border-radius">
-						<div class="relative"><a href="message/走進霧峰的時光隧道">
+						<div class="relative"><a href="chosen">
 							<div class=""><img src="images/item-1.jpg" class=""></div>
 							<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
 								<div class=""><img src="images/tg-big.svg"></div>
@@ -94,25 +94,25 @@
 									tag: '全世界最大清代',
 									note: '〔宮保第〕一品官宅建築群',
 									pic: 'images/item-2.jpg',
-									link: `message/霧峰林家建築群`,
+									link: `chosen`,
 								}, {
 									title: '民生故事館',
 									tag: '我有故事',
 									note: '也有酒',
 									pic: 'images/item-3.jpg',
-									link: `message/民生故事館`,
+									link: `chosen`,
 								}, {
 									title: '光復新村',
 									tag: '全台灣',
 									note: '第一個新市鎮',
 									pic: 'images/item-4.jpg',
-									link: `message/光復新村`,
+									link: `chosen`,
 								},{
 									title: '省議會紀念園區',
 									tag: '台灣',
 									note: '民主發源地',
 									pic: 'images/item-5.jpg',
-									link: `message/省議會紀念園區`,
+									link: `chosen`,
 								}]
 							}">
 							<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
@@ -177,7 +177,7 @@
 				</article>
 				<article>
 					<div class="category-border-radius">
-						<div class="relative"><a href="message/走進霧峰的時光隧道">
+						<div class="relative"><a href="chosen">
 							<div class=""><img src="images/item-1.jpg" class=""></div>
 							<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
 								<div class=""><img src="images/tg-big.svg"></div>
@@ -195,25 +195,25 @@
 									tag: '全世界最大清代',
 									note: '〔宮保第〕一品官宅建築群',
 									pic: 'images/item-2.jpg',
-									link: `message/霧峰林家建築群`,
+									link: `chosen`,
 								}, {
 									title: '民生故事館',
 									tag: '我有故事',
 									note: '也有酒',
 									pic: 'images/item-3.jpg',
-									link: `message/民生故事館`,
+									link: `chosen`,
 								}, {
 									title: '光復新村',
 									tag: '全台灣',
 									note: '第一個新市鎮',
 									pic: 'images/item-4.jpg',
-									link: `message/光復新村`,
+									link: `chosen`,
 								},{
 									title: '省議會紀念園區',
 									tag: '台灣',
 									note: '民主發源地',
 									pic: 'images/item-5.jpg',
-									link: `message/省議會紀念園區`,
+									link: `chosen`,
 								}]
 							}">
 							<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
@@ -248,27 +248,30 @@
 									pic: 'images/item-2.jpg',
 									cat: '2023全霧峰精選系列',
 									title: `走進霧峰的<br>時光隧道`,
+									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
 								}, {
 									pic: 'images/item-2.jpg',
 									cat: '2023全霧峰精選系列',
 									title: `得天獨厚的<br>天生好米`,
+									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
 								}, {
 									pic: 'images/item-2.jpg',
 									cat: '2023全霧峰精選系列',
 									title: `台灣<br>民主發源地`,
+									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
 								}]
 							}">
-							<li v-for="(p, i) in posts" class="relative flex category-border-radius p-3 pb-10" :class="{
+							<li v-for="(p, i) in posts"><a :href="p.link" class="relative flex category-border-radius p-3 pb-10" :class="{
 								'bg-blue': i == 0, 'bg-green': i == 1, 'bg-orange': i == 2
 							}">
 								<div class="mr-3" :class="i % 2 != 0 ? 'hidden' : ''"><img :src="p.pic" class="rounded-[32px]"></div>
 								<div class="text-white">
 									<div class="rounded-full border border-white px-2 text-sm opacity-80 mb-4 w-max">{{p.cat}}</div>
 									<div class="mb-1"><img src="images/tg-big-white.svg"></div>
-									<div class="font-bold text-5xl tracking-normal" v-html="p.title"></div>
+									<div class="font-bold text-[26px] tracking-normal" v-html="p.title"></div>
 								</div>
 								<div class="ml-3" :class="i % 2 == 0 ? 'hidden' : ''"><img :src="p.pic" class="rounded-[32px]"></div>
-							</li>
+							</a></li>
 						</ul>
 					</div>
 					<div class="font-en text-gray mt-2 text-right">7:00</div>
@@ -359,32 +362,45 @@ gsap.set(".box-bg", {
 	y: "100%",
 })
 
-
-
+var _name = $.cookie('name');     // 读取 cookie
 $(function() {
-	gsap.delayedCall(0.2, function () {
-		gsap.to(".box-bg", {
-			y: "-50%",
-			duration: 1.5,
-			delay: 3.5,
-			ease: "none",
-			onComplete: function () {
-				$("main").fadeOut(1000)
-				$("body").removeClass("is-lock")
+	if(_name) {
+		$("main").addClass('opacity-0 pointer-events-none')
 
-				TweenMax.to($(window), .5, {
-					scrollTo: {
-						y: $("#last-child"),
-						offsetY: -$("#last-child").height()
-					},
-					ease:Power2.easeInOut,
-					onComplete: function() {}
-				})
-			}
+		TweenMax.to($(window), 1.5, {
+			scrollTo: {
+				y: $("#last-child"),
+				offsetY: -$("#last-child").height()
+			},
+			ease:Power2.easeInOut,
+			onComplete: function() {}
 		})
-	});
-	
-	birdsreset()
+	} else {
+		gsap.delayedCall(0.2, function () {
+			gsap.to(".box-bg", {
+				y: "-50%",
+				duration: 1.5,
+				delay: 2,
+				ease: "none",
+				onComplete: function () {
+					$("main").fadeOut(1000)
+					$("body").removeClass("is-lock")
+
+					TweenMax.to($(window), 1.5, {
+						scrollTo: {
+							y: $("#last-child"),
+							offsetY: -$("#last-child").height()
+						},
+						ease:Power2.easeInOut,
+						onComplete: function() {}
+					})
+				}
+			})
+		});
+		
+		birdsreset()
+		$.cookie('name', 'first');  // 创建 cookie
+	}
 });
 
 
