@@ -297,7 +297,7 @@
 
 		<div class="bg-[#efebe4]">
 			<div class="menuList">
-				<ul class="marquee flex flex-nowrap w-max space-x-6 font-bold bg-green text-white border border-white rounded-[12px] overflow-hidden">
+				<ul class="flex flex-nowrap w-max space-x-6 font-bold bg-green text-white border border-white rounded-[12px] overflow-hidden">
 					<li class="inline-block w-max">2023/11/16 22°C  最新祭典活動開始了!快到霧峰遊玩</li>
 					<li class="inline-block w-max">2023/11/16 22°C  最新祭典活動開始了!快到霧峰遊玩</li>
 					<li class="inline-block w-max">2023/11/16 22°C  最新祭典活動開始了!快到霧峰遊玩</li>
