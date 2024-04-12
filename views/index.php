@@ -370,7 +370,7 @@ $(function() {
 		TweenMax.to($(window), 2, {
 			scrollTo: {
 				y: $("#last-child"),
-				offsetY: -$("#last-child").height()
+				offsetY: -$("#last-child").height() * 2
 			},
 			ease:Power2.easeInOut,
 			onComplete: function() {}
