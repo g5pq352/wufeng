@@ -358,8 +358,8 @@ $(function() {
 	if(_name) {
 		$("main").addClass('opacity-0 pointer-events-none')
 
-		TweenMax.to($(window), 4, {
-			delay: .3,
+		TweenMax.to($(window), 3, {
+			delay: .25,
 			scrollTo: {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
@@ -368,14 +368,14 @@ $(function() {
 			onComplete: function() {}
 		})
 	} else {
-		// TweenMax.to($(window), 1, {
-		// 	scrollTo: {
-		// 		y: $("#last-child"),
-		// 		offsetY: 0
-		// 	},
-		// 	ease:Power2.easeInOut,
-		// 	onComplete: function() {}
-		// })
+		TweenMax.to($(window), 1, {
+			scrollTo: {
+				y: $("#last-child"),
+				offsetY: 0
+			},
+			ease:Power2.easeInOut,
+			onComplete: function() {}
+		})
 
 		gsap.delayedCall(0.2, function () {
 			gsap.to(".box-bg", {
@@ -387,7 +387,7 @@ $(function() {
 					$("main").fadeOut(1000)
 					$("body").removeClass("is-lock")
 
-					TweenMax.to($(window), 4, {
+					TweenMax.to($(window), 3, {
 						scrollTo: {
 							y: $("#last-child"),
 							offsetY: -$("#last-child").height()
