@@ -12,7 +12,7 @@
 <body class="bg-[#efebe4]">
 	<?php include 'topmenu.php'; ?>
 
-	<div class="fixed inset-0 w-full h-full move-go hidden">
+	<div class="fixed inset-0 w-full h-full move-go hidden z-10">
 		<div class="absolute top-0 left-0 w-full h-full bg-[#000000] opacity-50"></div>
 		<div class="absolute tf"><img src="images/move-go.svg"></div>
 	</div>
@@ -291,7 +291,7 @@
 		<div class="font-en text-gray mt-2 text-right px-5">13:00</div>
 	</div>
 
-	<div class="fixed bottom-0 w-full">
+	<div class="fixed bottom-0 w-full z-20">
 		<div class="mb-5 mr-4"><svg width="34.36" height="34.36" viewBox="0 0 34.36 34.36" class="backtotop ml-auto">
 			<rect width="34.36" height="34.36" rx="8" ry="8" transform="translate(34.36 34.36) rotate(180)" style="fill: #fff;"/>
 			<g>
@@ -354,7 +354,7 @@
 </html>
 
 <script>
-TweenMax.to($(window), .5, {
+TweenMax.to($(window), .1, {
 	scrollTo: {
 		y: $("#last-child"),
 		offsetY: 0
@@ -373,7 +373,7 @@ $(function() {
 		$("main").addClass('opacity-0 pointer-events-none')
 
 		TweenMax.to($(window), 2.5, {
-			delay: .3,
+			delay: 1,
 			scrollTo: {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
