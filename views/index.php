@@ -245,20 +245,20 @@
 					<div class="category-border-radius">
 						<ul class="" v-scope="{
 								posts: [{
-									pic: 'images/item-2.jpg',
+									pic: 'images/item-13.jpg',
 									cat: '2023全霧峰精選系列',
 									title: `走進霧峰的<br>時光隧道`,
 									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
 								}, {
-									pic: 'images/item-2.jpg',
+									pic: 'images/item-14.jpg',
 									cat: '2023全霧峰精選系列',
 									title: `得天獨厚的<br>天生好米`,
-									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
+									link: `message2/得天獨厚的天生好米`,
 								}, {
-									pic: 'images/item-2.jpg',
+									pic: 'images/item-15.jpg',
 									cat: '2023全霧峰精選系列',
 									title: `台灣<br>民主發源地`,
-									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
+									link: `message3/台灣民主發源地`,
 								}]
 							}">
 							<li v-for="(p, i) in posts"><a :href="p.link" class="relative flex category-border-radius p-3 pb-10" :class="{
@@ -367,7 +367,7 @@ $(function() {
 	if(_name) {
 		$("main").addClass('opacity-0 pointer-events-none')
 
-		TweenMax.to($(window), 1.5, {
+		TweenMax.to($(window), 2, {
 			scrollTo: {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
@@ -386,7 +386,7 @@ $(function() {
 					$("main").fadeOut(1000)
 					$("body").removeClass("is-lock")
 
-					TweenMax.to($(window), 1.5, {
+					TweenMax.to($(window), 2, {
 						scrollTo: {
 							y: $("#last-child"),
 							offsetY: -$("#last-child").height()

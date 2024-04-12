@@ -65,6 +65,18 @@ $app->get('/message/:slug', function ($slug) use ($app) {
   ]);
 });
 
+$app->get('/message2/:slug', function ($slug) use ($app) {
+  $app->render('message_detail2.php', [
+    'slug' => $slug,
+  ]);
+});
+
+$app->get('/message3/:slug', function ($slug) use ($app) {
+  $app->render('message_detail3.php', [
+    'slug' => $slug,
+  ]);
+});
+
 $app->get('/news', function () use ($app) {
   $app->render('news.php', array( 'now' => 'news' ));
 });
