@@ -311,27 +311,27 @@
 				<div class="flex h-[190px]">
 					<div class="bg-orange-100 h-full flex items-center px-3 border border-white rounded-[12px] overflow-hidden"><img src="images/menu-logo.svg"></div>
 					<nav class="grid grid-cols-3 w-full h-full">
-						<a href="<?= $baseurl ?>"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="max-h-[95px]" href="<?= $baseurl ?>"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-1.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">進入首頁</div>
 						</div></a>
-						<a href="<?= $baseurl ?>/news"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="max-h-[95px]" href="<?= $baseurl ?>/news"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf mt-2 -ml-2"><img src="images/menu-logo-2.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">活動情報</div>
 						</div></a>
-						<a href="javascript:;"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="max-h-[95px]" href="javascript:;"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-3.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">熱點通知</div>
 						</div></a>
-						<a href="<?= $baseurl ?>/cuisine"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="max-h-[95px]" href="<?= $baseurl ?>/cuisine"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-4.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">在地美食</div>
 						</div></a>
-						<a href="<?= $baseurl ?>/map"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="max-h-[95px]" href="<?= $baseurl ?>/map"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-5.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">地圖搜尋</div>
 						</div></a>
-						<a href="javascript:;" class="openMenu"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="max-h-[95px]" href="javascript:;" class="openMenu"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-6.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">打開選單</div>
 						</div></a>

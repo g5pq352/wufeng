@@ -948,6 +948,9 @@ video {
 .max-h-\[462px\]{
   max-height: 462px;
 }
+.max-h-\[95px\]{
+  max-height: 95px;
+}
 .w-2{
   width: 0.5rem;
 }
