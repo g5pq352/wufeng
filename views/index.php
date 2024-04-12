@@ -354,6 +354,15 @@
 </html>
 
 <script>
+TweenMax.to($(window), .5, {
+	scrollTo: {
+		y: $("#last-child"),
+		offsetY: 0
+	},
+	ease:Power2.easeInOut,
+	onComplete: function() {}
+})
+
 gsap.set(".box-bg", {
 	y: "100%",
 })
@@ -363,8 +372,8 @@ $(function() {
 	if(_name) {
 		$("main").addClass('opacity-0 pointer-events-none')
 
-		TweenMax.to($(window), 3, {
-			delay: .25,
+		TweenMax.to($(window), 2.5, {
+			delay: .3,
 			scrollTo: {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
@@ -375,15 +384,6 @@ $(function() {
 			}
 		})
 	} else {
-		TweenMax.to($(window), 1, {
-			scrollTo: {
-				y: $("#last-child"),
-				offsetY: 0
-			},
-			ease:Power2.easeInOut,
-			onComplete: function() {}
-		})
-
 		gsap.delayedCall(0.2, function () {
 			gsap.to(".box-bg", {
 				y: "-50%",
@@ -394,7 +394,7 @@ $(function() {
 					$("main").fadeOut(1000)
 					$("body").removeClass("is-lock")
 
-					TweenMax.to($(window), 3, {
+					TweenMax.to($(window), 2.5, {
 						scrollTo: {
 							y: $("#last-child"),
 							offsetY: -$("#last-child").height()
