@@ -359,7 +359,7 @@ $(function() {
 		$("main").addClass('opacity-0 pointer-events-none')
 
 		TweenMax.to($(window), 4, {
-			delay: .1,
+			delay: .3,
 			scrollTo: {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
