@@ -378,7 +378,7 @@ $(function() {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
 			},
-			ease: 'none',
+			ease:Power2.easeInOut,
 			onComplete: function() {
 				$(".move-go").fadeIn(500)
 			}
