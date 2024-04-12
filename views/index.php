@@ -12,6 +12,11 @@
 <body class="bg-[#efebe4]">
 	<?php include 'topmenu.php'; ?>
 
+	<div class="fixed inset-0 w-full h-full move-go hidden">
+		<div class="absolute top-0 left-0 w-full h-full bg-[#000000] opacity-50"></div>
+		<div class="absolute tf"><img src="images/move-go.svg"></div>
+	</div>
+
 	<main class="fixed bg-orange-100 z-60 fixed w-full h-full top-0 left-0">
 		<div class="fixed tf -z-20"><img src="images/index-logo.svg" class="max-w-none"></div>
 
@@ -365,7 +370,9 @@ $(function() {
 				offsetY: -$("#last-child").height()
 			},
 			ease:Power2.easeInOut,
-			onComplete: function() {}
+			onComplete: function() {
+				$(".move-go").fadeIn(500)
+			}
 		})
 	} else {
 		TweenMax.to($(window), 1, {
@@ -393,7 +400,9 @@ $(function() {
 							offsetY: -$("#last-child").height()
 						},
 						ease:Power2.easeInOut,
-						onComplete: function() {}
+						onComplete: function() {
+							$(".move-go").fadeIn(500)
+						}
 					})
 				}
 			})
@@ -403,6 +412,10 @@ $(function() {
 		$.cookie('name', 'first');  // 创建 cookie
 	}
 });
+
+$(window).scroll(function() {
+	$(".move-go").fadeOut(200)
+})
 
 
 
