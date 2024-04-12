@@ -291,7 +291,7 @@
 		<div class="font-en text-gray mt-2 text-right px-5">13:00</div>
 	</div>
 
-	<div class="fixed bottom-0 w-full z-20">
+	<div class="fixed bottom-0 w-full">
 		<div class="mb-5 mr-4"><svg width="34.36" height="34.36" viewBox="0 0 34.36 34.36" class="backtotop ml-auto">
 			<rect width="34.36" height="34.36" rx="8" ry="8" transform="translate(34.36 34.36) rotate(180)" style="fill: #fff;"/>
 			<g>
@@ -378,7 +378,7 @@ $(function() {
 				y: $("#last-child"),
 				offsetY: -$("#last-child").height()
 			},
-			ease:Power2.easeInOut,
+			ease: 'none',
 			onComplete: function() {
 				$(".move-go").fadeIn(500)
 			}
