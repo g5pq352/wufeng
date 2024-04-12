@@ -310,7 +310,7 @@
 
 				<div class="flex h-[190px]">
 					<div class="bg-orange-100 h-full flex items-center px-3 border border-white rounded-[12px] overflow-hidden"><img src="images/menu-logo.svg"></div>
-					<nav class="grid grid-cols-3 w-full h-[50%]">
+					<nav class="grid grid-cols-3 w-full h-full">
 						<a href="<?= $baseurl ?>"><div class="relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-1.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">進入首頁</div>
