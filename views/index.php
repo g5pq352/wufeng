@@ -12,10 +12,10 @@
 <body class="bg-[#efebe4]">
 	<?php include 'topmenu.php'; ?>
 
-	<div class="fixed inset-0 w-full h-full move-go hidden z-10">
+	<!-- <div class="fixed inset-0 w-full h-full move-go hidden z-10">
 		<div class="absolute top-0 left-0 w-full h-full bg-[#000000] opacity-50"></div>
 		<div class="absolute tf"><img src="images/move-go.svg"></div>
-	</div>
+	</div> -->
 
 	<main class="fixed bg-orange-100 z-60 fixed w-full h-full top-0 left-0">
 		<div class="fixed tf -z-20"><img src="images/index-logo.svg" class="max-w-none"></div>
@@ -86,11 +86,11 @@
 							<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
 								<div class=""><img src="images/tg-big.svg"></div>
 								<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
-								<ul v-scope="{
+								<!-- <ul v-scope="{
 									posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
 								}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
 									<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
-								</ul>
+								</ul> -->
 							</div>
 						</a></div>
 						<ul class="grid grid-cols-2" v-scope="{
@@ -131,7 +131,7 @@
 										<div class="">{{p.title}}</div>
 									</div>
 									<div class="">
-										<div class="">#{{p.tag}}</div>
+										<!-- <div class="">#{{p.tag}}</div> -->
 										<div class="">{{p.note}}</div>
 									</div>
 								</div>
@@ -187,11 +187,11 @@
 							<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
 								<div class=""><img src="images/tg-big.svg"></div>
 								<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
-								<ul v-scope="{
+								<!-- <ul v-scope="{
 									posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
 								}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
 									<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
-								</ul>
+								</ul> -->
 							</div>
 						</a></div>
 						<ul class="grid grid-cols-2" v-scope="{
@@ -232,7 +232,7 @@
 										<div class="">{{p.title}}</div>
 									</div>
 									<div class="">
-										<div class="">#{{p.tag}}</div>
+										<!-- <div class="">#{{p.tag}}</div> -->
 										<div class="">{{p.note}}</div>
 									</div>
 								</div>
@@ -354,14 +354,14 @@
 </html>
 
 <script>
-TweenMax.to($(window), .1, {
-	scrollTo: {
-		y: $("#last-child"),
-		offsetY: 0
-	},
-	ease:Power2.easeInOut,
-	onComplete: function() {}
-})
+// TweenMax.to($(window), .1, {
+// 	scrollTo: {
+// 		y: $("#last-child"),
+// 		offsetY: 0
+// 	},
+// 	ease:Power2.easeInOut,
+// 	onComplete: function() {}
+// })
 
 gsap.set(".box-bg", {
 	y: "100%",
@@ -372,17 +372,17 @@ $(function() {
 	if(_name) {
 		$("main").addClass('opacity-0 pointer-events-none')
 
-		TweenMax.to($(window), 2.5, {
-			delay: 1,
-			scrollTo: {
-				y: $("#last-child"),
-				offsetY: -$("#last-child").height()
-			},
-			ease:Power2.easeInOut,
-			onComplete: function() {
-				$(".move-go").fadeIn(500)
-			}
-		})
+		// TweenMax.to($(window), 2.5, {
+		// 	delay: 1,
+		// 	scrollTo: {
+		// 		y: $("#last-child"),
+		// 		offsetY: -$("#last-child").height()
+		// 	},
+		// 	ease:Power2.easeInOut,
+		// 	onComplete: function() {
+		// 		$(".move-go").fadeIn(500)
+		// 	}
+		// })
 	} else {
 		gsap.delayedCall(0.2, function () {
 			gsap.to(".box-bg", {
@@ -394,16 +394,16 @@ $(function() {
 					$("main").fadeOut(1000)
 					$("body").removeClass("is-lock")
 
-					TweenMax.to($(window), 2.5, {
-						scrollTo: {
-							y: $("#last-child"),
-							offsetY: -$("#last-child").height()
-						},
-						ease:Power2.easeInOut,
-						onComplete: function() {
-							$(".move-go").fadeIn(500)
-						}
-					})
+					// TweenMax.to($(window), 2.5, {
+					// 	scrollTo: {
+					// 		y: $("#last-child"),
+					// 		offsetY: -$("#last-child").height()
+					// 	},
+					// 	ease:Power2.easeInOut,
+					// 	onComplete: function() {
+					// 		$(".move-go").fadeIn(500)
+					// 	}
+					// })
 				}
 			})
 		});
