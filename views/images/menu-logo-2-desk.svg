@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_2" data-name="圖層 2" xmlns="http://www.w3.org/2000/svg" width="48.86" height="33.99" viewBox="0 0 48.86 33.99">
+  <g id="layout">
+    <g>
+      <g>
+        <path d="M30.09,23.87l-25.56-3.62c-.77-.11-1.39-.7-1.52-1.47L.68,6.04c-.17-.95,.43-1.87,1.37-2.08L16.19,.7c.72-.17,1.46,.12,1.89,.72l13.75,19.62c.91,1.29-.17,3.05-1.73,2.83Z" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.31px;"/>
+        <line x1="17.54" y1=".92" x2="3.48" y2="19.72" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.31px;"/>
+        <line x1=".97" y1="4.7" x2="31.86" y2="23.05" style="fill: #fff; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.31px;"/>
+      </g>
+      <path d="M10.62,10.43c.01,8.1-1.83,18.15-9.97,22.9" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.31px;"/>
+      <path d="M32.03,23.24s1.37,4.07,5.16,4.87c3.96,.83,8.77-2.08,9.83-4.38" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.31px;"/>
+      <path d="M31.4,22.96s4.13-.9,8.49,3.29c4.36,4.19,7.6,2.25,8.31,1.33" style="fill: none; stroke: #000; stroke-linecap: round; stroke-miterlimit: 10; stroke-width: 1.31px;"/>
+    </g>
+  </g>
+</svg>

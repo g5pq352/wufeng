@@ -232,6 +232,8 @@ $(".search-bg").on("click", function(){
 
 	$(".searcOpen svg").eq(0).toggleClass("hidden")
 	$(".searcOpen svg").eq(1).toggleClass("hidden")
+
+	$("#desktop-search").toggleClass("z-20")
 })
 
 $(".openMenu").on("click", function(){
@@ -242,9 +244,38 @@ $(".closeMenu").on("click", function(){
 })
 
 
+$("#desktop-search").on("click", function(){
+	$(this).addClass("z-20")
+	$("#desktop-searchWrap").removeClass("opacity-0 pointer-events-none")
+});
+
+function autosliderHandler(el) {
+	var $autoslider = $(el).flickity({
+	    "draggable": false,
+	    "prevNextButtons": false,
+	    "pageDots": false,
+	    "wrapAround": true,
+	    "imagesLoaded": true,
+	    "fade": true,
+	    "cellAlign": "center",
+	    "adaptiveHeight": true,
+	    "arrowShape": "",
+	    "autoPlay": 4000,
+	    "pauseAutoPlayOnHover": false
+	});
+
+	$("body").on('mouseleave', function(e) { 
+	    $autoslider.flickity('playPlayer')
+	})
+}
+
+
+
 $(window).on("load", function() {
 
 	$("#preload").fadeOut(300)
+
+	autosliderHandler()
 
 	// gsap.delayedCall(.5, () => {
 	// 	ScrollTrigger.refresh();

@@ -75,223 +75,242 @@
 		</div>
 	</main>
 
-	<div class="mt-[100px] space-y-12">
-		<section class="px-5">
-			<div class="text-center text-white mb-3"><span class="inline-block rounded-full bg-gray-400 px-2">11月9日(四)</span></div>
-			<div class="space-y-12">
-				<article>
-					<div class="category-border-radius">
-						<div class="relative"><a href="chosen">
-							<div class=""><img src="images/item-1.jpg" class=""></div>
-							<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
-								<div class=""><img src="images/tg-big.svg"></div>
-								<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
-								<!-- <ul v-scope="{
-									posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
-								}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
-									<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
-								</ul> -->
-							</div>
-						</a></div>
-						<ul class="grid grid-cols-2" v-scope="{
-								posts: [{
-									title: '霧峰林家建築群',
-									tag: '全世界最大清代',
-									note: '〔宮保第〕一品官宅建築群',
-									pic: 'images/item-2.jpg',
-									link: `chosen`,
-								}, {
-									title: '民生故事館',
-									tag: '我有故事',
-									note: '也有酒',
-									pic: 'images/item-3.jpg',
-									link: `chosen`,
-								}, {
-									title: '光復新村',
-									tag: '全台灣',
-									note: '第一個新市鎮',
-									pic: 'images/item-4.jpg',
-									link: `chosen`,
-								},{
-									title: '省議會紀念園區',
-									tag: '台灣',
-									note: '民主發源地',
-									pic: 'images/item-5.jpg',
-									link: `chosen`,
-								}]
-							}">
-							<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
-								<div class="relative">
-									<img :src="p.pic">
-									<div class="absolute top-0 left-0 w-full h-full bg-black-700 opacity-50"></div>
+	<div class="flex lg:block lg:mr-0">
+		<div class="w-[55vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
+			<?php include 'desktop_slider.php'; ?>
+		</div>
+		<div class="w-[33.1vw] lg:w-full">
+			<!--  -->
+			<div class="">
+				<div class="mt-[100px] space-y-12">
+					<section class="px-5">
+						<div class="text-center text-white mb-3"><span class="inline-block rounded-full bg-gray-400 px-2">11月9日(四)</span></div>
+						<div class="space-y-12">
+							<article>
+								<div class="category-border-radius">
+									<div class="relative"><a href="chosen">
+										<div class=""><img src="images/item-1.jpg" class=""></div>
+										<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
+											<div class=""><img src="images/tg-big.svg"></div>
+											<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
+											<!-- <ul v-scope="{
+												posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
+											}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
+												<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
+											</ul> -->
+										</div>
+									</a></div>
+									<ul class="grid grid-cols-2" v-scope="{
+											posts: [{
+												title: '霧峰林家建築群',
+												tag: '全世界最大清代',
+												note: '〔宮保第〕一品官宅建築群',
+												pic: 'images/item-2.jpg',
+												link: `chosen`,
+											}, {
+												title: '民生故事館',
+												tag: '我有故事',
+												note: '也有酒',
+												pic: 'images/item-3.jpg',
+												link: `chosen`,
+											}, {
+												title: '光復新村',
+												tag: '全台灣',
+												note: '第一個新市鎮',
+												pic: 'images/item-4.jpg',
+												link: `chosen`,
+											},{
+												title: '省議會紀念園區',
+												tag: '台灣',
+												note: '民主發源地',
+												pic: 'images/item-5.jpg',
+												link: `chosen`,
+											}]
+										}">
+										<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
+											<div class="relative">
+												<img :src="p.pic">
+												<div class="absolute top-0 left-0 w-full h-full bg-black-700 opacity-50"></div>
+											</div>
+											<div class="absolute flex flex-col justify-between h-full top-0 left-0 px-3 py-4 text-white">
+												<div class="">
+													<div class="opacity-60">no.{{i+1}}</div>
+													<div class="text-3xl lg:text-base">{{p.title}}</div>
+												</div>
+												<div class="">
+													<!-- <div class="">#{{p.tag}}</div> -->
+													<div class="text-3xl lg:text-base">{{p.note}}</div>
+												</div>
+											</div>
+										</a></li>
+									</ul>
 								</div>
-								<div class="absolute flex flex-col justify-between h-full top-0 left-0 px-3 py-4 text-white">
-									<div class="">
-										<div class="opacity-60">no.{{i+1}}</div>
-										<div class="">{{p.title}}</div>
-									</div>
-									<div class="">
-										<!-- <div class="">#{{p.tag}}</div> -->
-										<div class="">{{p.note}}</div>
-									</div>
-								</div>
-							</a></li>
-						</ul>
-					</div>
-					<div class="font-en text-gray mt-2 text-right">7:00</div>
-				</article>
-				<article>
-					<div class="category-border-radius">
-						<div class="relative"><a href="message/全世界最大清代〔宮保第〕一品官宅建築群">
-							<div class=""><img src="images/item-1.jpg"></div>
-							<div class="absolute top-4 right-4 text-white text-sm border border-white rounded-full px-2">假日去哪兒</div>
-							<div class="absolute h-full flex flex-col top-0 left-0 px-3 py-4 text-white">
-								<div class=""><img src="images/tg-big.svg"></div>
-								<div class="text-[25px] font-bold">全世界最大清代<br>〔宮保第〕一品官宅建築群</div>
-							</div>
-						</a></div>
-						<div class="relative">
-							<ul v-scope="{
-								posts: [
-									'images/item-6.jpg',
-									'images/item-8.jpg',
-									'images/item-6.jpg',
-									'images/item-7.jpg',
-								]
-							}" v-on:vue:mounted="modsHandler($el)" class="modsSlider">
-								<li v-for="p in posts" class="w-[55%]"><img :src="p"></li>
-							</ul>
+								<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base">7:00</div>
+							</article>
+							<article>
+								<div class="category-border-radius">
+									<div class="relative"><a href="message/全世界最大清代〔宮保第〕一品官宅建築群">
+										<div class=""><img src="images/item-1.jpg"></div>
+										<div class="absolute top-4 right-4 text-white text-sm border border-white rounded-full px-2">假日去哪兒</div>
+										<div class="absolute h-full flex flex-col top-0 left-0 px-3 py-4 text-white">
+											<div class=""><img src="images/tg-big.svg"></div>
+											<div class="text-[25px] font-bold">全世界最大清代<br>〔宮保第〕一品官宅建築群</div>
+										</div>
+									</a></div>
+									<div class="relative">
+										<ul v-scope="{
+											posts: [
+												'images/item-6.jpg',
+												'images/item-8.jpg',
+												'images/item-6.jpg',
+												'images/item-7.jpg',
+											]
+										}" v-on:vue:mounted="modsHandler($el)" class="modsSlider">
+											<li v-for="p in posts" class="w-[55%]"><img :src="p"></li>
+										</ul>
 
-							<div class="mods-prev absolute tf-y left-2"><svg  width="42.84" height="42.84" viewBox="0 0 42.84 42.84">
-								<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
-								<g>
-								<rect x="19.57" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
-								<polygon points="13.38 21.42 20.17 24.33 20.17 18.52 13.38 21.42" style="fill: #fff;"/>
-								</g>
-							</svg></div>
-							<div class="mods-next absolute tf-y right-2"><svg width="42.84" height="42.84" viewBox="0 0 42.84 42.84">
-								<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
-								<g>
-								<rect x="15.67" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
-								<polygon points="29.46 21.42 22.68 18.52 22.68 24.33 29.46 21.42" style="fill: #fff;"/>
-								</g>
-							</svg></div>
+										<div class="mods-prev basic-hover absolute tf-y left-2"><svg  width="42.84" height="42.84" viewBox="0 0 42.84 42.84">
+											<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
+											<g>
+											<rect x="19.57" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
+											<polygon points="13.38 21.42 20.17 24.33 20.17 18.52 13.38 21.42" style="fill: #fff;"/>
+											</g>
+										</svg></div>
+										<div class="mods-next basic-hover absolute tf-y right-2"><svg width="42.84" height="42.84" viewBox="0 0 42.84 42.84">
+											<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
+											<g>
+											<rect x="15.67" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
+											<polygon points="29.46 21.42 22.68 18.52 22.68 24.33 29.46 21.42" style="fill: #fff;"/>
+											</g>
+										</svg></div>
+									</div>
+								</div>
+								<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base">12:00</div>
+							</article>
+							<article>
+								<div class="category-border-radius">
+									<div class="relative"><a href="chosen">
+										<div class=""><img src="images/item-1.jpg" class=""></div>
+										<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
+											<div class=""><img src="images/tg-big.svg"></div>
+											<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
+											<!-- <ul v-scope="{
+												posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
+											}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
+												<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
+											</ul> -->
+										</div>
+									</a></div>
+									<ul class="grid grid-cols-2" v-scope="{
+											posts: [{
+												title: '霧峰林家建築群',
+												tag: '全世界最大清代',
+												note: '〔宮保第〕一品官宅建築群',
+												pic: 'images/item-2.jpg',
+												link: `chosen`,
+											}, {
+												title: '民生故事館',
+												tag: '我有故事',
+												note: '也有酒',
+												pic: 'images/item-3.jpg',
+												link: `chosen`,
+											}, {
+												title: '光復新村',
+												tag: '全台灣',
+												note: '第一個新市鎮',
+												pic: 'images/item-4.jpg',
+												link: `chosen`,
+											},{
+												title: '省議會紀念園區',
+												tag: '台灣',
+												note: '民主發源地',
+												pic: 'images/item-5.jpg',
+												link: `chosen`,
+											}]
+										}">
+										<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
+											<div class="relative">
+												<img :src="p.pic">
+												<div class="absolute top-0 left-0 w-full h-full bg-black-700 opacity-50"></div>
+											</div>
+											<div class="absolute flex flex-col justify-between h-full top-0 left-0 px-3 py-4 text-white">
+												<div class="">
+													<div class="opacity-60">no.{{i+1}}</div>
+													<div class="text-3xl lg:text-base">{{p.title}}</div>
+												</div>
+												<div class="">
+													<!-- <div class="">#{{p.tag}}</div> -->
+													<div class="text-3xl lg:text-base">{{p.note}}</div>
+												</div>
+											</div>
+										</a></li>
+									</ul>
+								</div>
+								<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base">7:00</div>
+							</article>
 						</div>
-					</div>
-					<div class="font-en text-gray mt-2 text-right">12:00</div>
-				</article>
-				<article>
-					<div class="category-border-radius">
-						<div class="relative"><a href="chosen">
-							<div class=""><img src="images/item-1.jpg" class=""></div>
-							<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
-								<div class=""><img src="images/tg-big.svg"></div>
-								<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
-								<!-- <ul v-scope="{
-									posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
-								}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
-									<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
-								</ul> -->
-							</div>
-						</a></div>
-						<ul class="grid grid-cols-2" v-scope="{
-								posts: [{
-									title: '霧峰林家建築群',
-									tag: '全世界最大清代',
-									note: '〔宮保第〕一品官宅建築群',
-									pic: 'images/item-2.jpg',
-									link: `chosen`,
-								}, {
-									title: '民生故事館',
-									tag: '我有故事',
-									note: '也有酒',
-									pic: 'images/item-3.jpg',
-									link: `chosen`,
-								}, {
-									title: '光復新村',
-									tag: '全台灣',
-									note: '第一個新市鎮',
-									pic: 'images/item-4.jpg',
-									link: `chosen`,
-								},{
-									title: '省議會紀念園區',
-									tag: '台灣',
-									note: '民主發源地',
-									pic: 'images/item-5.jpg',
-									link: `chosen`,
-								}]
-							}">
-							<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
-								<div class="relative">
-									<img :src="p.pic">
-									<div class="absolute top-0 left-0 w-full h-full bg-black-700 opacity-50"></div>
+					</section>
+					<section class="px-5">
+						<div class="text-center text-white mb-3"><span class="inline-block rounded-full bg-gray-400 px-2">11月10日(五)</span></div>
+						<div class="space-y-12">
+							<article>
+								<div class="category-border-radius">
+									<ul class="" v-scope="{
+											posts: [{
+												pic: 'images/item-13.jpg',
+												cat: '2023全霧峰精選系列',
+												title: `走進霧峰的<br>時光隧道`,
+												link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
+											}, {
+												pic: 'images/item-14.jpg',
+												cat: '2023全霧峰精選系列',
+												title: `得天獨厚的<br>天生好米`,
+												link: `message2/得天獨厚的天生好米`,
+											}, {
+												pic: 'images/item-15.jpg',
+												cat: '2023全霧峰精選系列',
+												title: `台灣<br>民主發源地`,
+												link: `message3/台灣民主發源地`,
+											}]
+										}">
+										<li v-for="(p, i) in posts"><a :href="p.link" class="relative flex category-border-radius px-8 py-6 lg:p-3 pb-10 justify-between" :class="{
+											'bg-blue': i == 0, 'bg-green': i == 1, 'bg-orange': i == 2
+										}">
+											<div class="mr-3" :class="i % 2 != 0 ? 'hidden' : ''"><img :src="p.pic" class="max-w-[260px] lg:max-w-full rounded-[32px]"></div>
+											<div class="text-white">
+												<div class="rounded-full border border-white px-2 lg:text-sm opacity-80 mb-4 w-max text-lg">{{p.cat}}</div>
+												<div class="mb-1"><img src="images/tg-big-white.svg" class="w-16 lg:w-auto"></div>
+												<div class="font-bold text-[44px] leading-tight tracking-wide lg:text-[26px] lg:tracking-normal" v-html="p.title"></div>
+											</div>
+											<div class="ml-3" :class="i % 2 == 0 ? 'hidden' : ''"><img :src="p.pic" class="max-w-[240px] lg:max-w-full rounded-[32px]"></div>
+										</a></li>
+									</ul>
 								</div>
-								<div class="absolute flex flex-col justify-between h-full top-0 left-0 px-3 py-4 text-white">
-									<div class="">
-										<div class="opacity-60">no.{{i+1}}</div>
-										<div class="">{{p.title}}</div>
-									</div>
-									<div class="">
-										<!-- <div class="">#{{p.tag}}</div> -->
-										<div class="">{{p.note}}</div>
-									</div>
-								</div>
-							</a></li>
-						</ul>
-					</div>
-					<div class="font-en text-gray mt-2 text-right">7:00</div>
-				</article>
+								<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base">7:00</div>
+							</article>
+						</div>
+					</section>
+				</div>
+
+				<div class="mt-12 mb-32" id="last-child">
+					<div class="h-screen w-full category-border-radius" style="background: url('images/index-para.jpg') center center / cover no-repeat;"></div>
+
+					<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base px-5">13:00</div>
+				</div>
 			</div>
-		</section>
-		<section class="px-5">
-			<div class="text-center text-white mb-3"><span class="inline-block rounded-full bg-gray-400 px-2">11月10日(五)</span></div>
-			<div class="space-y-12">
-				<article>
-					<div class="category-border-radius">
-						<ul class="" v-scope="{
-								posts: [{
-									pic: 'images/item-13.jpg',
-									cat: '2023全霧峰精選系列',
-									title: `走進霧峰的<br>時光隧道`,
-									link: `message/全世界最大清代〔宮保第〕一品官宅建築群`,
-								}, {
-									pic: 'images/item-14.jpg',
-									cat: '2023全霧峰精選系列',
-									title: `得天獨厚的<br>天生好米`,
-									link: `message2/得天獨厚的天生好米`,
-								}, {
-									pic: 'images/item-15.jpg',
-									cat: '2023全霧峰精選系列',
-									title: `台灣<br>民主發源地`,
-									link: `message3/台灣民主發源地`,
-								}]
-							}">
-							<li v-for="(p, i) in posts"><a :href="p.link" class="relative flex category-border-radius p-3 pb-10" :class="{
-								'bg-blue': i == 0, 'bg-green': i == 1, 'bg-orange': i == 2
-							}">
-								<div class="mr-3" :class="i % 2 != 0 ? 'hidden' : ''"><img :src="p.pic" class="rounded-[32px]"></div>
-								<div class="text-white">
-									<div class="rounded-full border border-white px-2 text-sm opacity-80 mb-4 w-max">{{p.cat}}</div>
-									<div class="mb-1"><img src="images/tg-big-white.svg"></div>
-									<div class="font-bold text-[26px] tracking-normal" v-html="p.title"></div>
-								</div>
-								<div class="ml-3" :class="i % 2 == 0 ? 'hidden' : ''"><img :src="p.pic" class="rounded-[32px]"></div>
-							</a></li>
-						</ul>
-					</div>
-					<div class="font-en text-gray mt-2 text-right">7:00</div>
-				</article>
-			</div>
-		</section>
+			<!--  -->
+
+			<div class="mb-5 mr-4"><svg width="34.36" height="34.36" viewBox="0 0 34.36 34.36" class="backtotop ml-auto basic-hover">
+				<rect width="34.36" height="34.36" rx="8" ry="8" transform="translate(34.36 34.36) rotate(180)" style="fill: #fff;"/>
+				<g>
+					<rect x="16.19" y="16.23" width="1.98" height="10.15" style="fill: #231815;"/>
+					<polygon points="17.18 7.98 13.3 17.03 21.05 17.03 17.18 7.98" style="fill: #231815;"/>
+				</g>
+			</svg></div>
+		</div>
 	</div>
 
-	<div class="mt-12 mb-32" id="last-child">
-		<div class="h-screen w-full category-border-radius" style="background: url('images/index-para.jpg') center center / cover no-repeat;"></div>
-
-		<div class="font-en text-gray mt-2 text-right px-5">13:00</div>
-	</div>
-
-	<div class="fixed bottom-0 w-full">
+	<div class="fixed bottom-0 w-full hidden lg:block">
 		<div class="mb-5 mr-4"><svg width="34.36" height="34.36" viewBox="0 0 34.36 34.36" class="backtotop ml-auto">
 			<rect width="34.36" height="34.36" rx="8" ry="8" transform="translate(34.36 34.36) rotate(180)" style="fill: #fff;"/>
 			<g>
@@ -331,7 +350,7 @@
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-5.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">地圖搜尋</div>
 						</div></a>
-						<a class="h-[95px]" href="javascript:;" class="openMenu"><div class="h-full relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="h-[95px] openMenu" href="javascript:;"><div class="h-full relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-6.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">打開選單</div>
 						</div></a>

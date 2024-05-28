@@ -15,7 +15,7 @@ function sync(cb) {
       proxy: "localhost/wufeng",
       port: 8888,
       // notify: false,
-      open: false,
+      open: true,
   });
 
   gulp.watch('sass/**/*.scss', style);
