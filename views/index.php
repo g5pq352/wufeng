@@ -18,59 +18,59 @@
 	</div> -->
 
 	<main class="fixed bg-orange-100 z-60 fixed w-full h-full top-0 left-0">
-		<div class="fixed tf -z-20"><img src="images/index-logo.svg" class="max-w-none"></div>
+		<div class="fixed tf -z-20"><img src="images/index-logo.svg" class="w-[390px] lg:w-auto lg:max-w-none"></div>
 
-		<div class="box-area px-5 pt-7 pb-32 text-white text-sm relative h-screen">
+		<div class="box-area px-12 lg:px-5 pt-7 pb-32 text-white text-3xl lg:text-sm relative h-screen">
 			<div class="box-bg absolute w-full h-[200%] top-0 left-0 z-30 bg-gradient-to-t from-orange-100 via-orange-100 to-transparent"></div>
 
 			<div class="items-area relative">
-				<div class="pic absolute -z-10 -top-32 right-3"><img src="images/fly-img-1.jpg"></div>
+				<div class="pic absolute -z-10 top-0 left-0 lg:-top-32 lg:left-auto lg:right-3"><img src="images/fly-img-1-desk.jpg" class="lg:hidden"><img src="images/fly-img-1.jpg" class="hidden lg:block"></div>
 
-				<div class="item absolute -top-12 flex right-0"><span class="category-border-radius-right py-2 px-7 bg-blue">\( ^▽^ )/</span></div>
-				<div class="item absolute -top-[3vh] flex right-0"><span class="category-border-radius-right py-2 px-7 bg-green">
+				<div class="item absolute -top-2 flex right-4 lg:-top-12 lg:right-0"><span class="category-border-radius-right py-2 px-7 bg-blue">\( ^▽^ )/</span></div>
+				<div class="item absolute top-[6vh] flex right-4 lg:-top-[3vh] lg:right-0"><span class="category-border-radius-right py-2 px-7 bg-green">
 					要不要計劃一個台灣霧峰的旅行？<br>
 					聽說那裡風景優美，美食也很棒。
 				</span></div>
-				<div class="item absolute top-[5vh] flex right-0"><span class="category-border-radius-right py-2 px-7 bg-orange">Σヽ(ﾟД ﾟ; )ﾉ 好想去~~!<br><br></span></div>
-				<div class="item absolute top-[15vh] flex z-10"><span class="category-border-radius py-2 px-7 bg-blue">天啊!+1</span></div>
-				<div class="item absolute top-[14vh] flex ml-16"><span class="category-border-radius-right py-2 px-7 bg-green">現在馬上就出發!!!</span></div>
-				<div class="item absolute top-[16vh] flex right-0"><span class="category-border-radius-right py-2 px-7 bg-white text-black">現在馬上就出發!!!</span></div>
+				<div class="item absolute top-[12vh] flex lg:top-[5vh] right-0"><span class="category-border-radius-right py-2 px-7 bg-orange">Σヽ(ﾟД ﾟ; )ﾉ 好想去~~!<br><br></span></div>
+				<div class="item absolute top-[2vh] left-[8vw] lg:top-[15vh] lg:left-auto flex z-10"><span class="category-border-radius py-2 px-7 bg-blue">天啊!+1</span></div>
+				<div class="item absolute top-[7vh] left-[12vw] lg:left-auto flex ml-16"><span class="category-border-radius-right py-2 px-7 bg-green">現在馬上就出發!!!</span></div>
+				<div class="item absolute top-[16vh] flex left-[22vw] lg:left-auto lg:right-0"><span class="category-border-radius-right py-2 px-7 bg-white text-black">現在馬上就出發!!!</span></div>
 
-				<div class="pic absolute -z-10 top-16 -right-5"><img src="images/fly-img-2.jpg"></div>
+				<div class="pic absolute -z-10 top-0 right-0 lg:top-16 lg:-right-5"><img src="images/fly-img-2-desk.jpg" class="lg:hidden"><img src="images/fly-img-2.jpg" class="hidden lg:block"></div>
 
-				<div class="item absolute top-[23vh] flex right-0"><span class="category-border-radius-right py-2 px-7 bg-blue">
+				<div class="item absolute top-[23vh] flex right-[22vw] lg:right-0"><span class="category-border-radius-right py-2 px-7 bg-blue">
 					全世界最大清代<br>
 					〔宮保第〕一品官宅建築群<br>
 					在霧峰!!!
 				</span></div>
-				<div class="item absolute top-[28vh] flex"><span class="category-border-radius py-2 px-7 bg-orange">好想去吃霧峰米</span></div>
+				<div class="item absolute top-[28vh] left-[2vw] lg:left-auto flex"><span class="category-border-radius py-2 px-7 bg-orange">好想去吃霧峰米</span></div>
 				<div class="item absolute top-[35vh] flex"><span class="category-border-radius py-2 px-7 bg-white text-black">天啊!+1</span></div>
-				<div class="item absolute top-[38vh] flex right-8"><span class="category-border-radius py-2 px-7 bg-green">還有農旅行程可以參考</span></div>
-				<div class="item absolute top-[44vh] left-10 flex"><span class="category-border-radius py-2 px-7 bg-blue">LET’S GO!!</span></div>
-				<div class="item absolute top-[46vh] flex"><span class="category-border-radius py-2 px-7 bg-blue"><br>霧峰有機田有守護神?!</span></div>
-				<div class="item absolute top-[56vh] left-[18px] flex"><span class="category-border-radius py-2 px-7 bg-blue">(＾ω＾)</span></div>
-				<div class="item absolute top-[54vh] flex right-0 z-10"><span class="category-border-radius-right py-2 px-7 bg-white text-black">
+				<div class="item absolute top-[38vh] flex right-[25vw] lg:right-8"><span class="category-border-radius py-2 px-7 bg-green">還有農旅行程可以參考</span></div>
+				<div class="item absolute top-[40vh] left-[20vw] lg:top-[44vh] lg:left-10 flex"><span class="category-border-radius py-2 px-7 bg-blue">LET’S GO!!</span></div>
+				<div class="item absolute top-[46vh] left-[7vw] lg:left-auto flex"><span class="category-border-radius py-2 px-7 bg-blue"><br>霧峰有機田有守護神?!</span></div>
+				<div class="item absolute top-[56vh] left-[27vw] lg:left-[18px] flex"><span class="category-border-radius py-2 px-7 bg-blue">(＾ω＾)</span></div>
+				<div class="item absolute top-[50vh] flex lg:top-[54vh] right-[10vw] lg:right-0 z-10"><span class="category-border-radius-right py-2 px-7 bg-white text-black">
 					我們來一場以農為本的<br>
 					創意之路吧!!!!
 				</span></div>
-				<div class="item absolute top-[61vh] flex right-0"><span class="category-border-radius-right py-2 px-7 bg-green">
+				<div class="item absolute top-[61vh] flex right-[18vw] lg:right-0"><span class="category-border-radius-right py-2 px-7 bg-green">
 					要不要計劃一個台灣霧峰的旅行？<br>
 					聽說那裡風景優美，美食也很棒。
 				</span></div>
-				<div class="item absolute top-[67vh] left-5 flex"><span class="category-border-radius py-2 px-7 bg-white text-black">天啊!+1</span></div>
-				<div class="item absolute top-[68vh] flex right-0 z-20"><span class="category-border-radius-right py-2 px-7 bg-orange">Σヽ(ﾟД ﾟ; )ﾉ 好想去~~!<br><br></span></div>
-				<div class="item absolute top-[73vh] flex z-10"><span class="category-border-radius py-2 px-7 bg-green">好想去吃霧峰米</span></div>
-				<div class="item absolute top-[76vh] flex"><span class="category-border-radius py-2 px-7 bg-blue">天啊!+1</span></div>
+				<div class="item absolute top-[58vh] left-[6vw] lg:top-[67vh] lg:left-5 flex"><span class="category-border-radius py-2 px-7 bg-white text-black">天啊!+1</span></div>
+				<div class="item absolute top-[68vh] flex right-[20vw] lg:right-0 z-20"><span class="category-border-radius-right py-2 px-7 bg-orange">Σヽ(ﾟД ﾟ; )ﾉ 好想去~~!<br><br></span></div>
+				<div class="item absolute top-[63vh] left-[26vw] lg:top-[73vh] flex z-10"><span class="category-border-radius py-2 px-7 bg-green">好想去吃霧峰米</span></div>
+				<div class="item absolute top-[71vh] left-[11vw] lg:top-[76vh] lg:left-auto flex"><span class="category-border-radius py-2 px-7 bg-blue">天啊!+1</span></div>
 
-				<div class="pic absolute -z-10 top-[72vh] left-3"><img src="images/fly-img-3.jpg"></div>
+				<div class="pic absolute -z-10 top-[64vh] left-[12vw] lg:top-[72vh] lg:left-3"><img src="images/fly-img-3-desk.jpg" class="lg:hidden"><img src="images/fly-img-3.jpg" class="hidden lg:block"></div>
 
-				<div class="item absolute top-[78vh] flex right-0 z-10"><span class="category-border-radius-right py-2 px-7 bg-green">
+				<div class="item absolute top-[78vh] flex right-[25vw] lg:right-0 z-10"><span class="category-border-radius-right py-2 px-7 bg-green">
 					要不要計劃一個台灣霧峰的旅行？<br>
 					聽說那裡風景優美，美食也很棒。
 				</span></div>
-				<div class="item absolute top-[84vh] flex left-[60px] z-20"><span class="category-border-radius-right py-2 px-7 bg-white text-black">現在馬上就出發!!!</span></div>
-				<div class="item absolute top-[88vh] left-5 flex"><span class="category-border-radius py-2 px-7 bg-blue">(＾ω＾)</span></div>
-				<div class="item absolute top-[90vh] flex right-0"><span class="category-border-radius-right py-2 px-7 bg-blue">\( ^▽^ )/</span></div>
+				<div class="item absolute top-[84vh] flex left-[24vw] lg:left-[60px] z-20"><span class="category-border-radius-right py-2 px-7 bg-white text-black">現在馬上就出發!!!</span></div>
+				<div class="item absolute top-[76vh] left-[17vw] lg:top-[88vh] lg:left-5 flex"><span class="category-border-radius py-2 px-7 bg-blue">(＾ω＾)</span></div>
+				<div class="item absolute top-[90vh] flex right-[136px] lg:right-0"><span class="category-border-radius-right py-2 px-7 bg-blue">\( ^▽^ )/</span></div>
 			</div>
 		</div>
 	</main>

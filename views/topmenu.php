@@ -41,7 +41,7 @@ if(isset($now)){
 </div>
 
 <div class="fixed right-0 top-0 h-screen flex z-30 justify-end lg:justify-center lg:w-full lg:block lg:relative lg:h-auto">
-	<div class="menuWrap absolute bg-[#efebe4] top-0 h-full z-60 overflow-y-auto transition-all duration-500 opacity-0 pointer-events-none w-[21vw] -left-[21vw] lg:left-auto lg:w-full lg:fixed">
+	<div class="menuWrap absolute bg-[#efebe4] top-0 h-full z-60 overflow-y-auto transition-all duration-500 opacity-0 pointer-events-none w-[21vw] -left-[21vw] xl:w-[25vw] xl:-left-[25vw] xl:zoom-90 lg:left-auto lg:w-full lg:fixed">
 		<div class="closeMenu absolute top-3 right-5 basic-hover"><svg width="19.41" height="17.61" viewBox="0 0 19.41 17.61">
 			<line x1="18.59" y1=".92" x2=".82" y2="16.69" style="fill: none; stroke: #251714; stroke-miterlimit: 10; stroke-width: 2.46px;"/>
 			<line x1="18.59" y1="16.69" x2=".82" y2=".92" style="fill: none; stroke: #251714; stroke-miterlimit: 10; stroke-width: 2.46px;"/>
