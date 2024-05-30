@@ -10,7 +10,7 @@
 		<div class="w-[50vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
 			<?php include 'desktop_slider.php'; ?>
 		</div>
-		<div class="w-[35vw] lg:w-full">
+		<div class="w-[35vw] xl:w-[33vw] lg:w-full">
 			<!--  -->
 			<div class="mt-[132px] mb-[92px]">
 				<div class="mb-10"><img src="images/search-deco.svg" class="mx-auto"></div>

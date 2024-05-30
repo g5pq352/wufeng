@@ -10,7 +10,7 @@
 		<div class="w-[50vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
 			<?php include 'desktop_slider.php'; ?>
 		</div>
-		<div class="w-[36vw] relative lg:w-full">
+		<div class="w-[36vw] xl:w-[33vw] relative lg:w-full">
 			<!--  -->
 			<div class="absolute lg:fixed z-10 w-full px-5 top-[62px]">
 				<form action="javascript:;" id="contactForm" class="">
