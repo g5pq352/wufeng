@@ -284,7 +284,7 @@ function autosliderHandler(el) {
 
 			var objs = $(".vegas-slide-inner");
 			var lw = $(window).width() / 30;
-			var lh = $(window).height() / 20;
+			var lh = $(window).height() / 30;
 
 			if (objs.length > 1) {
 				var obj = objs[1]
@@ -308,13 +308,21 @@ function autosliderHandler(el) {
 				})
 			} else if (i % 3 == 2) {
 				gsap.set(obj, {
-					scale: 1.1,
-					y: -lh
+					scale: 1.12,
+					y: lh
 				})
 				gsap.to(obj, 8, {
-					y: lh,
+					y: -lh,
 					ease: 'none',
 				})
+				// gsap.set(obj, {
+				// 	scale: 1.12,
+				// 	x: -lw
+				// })
+				// gsap.to(obj, 8.5, {
+				// 	x: lw,
+				// 	ease: 'none',
+				// })
 			}
 		}
 	});
