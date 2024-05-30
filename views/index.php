@@ -383,6 +383,8 @@ $(window).scroll(function(event){
 	if (st > lastScrollTop){
 		$(".menuList").slideUp(300)
 		$("#last-child").addClass("is-open")
+		$(".menuSlide .ch").text("點此展開")
+		$(".menuSlide").addClass("is-open")
 	}
 	lastScrollTop = st;
 });
