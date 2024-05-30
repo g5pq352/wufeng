@@ -315,14 +315,6 @@ function autosliderHandler(el) {
 					y: -lh,
 					ease: 'none',
 				})
-				// gsap.set(obj, {
-				// 	scale: 1.12,
-				// 	x: -lw
-				// })
-				// gsap.to(obj, 8.5, {
-				// 	x: lw,
-				// 	ease: 'none',
-				// })
 			}
 		}
 	});
