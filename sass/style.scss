@@ -72,9 +72,14 @@ body{
 	}
 }
 .menuSlide{
-	transform: rotate(180deg);
+	svg{
+		transform: rotate(180deg);
+	}
 	&.is-open{
 	    transform: rotate(0);
+	    svg{
+			transform: rotate(0);
+		}
 	}
 }
 input[name="search"]{

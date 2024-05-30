@@ -981,12 +981,6 @@ video {
 .h-screen{
   height: 100vh;
 }
-.h-\[200px\]{
-  height: 200px;
-}
-.h-\[90vh\]{
-  height: 90vh;
-}
 .max-h-\[462px\]{
   max-height: 462px;
 }
@@ -1002,20 +996,23 @@ video {
 .w-5{
   width: 1.25rem;
 }
-.w-\[11vw\]{
-  width: 11vw;
-}
 .w-\[120\%\]{
   width: 120%;
+}
+.w-\[14vw\]{
+  width: 14vw;
 }
 .w-\[21vw\]{
   width: 21vw;
 }
-.w-\[33\.1vw\]{
-  width: 33.1vw;
-}
 .w-\[35\%\]{
   width: 35%;
+}
+.w-\[35vw\]{
+  width: 35vw;
+}
+.w-\[36vw\]{
+  width: 36vw;
 }
 .w-\[390px\]{
   width: 390px;
@@ -1023,11 +1020,11 @@ video {
 .w-\[50px\]{
   width: 50px;
 }
+.w-\[50vw\]{
+  width: 50vw;
+}
 .w-\[55\%\]{
   width: 55%;
-}
-.w-\[55vw\]{
-  width: 55vw;
 }
 .w-full{
   width: 100%;
@@ -1036,18 +1033,6 @@ video {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-}
-.w-\[50vw\]{
-  width: 50vw;
-}
-.w-\[14vw\]{
-  width: 14vw;
-}
-.w-\[35vw\]{
-  width: 35vw;
-}
-.w-\[36vw\]{
-  width: 36vw;
 }
 .min-w-\[100px\]{
   min-width: 100px;
@@ -1067,6 +1052,9 @@ video {
 .max-w-\[260px\]{
   max-width: 260px;
 }
+.max-w-\[30vw\]{
+  max-width: 30vw;
+}
 .max-w-\[36px\]{
   max-width: 36px;
 }
@@ -1081,9 +1069,6 @@ video {
 }
 .max-w-none{
   max-width: none;
-}
-.max-w-\[30vw\]{
-  max-width: 30vw;
 }
 .flex-auto{
   -webkit-box-flex: 1;
@@ -1541,8 +1526,14 @@ video {
 .text-\[15px\]{
   font-size: 15px;
 }
+.text-\[19px\]{
+  font-size: 19px;
+}
 .text-\[21px\]{
   font-size: 21px;
+}
+.text-\[22px\]{
+  font-size: 22px;
 }
 .text-\[25px\]{
   font-size: 25px;
@@ -1586,12 +1577,6 @@ video {
 .text-xs{
   font-size: 12px;
   line-height: 1.5;
-}
-.text-\[22px\]{
-  font-size: 22px;
-}
-.text-\[19px\]{
-  font-size: 19px;
 }
 .font-bold{
   font-weight: 700;
@@ -1679,9 +1664,6 @@ video {
 }
 .opacity-80{
   opacity: 0.8;
-}
-.opacity-90{
-  opacity: 0.9;
 }
 .transition{
   -webkit-transition-property: color, background-color, border-color, fill, stroke, opacity, -webkit-text-decoration-color, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
@@ -1803,11 +1785,16 @@ body {
   .itinerarySlider li.is-selected .pic:before {
     opacity: 0; }
 
-.menuSlide {
+.menuSlide svg {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg); }
-  .menuSlide.is-open {
+
+.menuSlide.is-open {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0); }
+  .menuSlide.is-open svg {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0); }
@@ -1975,9 +1962,6 @@ input[name="search"] {
   }
   .lg\:h-auto{
     height: auto;
-  }
-  .lg\:h-\[80vh\]{
-    height: 80vh;
   }
   .lg\:w-auto{
     width: auto;

@@ -359,9 +359,12 @@
 			</div>
 
 			<div class="menuSlide h-10 flex items-center justify-center bg-orange-100 border border-white rounded-[12px] overflow-hidden">
-				<svg width="8.82" height="6.79" viewBox="0 0 8.82 6.79">
-					<polygon points="4.41 0 0 6.79 8.82 6.79 4.41 0"/>
-				</svg>
+				<div class="">
+					<svg width="8.82" height="6.79" viewBox="0 0 8.82 6.79">
+						<polygon points="4.41 0 0 6.79 8.82 6.79 4.41 0"/>
+					</svg>
+				</div>
+				<div class="ch font-bold text-xs tracking-normal ml-2">下滑收合</div>
 			</div>
 		</div>
 	</div>
@@ -503,6 +506,12 @@ function modsHandler(el) {
 }
 
 $(".menuSlide").on("click", function(){
+	if($(this).hasClass("is-open")){
+		$(this).find(".ch").text("下滑收合")
+	}else{
+		$(this).find(".ch").text("點此展開")
+	}
+
 	$(this).toggleClass("is-open")
 
 	$(".menuList").slideToggle(300)
