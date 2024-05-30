@@ -7,10 +7,10 @@
 	<?php include 'topmenu.php'; ?>
 
 	<div class="flex lg:block lg:mr-0">
-		<div class="w-[55vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
+		<div class="w-[50vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
 			<?php include 'desktop_slider.php'; ?>
 		</div>
-		<div class="w-[33.1vw] relative lg:w-full">
+		<div class="w-[36vw] relative lg:w-full">
 			<!--  -->
 			<div class="absolute lg:fixed z-10 w-full px-5 top-[62px]">
 				<form action="javascript:;" id="contactForm" class="">
@@ -127,7 +127,7 @@
 				<div class="fancy-closeBlock fixed -z-10 inset-0 cursor-pointer bg-black opacity-80"></div>
 
 				<!-- code here -->
-				<div class="relative mx-6">
+				<div class="relative mx-6 max-w-[30vw]">
 					<div class="px-3 py-4 bg-white mb-2 category-border-radius">
 						<div class="fancy-cat absolute right-4 top-4 text-sm text-gray-300 border border-gray-300 rounded-[12px] px-1">在地美食</div>
 
@@ -205,7 +205,7 @@ var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 15,
     center: new google.maps.LatLng(24.0455977, 120.7334986),
     styles: originalStyle,
-    zoomControl: false,
+    // zoomControl: false,
     // scrollwheel: false,
     streetViewControl: false,
     mapTypeControl: false,

@@ -63,7 +63,7 @@ if(isset($now)){
 			</form>
 
 			<div class="">
-				<div class="font-bold mb-4">熱門搜尋</div>
+				<div class="font-bold mb-4 text-[19px] lg:text-base">熱門搜尋</div>
 
 				<nav v-scope="{
 					posts: [{
@@ -100,7 +100,7 @@ if(isset($now)){
 			</div>
 
 			<div class="my-7">
-				<div class="font-bold mb-4">為你推薦</div>
+				<div class="font-bold mb-4 text-[19px] lg:text-base">為你推薦</div>
 
 				<nav v-scope="{
 					posts: [{
@@ -140,7 +140,7 @@ if(isset($now)){
 					<a v-for="p in posts" :href="p.link" class="flex items-center justify-between border-b border-gray-400 pb-1">
 						<div class="flex items-center">
 							<div class="mr-4"><img :src="p.icon"></div>
-							<div class="font-bold text-3xl lg:text-base">{{p.title}}</div>
+							<div class="font-bold text-[19px] lg:text-base">{{p.title}}</div>
 						</div>
 						<div class=""><img src="images/recommend-go-desk.svg" class="lg:hidden"><img src="images/recommend-go.svg" class="hidden lg:block"></div>
 					</a>
@@ -168,7 +168,7 @@ if(isset($now)){
 			</div>
 		</div>
 	</div>
-	<div class="w-[11vw] xl:w-[16vw] h-screen bg-orange-100 border-l-2 border-white lg:hidden">
+	<div class="w-[14vw] xl:w-[16vw] h-screen bg-orange-100 border-l-2 border-white lg:hidden">
 
 		<div class="searchWrap absolute top-0 w-full h-screen z-20 transition-all duration-500 opacity-0 pointer-events-none" id="desktop-searchWrap">
 			<div class="search-bg absolute w-full h-full top-0 left-0 bg-black-700 opacity-80"></div>

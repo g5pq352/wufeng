@@ -76,10 +76,10 @@
 	</main>
 
 	<div class="flex lg:block lg:mr-0">
-		<div class="w-[55vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
+		<div class="w-[50vw] xl:w-[50vw] h-screen sticky top-0 lg:hidden">
 			<?php include 'desktop_slider.php'; ?>
 		</div>
-		<div class="w-[33.1vw] lg:w-full">
+		<div class="w-[35vw] lg:w-full">
 			<!--  -->
 			<div class="">
 				<div class="mt-[100px] space-y-12">
