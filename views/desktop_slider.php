@@ -7,7 +7,9 @@
 		</ul>
 	</div>
 
-	<ul v-scope="{
+	<div class="h-screen relative" id="vegasWrap" v-scope="{}" v-on:vue:mounted="autosliderHandler($el)"></div>
+
+	<!-- <ul v-scope="{
 		posts: [
 			'images/slider-pic-1.jpg',
 			'images/slider-pic-2.jpg',
@@ -16,5 +18,5 @@
 		]
 	}" v-on:vue:mounted="autosliderHandler($el)" id="autoslider">
 		<li v-for="pic in posts" class="w-full h-full" :style="'background: url('+pic+') center center /cover;'"></li>
-	</ul>
+	</ul> -->
 </div>

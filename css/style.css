@@ -981,6 +981,12 @@ video {
 .h-screen{
   height: 100vh;
 }
+.h-\[200px\]{
+  height: 200px;
+}
+.h-\[90vh\]{
+  height: 90vh;
+}
 .max-h-\[462px\]{
   max-height: 462px;
 }
@@ -1674,6 +1680,9 @@ video {
 .opacity-80{
   opacity: 0.8;
 }
+.opacity-90{
+  opacity: 0.9;
+}
 .transition{
   -webkit-transition-property: color, background-color, border-color, fill, stroke, opacity, -webkit-text-decoration-color, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, fill, stroke, opacity, -webkit-text-decoration-color, -webkit-box-shadow, -webkit-transform, -webkit-filter, -webkit-backdrop-filter;
@@ -1966,6 +1975,9 @@ input[name="search"] {
   }
   .lg\:h-auto{
     height: auto;
+  }
+  .lg\:h-\[80vh\]{
+    height: 80vh;
   }
   .lg\:w-auto{
     width: auto;
