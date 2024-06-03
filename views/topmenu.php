@@ -185,59 +185,62 @@ if(isset($now)){
 				</div>
 			</div>
 		</form>
+		<div class="flex flex-col justify-between h-[87%] xl:zoom-80">
+			<div class="">
+				<div class="text-center"><img src="images/desktop-logo.svg" class="inline-block"></div>
 
-		<div class="xl:zoom-80">
-			<div class="text-center"><img src="images/desktop-logo.svg" class="inline-block"></div>
+				<nav class="w-full mt-5">
+					<a class="openMenu" href="javascript:;"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
+						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-6.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
+						<div class="text-center font-bold text-[21px] lg:text-sm">打開選單</div>
+					</div></a>
+					<a class="" href="<?= $baseurl ?>"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
+						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-1.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
+						<div class="text-center font-bold text-[21px] lg:text-sm">進入首頁</div>
+					</div></a>
+					<a class="" href="<?= $baseurl ?>/news"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
+						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-2-desk.svg" class="max-w-[48px] lg:max-w-none"></div>
+						<div class="text-center font-bold text-[21px] lg:text-sm">活動情報</div>
+					</div></a>
+					<a class="" href="<?= $baseurl ?>/map"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
+						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-5.svg" class="max-w-[46px] inline-block lg:max-w-none"></div>
+						<div class="text-center font-bold text-[21px] lg:text-sm">地圖搜尋</div>
+					</div></a>
+					<a class="" href="<?= $baseurl ?>/cuisine"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
+						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-4.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
+						<div class="text-center font-bold text-[21px] lg:text-sm">在地美食</div>
+					</div></a>
+				</nav>
 
-			<nav class="w-full mt-5">
-				<a class="openMenu" href="javascript:;"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
-					<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-6.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
-					<div class="text-center font-bold text-[21px] lg:text-sm">打開選單</div>
-				</div></a>
-				<a class="" href="<?= $baseurl ?>"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
-					<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-1.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
-					<div class="text-center font-bold text-[21px] lg:text-sm">進入首頁</div>
-				</div></a>
-				<a class="" href="<?= $baseurl ?>/news"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
-					<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-2-desk.svg" class="max-w-[48px] lg:max-w-none"></div>
-					<div class="text-center font-bold text-[21px] lg:text-sm">活動情報</div>
-				</div></a>
-				<a class="" href="<?= $baseurl ?>/map"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
-					<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-5.svg" class="max-w-[46px] inline-block lg:max-w-none"></div>
-					<div class="text-center font-bold text-[21px] lg:text-sm">地圖搜尋</div>
-				</div></a>
-				<a class="" href="<?= $baseurl ?>/cuisine"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
-					<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-4.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
-					<div class="text-center font-bold text-[21px] lg:text-sm">在地美食</div>
-				</div></a>
-			</nav>
-
-			<div class="mt-5 mb-6 px-4">
-				<ul class="text-center bg-white space-y-10 pt-5 pb-6 category-border-radius">
-					<li class="">
-						<div class="inline-block mb-1"><img src="images/menu-quick-1.svg"></div>
-						<div class="text-[15px] font-bold mb-4">霧峰</div>
-						<div class=""><a href="" class="basic-hover"><span class="bg-green text-sm text-white p-2 rounded-t-[20px] rounded-br-[20px]">加入官方LINE</span></a></div>
-					</li>
-					<li class="">
-						<div class="inline-block mb-1"><img src="images/menu-quick-2.png" width="40"></div>
-						<div class="text-[15px] font-bold mb-4">即刻前往</div>
-						<div class=""><a href="" class="basic-hover"><span class="bg-green text-sm text-white p-2 rounded-t-[20px] rounded-br-[20px]">打開地圖</span></a></div>
-					</li>
-				</ul>
+				<div class="mt-5 mb-6 px-12">
+					<ul class="text-center bg-white space-y-10 pt-5 pb-6 category-border-radius">
+						<li class="">
+							<div class="inline-block mb-1"><img src="images/menu-quick-1.svg"></div>
+							<div class="text-[15px] font-bold mb-4">霧峰</div>
+							<div class=""><a href="" class="basic-hover"><span class="bg-green text-sm text-white p-2 rounded-t-[20px] rounded-br-[20px]">加入官方LINE</span></a></div>
+						</li>
+						<li class="">
+							<div class="inline-block mb-1"><img src="images/menu-quick-2.png" width="40"></div>
+							<div class="text-[15px] font-bold mb-4">即刻前往</div>
+							<div class=""><a href="" class="basic-hover"><span class="bg-green text-sm text-white p-2 rounded-t-[20px] rounded-br-[20px]">打開地圖</span></a></div>
+						</li>
+					</ul>
+				</div>
 			</div>
 
-			<nav class="flex items-center px-9 space-x-3 mb-6">
-				<a href="javascript:;" class="basic-hover"><img src="images/share-1.svg"></a>
-				<a href="javascript:;" class="basic-hover"><img src="images/share-2.svg"></a>
-				<a href="javascript:;" class="basic-hover"><img src="images/share-3.svg"></a>
-				<a href="javascript:;" class="basic-hover"><img src="images/share-4.svg"></a>
-			</nav>
+			<div class="">
+				<nav class="flex items-center px-9 space-x-3 mb-6">
+					<a href="javascript:;" class="basic-hover"><img src="images/share-1.svg"></a>
+					<a href="javascript:;" class="basic-hover"><img src="images/share-2.svg"></a>
+					<a href="javascript:;" class="basic-hover"><img src="images/share-3.svg"></a>
+					<a href="javascript:;" class="basic-hover"><img src="images/share-4.svg"></a>
+				</nav>
 
-			<div class="text-gray-400 text-center font-medium tracking-normal">
-				<a class="basic-hover" href="<?= $baseurl ?>">中文</a>
-				<span>/</span>
-				<a class="basic-hover" href="javascript:;" class="font-en">EN</a>
+				<div class="text-gray-400 text-center font-medium tracking-normal">
+					<a class="basic-hover" href="<?= $baseurl ?>">中文</a>
+					<span>/</span>
+					<a class="basic-hover" href="javascript:;" class="font-en">EN</a>
+				</div>
 			</div>
 		</div>
 	</div>

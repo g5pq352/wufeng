@@ -293,7 +293,7 @@
 				</div>
 
 				<div class="mt-12 mb-32" id="last-child">
-					<div class="h-screen w-full category-border-radius" style="background: url('images/index-para.jpg') center center / cover no-repeat;"></div>
+					<div class="h-[71vh] lg:h-[120vw] w-full category-border-radius" style="background: url('images/index-para.jpg') center center / cover no-repeat;"></div>
 
 					<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base px-5">13:00</div>
 				</div>

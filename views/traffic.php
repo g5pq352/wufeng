@@ -39,7 +39,7 @@
 						link: 'traffic/U-Bike',
 					}]
 				}" class="trafficList space-y-2 mb-9">
-					<li v-for="(p, i) in posts" class="category-border-radius text-white"><a :href="p.link" class="flex items-center px-7 py-7">
+					<li v-for="(p, i) in posts" class="flex lg:justify-center items-center category-border-radius text-white min-h-[164px]"><a :href="p.link" class="flex items-center px-7 py-7">
 						<div class="min-w-[134px] mr-4"><img :src="p.icon" class="mx-auto"></div>
 						<div class="">
 							<div class="font-bold" :class="[
