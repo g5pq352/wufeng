@@ -1,3 +1,7 @@
+<?php
+require_once 'Connections/connect2data.php';
+$latestlist = $DB->query("SELECT l_date, DAY(l_date) AS D FROM latest_set WHERE l_parent='latestC' AND l_active=1 AND DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= l_date GROUP BY D ORDER BY D ASC");
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -20,7 +24,7 @@
 	<main class="fixed bg-orange-100 z-60 fixed w-full h-full top-0 left-0">
 		<div class="fixed tf -z-20"><img src="images/index-logo.svg" class="w-[390px] lg:w-auto lg:max-w-none"></div>
 
-		<div class="box-area px-12 lg:px-5 pt-7 pb-32 text-white text-3xl lg:text-sm relative h-screen">
+		<div class="box-area px-12 lg:px-5 pt-7 pb-32 text-white text-3xl lg:text-sm relative h-screenreen">
 			<div class="box-bg absolute w-full h-[200%] top-0 left-0 z-30 bg-gradient-to-t from-orange-100 via-orange-100 to-transparent"></div>
 
 			<div class="items-area relative">
@@ -82,8 +86,163 @@
 		<div class="w-[35vw] xl:w-[33vw] lg:w-full">
 			<!--  -->
 			<div class="">
-				<div class="mt-[100px] space-y-12">
-					<section class="px-5">
+				<div class="mt-[100px] space-y-12" id="aritcleList">
+
+					<?php foreach($latestlist as $latestC) :
+					$w = date("w", strtotime($latestC['l_date']));
+					$week = array(
+						"0"=>"日",
+						"1"=>"一",
+						"2"=>"二",
+						"3"=>"三",
+						"4"=>"四",
+						"5"=>"五",
+						"6"=>"六"
+					);
+					?>
+					<?php $lists = $DB->query("SELECT * FROM latest_set WHERE l_parent='latestC' AND l_active=1 AND DAY(l_date)=? ORDER BY l_sort ASC", [$latestC['D']]); ?>
+						<section class="px-5">
+							<div class="text-center text-white mb-3"><span class="inline-block rounded-full bg-gray-400 px-2"><?= date("m月d日", strtotime($latestC['l_date'])).'('.$week[$w].')' ?></span></div>
+							<div class="space-y-12">
+								<!-- 物件 start -->
+
+								<?php foreach($lists as $list) : ?>
+								<?php $list_pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='latestCCover'", [$list['l_id']]); ?>
+
+									<!-- 版型一(五格) -->
+									<?php if($list['l_class'] == 1) : ?>
+									<?php $works = $DB->query("SELECT * FROM data_set WHERE d_class1='latest' AND d_class2=? AND d_active=1 ORDER BY d_sort ASC LIMIT 4", [$list['l_id']]); ?>
+										<article>
+											<div class="category-border-radius">
+												<div class="relative"><a href="<?= $baseurl ?>/chosen/<?= $list['l_slug'] ?>">
+													<div class=""><img src="<?= $list_pic['file_link1'] ?>" class=""></div>
+													<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
+														<div class=""><img src="images/tg-big.svg"></div>
+														<div class="text-[27px] font-bold"><?= $list['l_title'] ?></div>
+													</div>
+												</a></div>
+												<ul class="grid grid-cols-2" v-scope="{
+													posts: [
+														<?php foreach($works as $row) : ?>
+														<?php $pic = $DB->row("SELECT * FROM file_set WHERE file_d_id=? AND file_type='latestCover'", [$row['d_id']]); ?>
+															{
+																title: `<?= $row['d_title'] ?>`,
+																pic: '<?= $baseurl ?>/<?= $pic['file_link1'] ?>',
+																link: `<?= $baseurl ?>/chosen/<?= $list['l_slug'] ?>`,
+															},
+														<?php endforeach ?>
+													]
+												}">
+													<li v-for="(p, i) in posts" class="relative"><a :href="p.link">
+														<div class="relative">
+															<img :src="p.pic">
+															<div class="absolute top-0 left-0 w-full h-full bg-black-700 opacity-50"></div>
+														</div>
+														<div class="absolute flex flex-col justify-between h-full top-0 left-0 px-3 py-4 text-white">
+															<div class="">
+																<div class="opacity-60">no.{{i+1}}</div>
+																<div class="text-3xl lg:text-base">{{p.title}}</div>
+															</div>
+															<div class="">
+																<div class="text-3xl lg:text-base">{{p.note}}</div>
+															</div>
+														</div>
+													</a></li>
+												</ul>
+											</div>
+											<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base"><?= date("H:i", strtotime($latestC['l_date'])) ?></div>
+										</article>
+									<?php endif ?>
+
+									<!-- 版型二(輪播) -->
+									<?php if($list['l_class'] == 2) : ?>
+									<?php
+									$works = $DB->row("SELECT * FROM data_set, file_set WHERE d_class1='latest' AND d_class2=? AND file_d_id=d_id AND file_type='latestCover' AND d_active=1 ORDER BY d_sort ASC", [$list['l_id']]);
+									$pics = $DB->query("SELECT * FROM file_set WHERE file_d_id=? AND file_type='image'", [$works['d_id']]);
+									?>
+										<article>
+											<div class="category-border-radius">
+												<div class="relative"><a href="<?= $baseurl ?>/message/<?= $works['d_slug'] ?>">
+													<div class=""><img src="images/item-1.jpg"></div>
+													<!-- <div class="absolute top-4 right-4 text-white text-sm border border-white rounded-full px-2">假日去哪兒</div> -->
+													<div class="absolute h-full flex flex-col top-0 left-0 px-3 py-4 text-white">
+														<div class=""><img src="images/tg-big.svg"></div>
+														<div class="text-[25px] font-bold"><?= nl2br($list['l_title']) ?></div>
+													</div>
+												</a></div>
+												<div class="relative">
+													<ul v-scope="{
+														posts: [
+															<?php foreach($pics as $pic) : ?>
+																'<?= $baseurl ?>/<?= $pic['file_link1'] ?>',
+															<?php endforeach ?>
+														]
+													}" v-on:vue:mounted="modsHandler($el)" class="modsSlider">
+														<li v-for="p in posts" class="w-[55%]"><img :src="p"></li>
+													</ul>
+
+													<div class="mods-prev basic-hover absolute tf-y left-2"><svg  width="42.84" height="42.84" viewBox="0 0 42.84 42.84">
+														<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
+														<g>
+														<rect x="19.57" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
+														<polygon points="13.38 21.42 20.17 24.33 20.17 18.52 13.38 21.42" style="fill: #fff;"/>
+														</g>
+													</svg></div>
+													<div class="mods-next basic-hover absolute tf-y right-2"><svg width="42.84" height="42.84" viewBox="0 0 42.84 42.84">
+														<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
+														<g>
+														<rect x="15.67" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
+														<polygon points="29.46 21.42 22.68 18.52 22.68 24.33 29.46 21.42" style="fill: #fff;"/>
+														</g>
+													</svg></div>
+												</div>
+											</div>
+											<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base"><?= date("H:i", strtotime($latestC['l_date'])) ?></div>
+										</article>
+									<?php endif ?>
+
+									<!-- 版型二(三格) -->
+									<?php if($list['l_class'] == 3) : ?>
+									<?php $works = $DB->query("SELECT * FROM data_set, file_set WHERE d_class1='latest' AND d_class2=? AND file_d_id=d_id AND file_type='latestCover' AND d_active=1 ORDER BY d_sort ASC LIMIT 3", [$list['l_id']]); ?>
+										<article>
+											<div class="category-border-radius">
+												<ul class="" v-scope="{
+														posts: [
+															<?php foreach($works as $row) : ?>
+																{
+																	pic: '<?= $baseurl ?>/<?= $row['file_link1'] ?>',
+																	cat: '<?= $list['l_title'] ?>',
+																	title: `<?= nl2br($row['d_data1']) ?>`,
+																	link: `<?= $baseurl ?>/message/<?= $row['d_slug'] ?>`,
+																},
+															<?php endforeach ?>
+														]
+													}">
+													<li v-for="(p, i) in posts"><a :href="p.link" class="relative flex category-border-radius px-8 py-6 lg:p-3 pb-10 justify-between" :class="{
+														'bg-blue': i == 0, 'bg-green': i == 1, 'bg-orange': i == 2
+													}">
+														<div class="mr-3" :class="i % 2 != 0 ? 'hidden' : ''"><img :src="p.pic" class="max-w-[260px] lg:max-w-full rounded-[32px]"></div>
+														<div class="text-white">
+															<div class="rounded-full border border-white px-2 lg:text-sm opacity-80 mb-4 w-max text-lg">{{p.cat}}</div>
+															<div class="mb-1"><img src="images/tg-big-white.svg" class="w-16 lg:w-auto"></div>
+															<div class="font-bold text-[44px] leading-tight tracking-wide lg:text-[26px] lg:tracking-normal" v-html="p.title"></div>
+														</div>
+														<div class="ml-3" :class="i % 2 == 0 ? 'hidden' : ''"><img :src="p.pic" class="max-w-[240px] lg:max-w-full rounded-[32px]"></div>
+													</a></li>
+												</ul>
+											</div>
+											<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base"><?= date("H:i", strtotime($latestC['l_date'])) ?></div>
+										</article>
+									<?php endif ?>
+
+								<?php endforeach ?>
+
+								<!-- 物件 end -->
+							</div>
+						</section>
+					<?php endforeach ?>
+
+					<!-- <section class="px-5">
 						<div class="text-center text-white mb-3"><span class="inline-block rounded-full bg-gray-400 px-2">11月9日(四)</span></div>
 						<div class="space-y-12">
 							<article>
@@ -93,11 +252,6 @@
 										<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
 											<div class=""><img src="images/tg-big.svg"></div>
 											<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
-											<!-- <ul v-scope="{
-												posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
-											}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
-												<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
-											</ul> -->
 										</div>
 									</a></div>
 									<ul class="grid grid-cols-2" v-scope="{
@@ -138,7 +292,6 @@
 													<div class="text-3xl lg:text-base">{{p.title}}</div>
 												</div>
 												<div class="">
-													<!-- <div class="">#{{p.tag}}</div> -->
 													<div class="text-3xl lg:text-base">{{p.note}}</div>
 												</div>
 											</div>
@@ -194,11 +347,6 @@
 										<div class="absolute h-full flex flex-col justify-end top-0 left-0 px-3 py-4 text-white">
 											<div class=""><img src="images/tg-big.svg"></div>
 											<div class="text-[27px] font-bold">走進霧峰的時光隧道</div>
-											<!-- <ul v-scope="{
-												posts: ['霧峰林家建築群','民生故事館','霧峰農會酒莊','光復新村','台灣省省議會紀念園區']
-											}" class="flex flex-wrap items-center space-y-1 text-sm opacity-60">
-												<li v-for="(p, i) in posts" class="rounded-full border border-white px-2 mr-1">{{p}}</li>
-											</ul> -->
 										</div>
 									</a></div>
 									<ul class="grid grid-cols-2" v-scope="{
@@ -239,7 +387,6 @@
 													<div class="text-3xl lg:text-base">{{p.title}}</div>
 												</div>
 												<div class="">
-													<!-- <div class="">#{{p.tag}}</div> -->
 													<div class="text-3xl lg:text-base">{{p.note}}</div>
 												</div>
 											</div>
@@ -297,17 +444,15 @@
 
 					<div class="font-en text-gray mt-2 text-right text-3xl lg:text-base px-5">13:00</div>
 				</div>
-			</div>
-			<!--  -->
-
-			<div class="mb-5 mr-4"><svg width="34.36" height="34.36" viewBox="0 0 34.36 34.36" class="backtotop ml-auto basic-hover">
-				<rect width="34.36" height="34.36" rx="8" ry="8" transform="translate(34.36 34.36) rotate(180)" style="fill: #fff;"/>
-				<g>
-					<rect x="16.19" y="16.23" width="1.98" height="10.15" style="fill: #231815;"/>
-					<polygon points="17.18 7.98 13.3 17.03 21.05 17.03 17.18 7.98" style="fill: #231815;"/>
-				</g>
-			</svg></div>
+			</div> -->
 		</div>
+		<div class="mt-12 mb-5 mr-4 lg:hidden"><svg width="34.36" height="34.36" viewBox="0 0 34.36 34.36" class="backtotop ml-auto basic-hover">
+			<rect width="34.36" height="34.36" rx="8" ry="8" transform="translate(34.36 34.36) rotate(180)" style="fill: #fff;"/>
+			<g>
+				<rect x="16.19" y="16.23" width="1.98" height="10.15" style="fill: #231815;"/>
+				<polygon points="17.18 7.98 13.3 17.03 21.05 17.03 17.18 7.98" style="fill: #231815;"/>
+			</g>
+		</svg></div>
 	</div>
 
 	<div class="fixed bottom-0 w-full hidden lg:block">
@@ -342,7 +487,7 @@
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-3.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">熱點通知</div>
 						</div></a>
-						<a class="h-[95px]" href="<?= $baseurl ?>/cuisine"><div class="h-full relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
+						<a class="h-[95px]" href="<?= $baseurl ?>/sights/category/在地美食"><div class="h-full relative h-full bg-orange-100 flex items-end justify-center py-1 border border-white rounded-[12px] overflow-hidden">
 							<div class="absolute tf -mt-2"><img src="images/menu-logo-4.svg" class="max-w-none"></div>
 							<div class="text-center font-bold text-sm">在地美食</div>
 						</div></a>
@@ -376,13 +521,14 @@
 </html>
 
 <script>
+$("#aritcleList section:last-child").attr('id', 'last-child');
 
 var lastScrollTop = 0;
 $(window).scroll(function(event){
 	var st = $("body").scrollTop();
 	if (st > lastScrollTop){
 		$(".menuList").slideUp(300)
-		$("#last-child").addClass("is-open")
+		// $("#last-child").addClass("is-open")
 		$(".menuSlide .ch").text("點此展開")
 		$(".menuSlide").addClass("is-open")
 	}
@@ -518,6 +664,6 @@ $(".menuSlide").on("click", function(){
 
 	$(".menuList").slideToggle(300)
 
-	$("#last-child").toggleClass("is-open")
+	// $("#last-child").toggleClass("is-open")
 })
 </script>

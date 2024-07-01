@@ -57,8 +57,14 @@ $app->get('/talk', function () use ($app) {
   $app->render('about_talk.php');
 });
 
-$app->get('/chosen', function () use ($app) {
-  $app->render('chosen.php');
+// $app->get('/chosen', function () use ($app) {
+//   $app->render('chosen.php');
+// });
+
+$app->get('/chosen/:slug', function ($slug) use ($app) {
+  $app->render('chosen.php', [
+    'slug' => $slug,
+  ]);
 });
 
 $app->get('/map', function () use ($app) {
@@ -87,6 +93,15 @@ $app->get('/news', function () use ($app) {
   $app->render('news.php', array( 'now' => 'news' ));
 });
 
+$app->get('/news(/:p)', function ($p = null) use ($app) {
+  $app->render('news.php', [
+    'p' => $p,
+    'now' => 'news',
+  ]);
+})->conditions([
+  'p' => '\d{1,2}',
+]);
+
 $app->get('/news/:slug', function ($slug) use ($app) {
   $app->render('news_detail.php', [
     'slug' => $slug,
@@ -94,19 +109,28 @@ $app->get('/news/:slug', function ($slug) use ($app) {
   ]);
 });
 
-$app->get('/cuisine', function () use ($app) {
-  $app->render('cuisine.php', array( 'now' => 'cuisine' ));
+// $app->get('/cuisine', function () use ($app) {
+//   $app->render('cuisine.php', array( 'now' => 'cuisine' ));
+// });
+
+
+
+$app->get('/sights', function () use ($app) {
+  $app->render('sights.php');
 });
 
-$app->get('/cuisine/:slug', function ($slug) use ($app) {
-  $app->render('cuisine_detail.php', [
+$app->get('/sights/category/:slug', function ($slug) use ($app) {
+  $app->render('cuisine.php', [
     'slug' => $slug,
     'now' => 'cuisine',
   ]);
 });
 
-$app->get('/sights', function () use ($app) {
-  $app->render('sights.php');
+$app->get('/sights/:slug', function ($slug) use ($app) {
+  $app->render('cuisine_detail.php', [
+    'slug' => $slug,
+    'now' => 'cuisine',
+  ]);
 });
 
 $app->get('/itinerary', function () use ($app) {

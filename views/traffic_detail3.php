@@ -22,8 +22,8 @@
 		<div class="w-[35vw] xl:w-[33vw] lg:w-full">
 			<!--  -->
 			<div class="px-4 mt-[92px] mb-[110px]">
-				<div class="bg-orange category-border-radius mb-9 min-h-[164px]">
-					<div class="flex items-center px-7 py-7 text-white">
+				<div class="bg-orange category-border-radius mb-9">
+					<div class="flex items-center px-7 py-7 text-white min-h-[164px]">
 						<div class="min-w-[134px] mr-4"><img src="images/traffic-3.svg" class="mx-auto"></div>
 						<div class="">
 							<div class="font-bold text-[42px]">U-Bike</div>

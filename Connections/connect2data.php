@@ -15,7 +15,7 @@ if($_SERVER['HTTP_HOST'] == "127.0.0.1" || $_SERVER['HTTP_HOST'] == "localhost")
     define("HOSTNAME", "localhost");
     define("DATABASE", "wufeng");
     define("USERNAME", "root");
-    define("PASSWORD", "");
+    define("PASSWORD", "1234");
 }else{
     define("HOSTNAME", "localhost");
     define("DATABASE", "wufeng");
@@ -59,6 +59,23 @@ function moneyFormat($data, $n = 0) {
         $data3 = "." . $data3;
     }
     return $data1;
+}
+
+function generate_slug($str) {
+  // 將字符串轉換為小寫
+  $slug = strtolower($str);
+  // 替換空格為短橫線
+  $slug = preg_replace('/\s+/', '-', $slug);
+  // 替換點為底線
+  $slug = str_replace('.', '_', $slug);
+  // 移除非字母數字、短橫線、下划線和非中文字符
+  $slug = preg_replace('/[^\p{Han}a-z0-9-_]/iu', '', $slug);
+  // 移除多餘的短橫線
+  $slug = preg_replace('/-+/', '-', $slug);
+  // 移除首尾的短橫線
+  $slug = trim($slug, '-');
+
+  return $slug;
 }
 
 ?>

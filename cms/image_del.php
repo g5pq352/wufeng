@@ -9,18 +9,18 @@ if (isset($_SERVER['QUERY_STRING'])) {
 
 if (isset($_REQUEST['type']) && $_REQUEST['type']=='newsCover'){
     $fileType   = "file_type='newsCover' AND";
-} else if (isset($_REQUEST['type']) && $_REQUEST['type']=='applicationCover'){
-    $fileType   = "file_type='applicationCover' AND";
-} else if (isset($_REQUEST['type']) && $_REQUEST['type']=='applicationContent'){
-    $fileType   = "file_type='applicationContent' AND";
-} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="aboutCatCover")){
-    $fileType = "file_type='aboutCatCover' AND";
-} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="aboutCover")){
-    $fileType = "file_type='aboutCover' AND";
-} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="galleryCover")){
-    $fileType = "file_type='galleryCover' AND";
-} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="storeCover")){
-    $fileType = "file_type='storeCover' AND";
+} else if (isset($_REQUEST['type']) && $_REQUEST['type']=='sightsCCover'){
+    $fileType   = "file_type='sightsCCover' AND";
+} else if (isset($_REQUEST['type']) && $_REQUEST['type']=='mapCover'){
+    $fileType   = "file_type='mapCover' AND";
+} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="tourCCover")){
+    $fileType = "file_type='tourCCover' AND";
+} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="tourCover")){
+    $fileType = "file_type='tourCover' AND";
+} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="latestCCover")){
+    $fileType = "file_type='latestCCover' AND";
+} else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="latestCover")){
+    $fileType = "file_type='latestCover' AND";
 } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="neighborhoodsliderCover")){
     $fileType = "file_type='neighborhoodsliderCover' AND";
 } else if (isset($_REQUEST['type']) && ($_REQUEST['type']=="indexsliderCover")){
@@ -165,8 +165,10 @@ if ((isset($_POST['file_id'])) && ($_POST['file_id'] != "") && (isset($_POST['de
     $sth->bindParam(':file_id', $_POST['file_id'], PDO::PARAM_INT);
     $sth->execute();
 
-    if ($_REQUEST['type'] == "productsCatCover" || $_REQUEST['type'] == 'giftCatCover' || $_REQUEST['type'] == 'menuC_mobile') {
+    if ($_REQUEST['type'] == "sightsCCover") {
         $deleteGoTo = $_SESSION['nowPage'] . "?c_id=" . $row_RecImage['file_d_id'] . "#imageEdit";
+    } else if ($_REQUEST['type'] == "latestCCover") {
+        $deleteGoTo = $_SESSION['nowPage'] . "?l_id=" . $row_RecImage['file_d_id'] . "#imageEdit";
     } else {
         $deleteGoTo = $_SESSION['nowPage'] . "?d_id=" . $row_RecImage['file_d_id'] . "#imageEdit";
     }

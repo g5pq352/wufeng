@@ -36,51 +36,51 @@ function creatTablBottom(){
 <div id="cmsMenu">
 	<ul>
 		<?php if($row_RecLevelAuthority['a_2']=='1'){ ?>
-		<!-- <li id="main_menu_2" class="main_menu <?php if ($menu_is=='indexslider'): ?>main_menu_now<?php endif ?>">
-			<a href="indexslider_list.php"><div>首頁</div></a>
-		</li> -->
+		<li id="main_menu_2" class="main_menu <?php if ($menu_is=='latest'): ?>main_menu_now<?php endif ?>">
+			<a href="latest_list.php"><div>首頁</div></a>
+		</li>
 		<?php } ?>
 
 		<?php if($row_RecLevelAuthority['a_3']=='1'){ ?>
-		<li id="main_menu_3" class="main_menu <?php if ($menu_is=='application'): ?>main_menu_now<?php endif ?>">	
-			<a href="application_list.php"><div>Application</div></a>
+		<li id="main_menu_3" class="main_menu <?php if ($menu_is=='news'): ?>main_menu_now<?php endif ?>">	
+			<a href="news_list.php"><div>活動情報</div></a>
 		</li>
 		<?php } ?>
 
 		<?php if($row_RecLevelAuthority['a_4']=='1'){ ?>
-		<li id="main_menu_4" class="main_menu <?php if ($menu_is=='certification' || $menu_is=='whitepaper'): ?>main_menu_now<?php endif ?>">
-			<a href="certification_list.php"><div>technolog</div></a>
+		<li id="main_menu_4" class="main_menu <?php if ($menu_is=='sights'): ?>main_menu_now<?php endif ?>">
+			<a href="sights_list.php"><div>景點探索</div></a>
 		</li>
 		<?php } ?>
 
 		<?php if($row_RecLevelAuthority['a_5']=='1'){ ?>
-		<li id="main_menu_5" class="main_menu <?php if ($menu_is=='about'): ?>main_menu_now<?php endif ?>">
-			<a href="about_list.php"><div>about</div></a>
+		<li id="main_menu_5" class="main_menu <?php if ($menu_is=='map'): ?>main_menu_now<?php endif ?>">
+			<a href="map_list.php"><div>地圖搜尋</div></a>
 		</li>
 		<?php } ?>
 
      	<?php if($row_RecLevelAuthority['a_6']=='1'){ ?>
-     	<li id="main_menu_6" class="main_menu <?php if ($menu_is=='opening'): ?>main_menu_now<?php endif ?>">
-     		<a href="opening_list.php"><div>opening</div></a>
+     	<li id="main_menu_6" class="main_menu <?php if ($menu_is=='tour'): ?>main_menu_now<?php endif ?>">
+     		<a href="tour_list.php"><div>套裝行程</div></a>
      	</li>
      	<?php } ?>
 
      	<?php if($row_RecLevelAuthority['a_7']=='1'){?>
-     	<li id="main_menu_7" class="main_menu <?php if ($menu_is=='faq'): ?>main_menu_now<?php endif ?>">
+     	<!-- <li id="main_menu_7" class="main_menu <?php if ($menu_is=='faq'): ?>main_menu_now<?php endif ?>">
      		<a href="faq_list.php"><div>faq</div></a>
-     	</li>
+     	</li> -->
      	<?php } ?>
 
      	<?php if($row_RecLevelAuthority['a_8']=='1'){?>
-     	<li id="main_menu_8" class="main_menu <?php if ($menu_is=='news'): ?>main_menu_now<?php endif ?>">
+     	<!-- <li id="main_menu_8" class="main_menu <?php if ($menu_is=='news'): ?>main_menu_now<?php endif ?>">
      		<a href="news_list.php"><div>最新消息</div></a>
-     	</li>
+     	</li> -->
      	<?php } ?>
 
      	<?php if($row_RecLevelAuthority['a_9']=='1'){?>
-     	<li id="main_menu_9" class="main_menu <?php if ($menu_is=='contactus'): ?>main_menu_now<?php endif ?>">
+     	<!-- <li id="main_menu_9" class="main_menu <?php if ($menu_is=='contactus'): ?>main_menu_now<?php endif ?>">
      		<a href="contact_list.php"><div>聯絡我們</div></a>
-     	</li>
+     	</li> -->
      	<?php } ?>
 
      	<?php if($row_RecLevelAuthority['a_11']=='1'){?>
@@ -103,80 +103,50 @@ function creatTablBottom(){
     </ul>
 </div>
 <?php
-if($menu_is=="indexslider"){
+if($menu_is=="latest"){
 
 	creatTableTop();
-	creatAll('輪播', 'indexslider');
+	creatAll('首頁', 'latest');
+	creatAll('首頁類別', 'latestC');
 	
 	if($row_RecLevelAuthority['a_2']=='0'){header("Location:first.php");}
-	creatTablBottom();
-
-}else if($menu_is=="application"){
-
-	creatTableTop();
-	creatList('application', 'application');
-	
-	if($row_RecLevelAuthority['a_3']=='0'){header("Location:first.php");}
-	creatTablBottom();
-
-}else if($menu_is=="certification" || $menu_is=="whitepaper"){
- 
-	creatTableTop();
-	creatAll('certification', 'certification');
-	creatAll('certification分類', 'certificationC');
-
-	echo '<br>';
-
-	creatAll('whitepaper', 'whitepaper');
-
-	if($row_RecLevelAuthority['a_4']=='0'){header("Location:first.php");}
-	creatTablBottom();
-
-}else if($menu_is=="about"){
-
-	creatTableTop();
-	creatAll('該年份事件列表', 'about');
-	creatAll('about 年份分類', 'aboutC');
-	if($row_RecLevelAuthority['a_5']=='0'){header("Location:first.php");}
-	creatTablBottom();
-
-}else if($menu_is=="opening"){
-
-	creatTableTop();
-	creatAll('opening', 'opening');
-	creatAll('分類', 'openingC');
-	if($row_RecLevelAuthority['a_6']=='0'){header("Location:first.php");}
-	creatTablBottom();
-
-}else if($menu_is=="faq"){
-
-	creatTableTop();
-	creatAll('faq', 'faq');
-	if($row_RecLevelAuthority['a_7']=='0'){header("Location:first.php");}
 	creatTablBottom();
 
 }else if($menu_is=="news"){
 
 	creatTableTop();
-	creatAll('最新消息', 'news');
-	// creatAll('分類', 'newsC');
-	if($row_RecLevelAuthority['a_8']=='0'){header("Location:first.php");}
+	creatAll('活動情報', 'news');
+	
+	if($row_RecLevelAuthority['a_3']=='0'){header("Location:first.php");}
 	creatTablBottom();
 
-}else if($menu_is=="contactus"){
-
-	creatTableTop();
-	creatList('聯絡我們', 'contact');
-	if($row_RecLevelAuthority['a_9']=='0'){header("Location:first.php");}
-	creatTablBottom();
-}else if($menu_is=="contactus" || $menu_is=="chairman" || $menu_is=="franchisee"){
+}else if($menu_is=="sights"){
 
 	creatTableTop();
-	creatList('聯絡我們', 'contact');
-	creatList('董事長的話', 'chairman');
-	creatList('加盟表單', 'franchisee');
-	if($row_RecLevelAuthority['a_11']=='0'){header("Location:first.php");}
+	creatAll('景點探索', 'sights');
+	creatAll('景點探索分類', 'sightsC');
+	
+	if($row_RecLevelAuthority['a_4']=='0'){header("Location:first.php");}
 	creatTablBottom();
+
+}else if($menu_is=="map"){
+
+	creatTableTop();
+	creatAll('地圖搜尋', 'map');
+	// creatAll('地圖搜尋分類', 'mapC');
+	
+	if($row_RecLevelAuthority['a_5']=='0'){header("Location:first.php");}
+	creatTablBottom();
+
+}else if($menu_is=="tour"){
+
+	creatTableTop();
+	creatAll('套裝行程', 'tour');
+	creatAll('套裝行程分類', 'tourC');
+	
+	if($row_RecLevelAuthority['a_6']=='0'){header("Location:first.php");}
+	creatTablBottom();
+
 }else if($menu_is=="keywords"){
 
 	creatTableTop();

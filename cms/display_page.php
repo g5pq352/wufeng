@@ -28,7 +28,7 @@ function displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentP
 
         for ($i = 1; $i <= $totalPages + 1; $i++) {
             //如果非正在顯示的分頁則建立頁碼連結
-            if ($i != $pageNum + 1) {
+            if ($i != intval($pageNum) + 1) {
 
                 echo "<a href=";
                 printf("%s?pageNum=%d%s", $currentPage, $i - 1, $queryString);
@@ -125,7 +125,7 @@ function displayPages($pageNum, $queryString, $totalPages, $totalRows, $currentP
     if ($pageNum < $totalPages) {
         // Show if not last page
         echo "<a href=";
-        printf("%s?pageNum=%d%s", $currentPage, min($totalPages, $pageNum + 1), $queryString);
+        printf("%s?pageNum=%d%s", $currentPage, min($totalPages, intval($pageNum) + 1), $queryString);
         echo ">></a>";
     } // Show if not last page
     echo "</td></tr></table>";

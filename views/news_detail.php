@@ -1,3 +1,18 @@
+<?php
+require_once 'Connections/connect2data.php';
+
+$row = $DB->row("SELECT * FROM data_set, file_set WHERE d_class1='news' AND d_id=file_d_id AND file_type='newsCover' AND d_slug=?", [$slug]);
+
+if ($row == '') {
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '404.php';
+    header("Location: http://$host$uri/$extra");
+    exit;
+}
+
+$url = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -16,19 +31,18 @@
 				<div class="mr-4"><img src="images/message-tag.svg"></div>
 				<div class="tracking-normal">
 					<div class="flex items-center text-sm text-gray mb-1">
-						<div class="tracking-tight">Oct 19, 2013</div>
+						<div class="tracking-tight"><?= date("M d, y", strtotime($row['d_date'])) ?></div>
 						<div class="mx-2 mb-1">|</div>
 						<div class="">活動情報</div>
 					</div>
 					<div class="font-bold text-black text-6xl leading-tight">
-						迎接霧峰，<br>
-						共襄文化盛宴！
+						<?= nl2br($row['d_title']) ?>
 					</div>
 				</div>
 			</div>
 
 			<div class="relative mt-9 mb-16 category-border-radius">
-				<img src="images/news-1-1.jpg">
+				<img src="<?= $baseurl ?>/<?= $row['file_link1'] ?>">
 				<div class="absolute bottom-0 w-full h-3">
 					<div class="w-full h-[33.33333%] bg-blue"></div>
 					<div class="w-full h-[33.33333%] bg-orange"></div>
@@ -37,7 +51,9 @@
 			</div>
 
 			<div class="px-8 text-black-400 text-justify text-[14px] mb-[64px]">
-				在這個美麗的季節裡，我們迎來了一年一度的霧峰文化祭，這是一個繽紛多彩的盛會，聚集了來自各地的文化精華，讓我們攜手共度一場難忘的文化之旅。<br>
+				<?= $row['d_content'] ?>
+
+				<!-- 在這個美麗的季節裡，我們迎來了一年一度的霧峰文化祭，這是一個繽紛多彩的盛會，聚集了來自各地的文化精華，讓我們攜手共度一場難忘的文化之旅。<br>
 				<br>
 				<div class="-mx-4"><img src="images/news-1-2.jpg"></div>
 				<br>
@@ -50,14 +66,14 @@
 				<br>
 				<div class="-mx-4"><img src="images/news-1-4.jpg"></div>
 				<br>
-				參與各種文化工作坊，了解霧峰深厚的歷史和傳統。手作、烹飪、傳統藝術等等，讓你全身心地融入當地文化。
+				參與各種文化工作坊，了解霧峰深厚的歷史和傳統。手作、烹飪、傳統藝術等等，讓你全身心地融入當地文化。 -->
 			</div>
 
 			<nav class="flex items-center justify-center px-[58px] space-x-6 mb-6">
-				<a href="javascript:;"><img src="images/share-1.svg"></a>
-				<a href="javascript:;"><img src="images/share-2.svg"></a>
-				<a href="javascript:;"><img src="images/share-3.svg"></a>
-				<a href="javascript:;"><img src="images/share-4.svg"></a>
+				<!-- <a href="javascript:;"><img src="images/share-1.svg"></a> -->
+				<a href="<?= $url ?>" data-share="facebook" class="basic-hover"><img src="images/share-2.svg"></a>
+				<!-- <a href="javascript:;"><img src="images/share-3.svg"></a> -->
+				<a href="<?= $url ?>" data-share="copy" class="basic-hover"><img src="images/share-4.svg"></a>
 			</nav>
 
 			<div class="px-4 mb-[114px]">

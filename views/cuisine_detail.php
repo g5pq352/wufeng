@@ -1,3 +1,18 @@
+<?php
+require_once 'Connections/connect2data.php';
+
+$row = $DB->row("SELECT * FROM data_set, class_set, file_set WHERE d_class1='sights' AND c_parent='sightsC' AND d_class2=c_id AND d_id=file_d_id AND file_type='sightsCover' AND d_slug=?", [$slug]);
+
+if ($row == '') {
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '404.php';
+    header("Location: http://$host$uri/$extra");
+    exit;
+}
+
+$url = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -15,16 +30,15 @@
 			<div class="flex mt-[122px] px-10">
 				<div class="mr-4"><img src="images/message-tag.svg"></div>
 				<div class="tracking-normal">
-					<div class="text-sm text-gray mb-1">在地美食</div>
+					<div class="text-sm text-gray mb-1"><?= $row['c_title'] ?></div>
 					<div class="font-bold text-black text-6xl leading-tight">
-						初霧<br>
-						純米吟釀
+						<?= nl2br($row['d_title']) ?>
 					</div>
 				</div>
 			</div>
 
 			<div class="relative mt-9 mb-16 category-border-radius">
-				<img src="images/eat-1.jpg">
+				<img src="<?= $baseurl ?>/<?= $row['file_link1'] ?>">
 				<div class="absolute bottom-0 w-full h-3">
 					<div class="w-full h-[33.33333%] bg-blue"></div>
 					<div class="w-full h-[33.33333%] bg-orange"></div>
@@ -33,7 +47,9 @@
 			</div>
 
 			<div class="px-8 text-black-400 text-justify text-[14px] mb-[64px]">
-				台灣是米食大國，米糧酒歷史淵遠流長，且受到日本文化影響，被視為米糧酒最高級的清酒釀造工藝卻是一片空白，怎麼想都太不合理。<br>
+				<?= $row['d_content'] ?>
+
+				<!-- 台灣是米食大國，米糧酒歷史淵遠流長，且受到日本文化影響，被視為米糧酒最高級的清酒釀造工藝卻是一片空白，怎麼想都太不合理。<br>
 				<br>
 				其實，台灣曾有極為發達的清酒業。1915年資本家安部幸之助所創立的芳釀株式會社，斥資鉅額進口高級設備，成為全台灣擁有冷卻設備的清酒製造廠，更曾以「蝴蝶蘭」清酒轟動一時。可是日本戰敗投降後，台灣再次淪為政治交易品，在「清酒下台，紹興上台」的時局下，好不容易累積的日式釀酒文化也完全斷絕。儘管後來菸酒公賣局推出玉泉清酒，但使用大量添加糖與香料的「三增酒技術」，遠遠背馳傳統酒釀精神，那在品酩者心中根本無法被稱之為清酒。<br>
 				<br>
@@ -45,14 +61,14 @@
 				<br>
 				從推出首支酒品─初霧燒酎獲得德國國際烈酒評鑑銀牌獎，霧峰農會酒莊陸續又以初霧純米吟釀、荔枝蜂蜜酒在法國巴黎國際酒品評鑑、布魯塞爾世界酒類評鑑、德國國際烈酒評鑑摘金摘銀，很難想像在這光榮的背後，只能用兩個字來形容，那就是「硬斗」。<br>
 				<br>
-				<div class="-mx-4"><img src="images/eat-3.jpg"></div>
+				<div class="-mx-4"><img src="images/eat-3.jpg"></div> -->
 			</div>
 
 			<nav class="flex items-center justify-center px-[58px] space-x-6 mb-6">
-				<a href="javascript:;"><img src="images/share-1.svg"></a>
-				<a href="javascript:;"><img src="images/share-2.svg"></a>
-				<a href="javascript:;"><img src="images/share-3.svg"></a>
-				<a href="javascript:;"><img src="images/share-4.svg"></a>
+				<!-- <a href="javascript:;"><img src="images/share-1.svg"></a> -->
+				<a href="<?= $url ?>" data-share="facebook" class="basic-hover"><img src="images/share-2.svg"></a>
+				<!-- <a href="javascript:;"><img src="images/share-3.svg"></a> -->
+				<a href="<?= $url ?>" data-share="copy" class="basic-hover"><img src="images/share-4.svg"></a>
 			</nav>
 
 			<div class="px-4 mb-[114px]">

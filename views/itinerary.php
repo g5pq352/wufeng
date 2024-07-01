@@ -1,3 +1,9 @@
+<?php
+require_once 'Connections/connect2data.php';
+require_once 'paginator.class.php';
+
+$catlist = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='tourC' AND file_d_id=c_id AND file_type='tourCCover' AND c_active=1 ORDER BY c_sort ASC");
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -21,103 +27,34 @@
 			</div>
 
 			<section v-scope="{
-				posts: [{
-					title: '文旅',
-					tags: [
-						'台灣最大的清代一品官宅宮保第暨建築群',
-						'臺灣議會之父',
-						'台灣民主發源地',
-						'最大戲台',
-					],
-					pic: 'images/itinerary-1.jpg',
-					date: '09:00',
-					sliders: [{
-						pic: 'images/itinerary-slider-1-1.jpg',
-						title: '霧峰林家花園',
-						time: '09:00',
-					}, {
-						pic: 'images/itinerary-slider-1-2.jpg',
-						title: '肉尬',
-						time: '12:00',
-					}, {
-						pic: 'images/itinerary-slider-1-3.jpg',
-						title: '省議會紀念園區',
-						time: '14:00',
-					}, {
-						pic: 'images/itinerary-slider-1-1.jpg',
-						title: '霧峰林家花園',
-						time: '16:00',
-					}],
-					link: `itinerary/文旅`,
-				}, {
-					title: '食旅',
-					tags: [
-						'大自然的恩賜',
-						'霧峰香米',
-						'霧峰香蕉',
-						'滿天星空',
-						'特有生態',
-					],
-					pic: 'images/itinerary-2.jpg',
-					date: '08:00',
-					sliders: [{
-						pic: 'images/itinerary-slider-2-1.jpg',
-						title: '在地早餐',
-						time: '08:00',
-					}, {
-						pic: 'images/itinerary-slider-2-2.jpg',
-						title: '肉粽嫂',
-						time: '12:00',
-					}, {
-						pic: 'images/itinerary-slider-2-3.jpg',
-						title: '木瓜牛乳大王',
-						time: '14:00',
-					}, {
-						pic: 'images/itinerary-slider-2-4.jpg',
-						title: '民生故事館',
-						time: '16:00',
-					}],
-					link: `itinerary/食旅`,
-				}, {
-					title: '農旅',
-					tags: [
-						'初露純米吟釀',
-						'益全香米',
-						'生物防治',
-						'黑翅鳶',
-						'獨有生態',
-					],
-					pic: 'images/itinerary-3.jpg',
-					date: '10:00',
-					sliders: [{
-						pic: 'images/itinerary-slider-3-1.jpg',
-						title: '霧峰公園',
-						time: '10:00',
-					}, {
-						pic: 'images/itinerary-slider-3-2.jpg',
-						title: '五福黑翅鳶',
-						time: '11:00',
-					}, {
-						pic: 'images/itinerary-slider-3-3.jpg',
-						title: '肉尬',
-						time: '12:00',
-					}, {
-						pic: 'images/itinerary-slider-3-4.jpg',
-						title: '初露吟釀',
-						time: '15:00',
-					}],
-					link: `itinerary/農旅`,
-				}]
-			}" class="itineraryList px-4 space-y-10 mb-[112px]">
+				posts: [
+					<?php foreach($catlist as $c) : ?>
+					<?php $works = $DB->query("SELECT * FROM data_set, file_set WHERE d_class1='tour' AND d_class2=? AND d_id=file_d_id AND file_type='tourCover' AND d_active=1 ORDER BY d_sort ASC", [$c['c_id']]); ?>
+						{
+						title: `<?= $c['c_title'] ?>`,
+						tags: `<?= $c['c_content'] ?>`,
+						pic: '<?= $c['file_link1'] ?>',
+						sliders: [
+							<?php foreach($works as $row) : ?>
+								{
+									pic: '<?= $row['file_link1'] ?>',
+									title: `<?= nl2br($row['d_title']) ?>`,
+									time: '<?= date("H:i", strtotime($row['d_date'])) ?>',
+								},
+							<?php endforeach ?>
+						],
+						link: `<?= $baseurl ?>/itinerary/<?= $c['c_slug'] ?>`,
+					},
+					<?php endforeach ?>
+				]
+			}" class="itineraryList px-4 space-y-10 mb-[112px]" v-on:vue:mounted="sightsListHandler($el)">
 				<article v-for="(p, i) in posts" class="">
 					<div class="item text-white category-border-radius py-7 px-4">
 						<a :href="p.link">
 							<div class="font-bold text-[56px] leading-none mb-3">{{p.title}}</div>
-							<ul class="text-sm flex flex-wrap items-center space-y-1">
-								<li v-for="tag in (p.tags)" class="rounded-full border border-white px-2 mr-1">#{{tag}}</li>
-							</ul>
+							<ul class="data-array text-sm flex flex-wrap items-center lg:space-y-1 opacity-80"><span>{{p.tags}}</span></ul>
 							<div class="mt-7 mb-4"><img :src="p.pic" class="rounded-2xl"></div>
-							<div class="date font-en font-medium text-[72px] leading-none relative z-10 -mb-4">{{p.date}}</div>
+							<div class="date font-en font-medium text-[72px] leading-none relative z-10 -mb-4"></div>
 						</a>
 						<div class="relative" class="itinerarySlider">
 							<div class="absolute z-10 -top-[48px] right-0 flex space-x-2">
@@ -172,6 +109,22 @@
 </html>
 
 <script>
+function sightsListHandler(el){
+	var _el = $("article", el);
+
+	_el.each(function(i, item){
+		var value = $(".data-array", item).text();
+		var code = value.split(/[(\r\n)\r\n]+/)
+
+		code.forEach((use, index) => {
+			use = '<li class="rounded-full border border-white px-2 mr-1">' + use + '</li>';
+			$(".data-array", item).append(use)
+		})
+
+		$(".data-array span", item).remove()
+	})
+
+}
 function itineraryHandler(el) {
 	var $carousel = $(el).flickity({
 		"prevNextButtons": false,
@@ -193,6 +146,8 @@ function itineraryHandler(el) {
 		$carousel.flickity('next')
 		$carousel.flickity('stopPlayer');
 	})
+
+	$(el).closest("article").find(".date").text($("li", el).eq(0).data("time"))
 
 	$carousel.on( 'change.flickity', function( event, index ) {
 		$(el).closest("article").find(".date").text($("li", el).eq(index).data("time"))

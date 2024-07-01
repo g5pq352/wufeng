@@ -1,3 +1,9 @@
+<?php
+require_once 'Connections/connect2data.php';
+require_once 'paginator.class.php';
+
+$catlist = $DB->query("SELECT * FROM class_set WHERE c_parent='mapC' AND c_active=1 ORDER BY c_sort ASC");
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -13,18 +19,23 @@
 		<div class="w-[36vw] xl:w-[33vw] relative lg:w-full">
 			<!--  -->
 			<div class="absolute lg:fixed z-10 w-full px-5 top-[62px]">
-				<form action="javascript:;" id="contactForm" class="">
+				<form action="javascript:;" id="mapForm" class="" >
 					<select name="cats" id="" class="" style="width: 100%;">
 						<option value="">全部</option>
-						<option value="全部">全部</option>	
-						<option value="在地美食">在地美食</option>
+						<option value="全部">全部</option>
+
+						<?php foreach($catlist as $c) : ?>
+							<option value="<?= $c['c_title'] ?>"><?= $c['c_title'] ?></option>
+						<?php endforeach ?>
+
+						<!-- <option value="在地美食">在地美食</option>
 						<option value="霧峰商圈">霧峰商圈</option>
 						<option value="民宿飯店">民宿飯店</option>
 						<option value="自然景點">自然景點</option>
 						<option value="人文歷史">人文歷史</option>
 						<option value="熱門打卡">熱門打卡</option>
 						<option value="Ubike">Ubike</option>
-						<option value="停車場">停車場</option>
+						<option value="停車場">停車場</option> -->
 					</select>
 				</form>
 			</div>
@@ -33,91 +44,42 @@
 				<div id="map" class="h-screen -mx-1"></div>
 			</div>
 
-			<section class="hidden">
-				<article>
-					<div class="" data-cat="在地美食" data-lat="24.0399399" data-lng="120.7320165">
-						<div class="pic-s"><img src="views/images/map/map-1-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-1.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-					<div class="" data-cat="在地美食" data-lat="24.0384255" data-lng="120.7372857">
-						<div class="pic-s"><img src="views/images/map/map-2-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-2.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-					<div class="" data-cat="在地美食" data-lat="24.0424330" data-lng="120.7302967">
-						<div class="pic-s"><img src="views/images/map/map-3-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-3.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-					<div class="" data-cat="在地美食" data-lat="24.044938" data-lng="120.7352967">
-						<div class="pic-s"><img src="views/images/map/map-4-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-4.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-					<div class="" data-cat="在地美食" data-lat="24.042438" data-lng="120.7372967">
-						<div class="pic-s"><img src="views/images/map/map-5-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-5.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-					<div class="" data-cat="在地美食" data-lat="24.039438" data-lng="120.7282967">
-						<div class="pic-s"><img src="views/images/map/map-6-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-6.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-				</article>
-				<article>
-					<div class="" data-cat="霧峰商圈" data-lat="24.0359399" data-lng="120.7320165">
-						<div class="pic-s"><img src="views/images/map/map-7-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-7.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
-					</div>
-				</article>
-				<article>
-					<div class="" data-cat="民宿飯店" data-lat="24.047254" data-lng="120.730308">
-						<div class="pic-s"><img src="views/images/map/map-8-s.jpg"></div>
-						<div class="pic"><img src="views/images/map/map-8.jpg"></div>
-						<div class="title">霧峰木瓜牛乳大王</div>
-						<div class="phone">0907-267-088</div>
-						<div class="address">台中市霧峰區四德路61號</div>
-						<div class="time">週二至週日 08:00-17:00</div>
-						<div class="content">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
-						<div class="link">https://maps.app.goo.gl/im5TGfA3SGan4vmM6</div>
+			<section class="hidden" v-scope="{
+				posts: [
+					<?php foreach($catlist as $c) : ?>
+					<?php $works = $DB->query("SELECT * FROM data_set, class_set, file_set WHERE d_class1='map' AND c_parent='mapC' AND d_class2=? AND d_id=file_d_id AND file_type='mapCover' AND d_active=1 ORDER BY d_sort ASC", [$c['c_id']]); ?>
+						{
+							cat: '<?= $c['c_title'] ?>',
+							lists: [
+								<?php foreach($works as $row) : ?>
+									{
+										lat: '<?= $row['d_data1'] ?>',
+										lng: '<?= $row['d_data2'] ?>',
+										pic_s: '<?= $baseurl ?>/<?= $row['file_link3'] ?>',
+										pic: '<?= $baseurl ?>/<?= $row['file_link1'] ?>',
+										title: '<?= $row['d_title'] ?>',
+										phone: '<?= $row['d_data3'] ?>',
+										address: '<?= $row['d_data4'] ?>',
+										time: '<?= $row['d_data5'] ?>',
+										content: `<?= nl2br($row['d_content']) ?>`,
+										link: `<?= $row['d_data6'] ?>`,
+									},
+								<?php endforeach ?>
+							],
+						},
+					<?php endforeach ?>
+				]
+			}">
+				<article v-for="(p, i) in posts">
+					<div v-for="list in (p.lists)" class="" :data-cat="p.cat" :data-lat="list.lat" :data-lng="list.lng">
+						<div class="pic-s"><img :src="list.pic_s"></div>
+						<div class="pic"><img :src="list.pic"></div>
+						<div class="title">{{list.title}}</div>
+						<div class="phone">{{list.phone}}</div>
+						<div class="address">{{list.address}}</div>
+						<div class="time">{{list.time}}</div>
+						<div class="content" v-html="list.content"></div>
+						<div class="link">{{list.link}}</div>
 					</div>
 				</article>
 			</section>
@@ -150,12 +112,12 @@
 						<div class="fancy-text text-sm text-gray-300">「霧峰牛乳大王」曾榮獲「臺中市政府建國百年百大優良名攤認證標章」，可見品質信譽都是獲得肯定的。 「霧峰牛乳大王」主打賣點是木瓜牛奶，將木瓜與牛奶用果汁機打在一起，沒有加水稀釋，香醇濃郁，入口滑順，是臺灣常見的街邊飲料。</div>
 
 						<div class="text-black font-en flex items-center justify-center mt-6">
-							<div class="fancy-close flex items-center justify-center leading-none border-b border-dashed border-black min-w-[100px]">
+							<div class="fancy-close flex items-center justify-center leading-none border-b border-dashed border-black min-w-[100px] basic-hover">
 								<span><svg width="13.72" height="5.78" viewBox="0 0 13.72 5.78">
 									<rect x="6.15" y="2.15" width="7.57" height="1.48" style="fill: #000;"/>
 									<polygon points="0 2.89 6.75 5.78 6.75 0 0 2.89" style="fill: #000;"/>
 								</svg></span>
-								<span class="ml-2 li">back</span>
+								<span class="ml-2">back</span>
 							</div>
 						</div>
 					</div>
@@ -201,19 +163,19 @@ $("select").select2({
 
 var originalStyle = [];
 
-var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 15,
-    center: new google.maps.LatLng(24.0455977, 120.7334986),
-    styles: originalStyle,
-    // zoomControl: false,
-    // scrollwheel: false,
-    streetViewControl: false,
-    mapTypeControl: false,
-    // draggable: false,
-    fullscreenControl: false,
-});
-
 $(window).on("load", function() {
+	var map = new google.maps.Map(document.getElementById('map'), {
+	    zoom: 15,
+	    center: new google.maps.LatLng(24.0455977, 120.7334986),
+	    styles: originalStyle,
+	    // zoomControl: false,
+	    // scrollwheel: false,
+	    streetViewControl: false,
+	    mapTypeControl: false,
+	    // draggable: false,
+	    fullscreenControl: false,
+	});
+
 	$("article >div").each(function(i, el){
 		var _lat = $(el).data("lat")
 		var _lng = $(el).data("lng")
@@ -243,12 +205,13 @@ $(window).on("load", function() {
 
 			$('#map img[src="'+marker.icon+'"]').closest("div").attr('data-cat', _cat);
 
-			console.log($('#map .markers'))
+			// console.log($('#map .markers'))
 		})
 
 
 		marker.addListener('click', function() {
 			$(".m-fancyWrap .fancy-pic").attr("src", _pic)
+			$(".m-fancyWrap .fancy-cat").text(_cat)
 			$(".m-fancyWrap .fancy-title").text(_title)
 			$(".m-fancyWrap .fancy-phone").text(_phone)
 			$(".m-fancyWrap .fancy-address").text(_address)

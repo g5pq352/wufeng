@@ -1,3 +1,45 @@
+<?php
+require_once 'Connections/connect2data.php';
+require_once 'paginator.class.php';
+
+$ryder_cat = (isset($slug)) ? $slug : 'default';
+
+if ($ryder_cat == 'default') {
+    $order = "ORDER BY
+    CASE WHEN d_sort = 0 THEN 1 ELSE 2 END,
+    d_date DESC";
+}else{
+    $order = "ORDER BY d_sort ASC";
+}
+
+$cat = $DB->row("SELECT * FROM class_set, file_set WHERE c_parent='sightsC' AND c_slug=? AND c_id=file_d_id AND file_type='sightsCCover' AND c_active=1", [$ryder_cat]);
+
+//page start
+$page = (isset($p)) ? $p : 1;
+$_GET['page'] = $page;
+$maxItem = 8;
+$limit = ($page - 1) * $maxItem;
+
+$pp = $page - 1;
+$prevurl = "$baseurl/sights/category/$slug/$pp";
+
+$nn = $page + 1;
+$nexturl = "$baseurl/sights/category/$slug/$nn";
+
+// 拿來計算全部有幾則
+$workTotal = $DB->query("SELECT * FROM data_set, class_set, file_set WHERE d_class1='sights' AND d_class2=c_id AND d_id=file_d_id AND file_type='sightsCover' AND (c_slug=? OR ?='default') AND c_active=1 AND d_active=1 $order", [$ryder_cat, $ryder_cat]);
+$pageTotalCount = count($workTotal);
+$totalpage = ceil($pageTotalCount / $maxItem);
+
+//使用
+$work = $DB->query("SELECT * FROM data_set, class_set, file_set WHERE d_class1='sights' AND d_class2=c_id AND d_id=file_d_id AND file_type='sightsCover' AND (c_slug=? OR ?='default') AND c_active=1 AND d_active=1 $order LIMIT ?, ?", [$ryder_cat, $ryder_cat, $limit, $maxItem]);
+
+$pages = new Paginator;
+$pages->items_total = $pageTotalCount;
+$pages->items_per_page = $maxItem;
+$pages->paginate();
+//page end
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -13,51 +55,25 @@
 		<div class="w-[35vw] xl:w-[33vw] lg:w-full">
 			<!--  -->
 			<div class="mt-[132px] mb-[86px]">
-				<div class="mb-7"><img src="images/sights-deco-1.svg" class="mx-auto" width="130"></div>
+				<div class="mb-7"><img src="<?= $baseurl ?>/<?= $cat['file_link1'] ?>" class="mx-auto" width="130"></div>
 				<div class="text-center">
-					<div class="font-bold text-[28px]">在地美食</div>
-					<div class="font-en text-gray-400 text-4xl">#Local Cuisine</div>
+					<div class="font-bold text-[28px]"><?= $cat['c_title'] ?></div>
+					<div class="font-en text-gray-400 text-4xl">#<?= $cat['c_title_en'] ?></div>
 				</div>
 			</div>
 
 			<div class="px-4 mb-[112px]">
 				<ul v-scope="{
-					posts: [{
-						pic: 'images/chosen-1.jpg',
-						title: `初霧純米吟釀`,
-						note: `小公務員不可能的<br>清酒任務`,
-						link: 'cuisine/初霧純米吟釀',
-					}, {
-						pic: 'images/chosen-2.jpg',
-						title: `森川火鍋`,
-						note: `吃到飽火鍋，超人氣麻油燒酒烏骨雞`,
-						link: 'cuisine/森川火鍋',
-					}, {
-						pic: 'images/chosen-3.jpg',
-						title: `農學食堂`,
-						note: `一場以農為本的<br>創意之路`,
-						link: 'cuisine/農學食堂',
-					}, {
-						pic: 'images/chosen-4.jpg',
-						title: `肉尬`,
-						note: `益全香米<br>尬上肉`,
-						link: 'cuisine/肉尬',
-					}, {
-						pic: 'images/cuisine-1.jpg',
-						title: `雞排本色`,
-						note: `全台獨賣厚實飽滿多汁天然“有色”雞排`,
-						link: 'cuisine/雞排本色',
-					}, {
-						pic: 'images/cuisine-2.jpg',
-						title: `甘田果園`,
-						note: `荔之甘精緻農園<br>天然體驗農場`,
-						link: 'cuisine/甘田果園',
-					}, {
-						pic: 'images/cuisine-3.jpg',
-						title: `胡同李`,
-						note: `最在地的<br>東北大餡水餃`,
-						link: 'cuisine/胡同李',
-					}]
+					posts: [
+						<?php foreach($work as $row) : ?>
+							{
+								pic: `<?= $baseurl ?>/<?= $row['file_link1'] ?>`,
+								title: `<?= nl2br($row['d_title']) ?>`,
+								note: `<?= nl2br($row['d_data1']) ?>`,
+								link: '<?= $baseurl ?>/sights/<?= nl2br($row['d_slug']) ?>',
+							},
+						<?php endforeach ?>
+					]
 				}" class="space-y-4">
 					<li v-for="p in posts" class="category-border-radius bg-white p-3"><a :href="p.link">
 						<div class="flex items-center">
@@ -72,7 +88,7 @@
 
 				<div class="mt-[58px] mb-5">
 					<div class="flex items-center justify-center font-en font-medium">
-						<a href="javascript:;" class="mr-6 basic-hover"><svg width="43" height="43" viewBox="0 0 42.84 42.84">
+						<a href="<?= $prevurl ?>" class="mr-6 basic-hover"><svg width="43" height="43" viewBox="0 0 42.84 42.84">
 							<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
 							<g>
 							<rect x="19.57" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>
@@ -80,12 +96,24 @@
 							</g>
 						</svg></a>
 
+						<nav v-scope="{
+			                now: '<?= $page ?>',
+			                total: <?= $totalpage ?>,
+			                link: '<?= "$baseurl/sights/category/$slug" ?>',
+			                item: 6,
+			                }" class="flex items-center justify-center">
 
-						<a href="javascript:;" class="text-black text-3xl">2</a>
-						<a href="javascript:;" class="text-gray-400 page-total mt-1">5</a>
+			                <a href="javascript:;" class="text-black text-3xl">{{now}}</a>
+
+			                <a :href="`${link}/${total}`" class="page-total basic-hover text-gray-400 mt-1">{{total}}</a>
+			            </nav>
 
 
-						<a href="javascript:;" class="ml-6 basic-hover"><svg width="43" height="43" viewBox="0 0 42.84 42.84">
+						<!-- <a href="javascript:;" class="text-black text-3xl">2</a> -->
+						<!-- <a href="javascript:;" class="text-gray-400 page-total mt-1">5</a> -->
+
+
+						<a href="<?= $nexturl ?>" class="ml-6 basic-hover"><svg width="43" height="43" viewBox="0 0 42.84 42.84">
 							<circle cx="21.42" cy="21.42" r="21.42" style="fill: #b4b4b5;"/>
 							<g>
 							<rect x="15.67" y="20.68" width="7.61" height="1.49" style="fill: #fff;"/>

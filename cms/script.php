@@ -56,10 +56,8 @@ if (isset($outTypeA[1])) {
 ?>
 
 <script type="text/javascript">
-    // menu_now = '<?php echo $row['menu_use']; ?>';
 
     $(document).ready(function() {
-        // $(menu_now).addClass("main_menu_now"); //同时新增二个样式类别
 
         $(".button_set").hover(function() {
             $(this).addClass('btnTypeClass');

@@ -73,7 +73,7 @@ if (isset($_POST['use_rname'])) {
     <div id="login-wrapper">
         <div id="login-wrapper-form">
             <form action="<?php echo $loginFormAction; ?>" method="POST" name="form1" id="form1">
-                <div class="art-logo-name">鉅怡智慧</div>
+                <div class="art-logo-name">霧峰</div>
                 <h3 class="login-cms-text">後端內容管理系統</h3>
                 <div id="login-content">
                     <ul id="login-input">

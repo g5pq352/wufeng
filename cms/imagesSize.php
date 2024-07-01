@@ -15,49 +15,59 @@ $imagesSize = [
         'note' => "圖片請上傳寬 694pixel、高 380pixel之圖檔。 $maxFileSize",
     ],
     "newsCover" => [
-        'IW' => 1086,
-        'IH' => 658,
-        'note' => "圖片請上傳寬 1086pixel、高 658pixel之圖檔。 $maxFileSize",
+        'IW' => 768,
+        'IH' => 768,
+        'note' => "圖片請上傳寬 768pixel、高 768pixel之圖檔。 $maxFileSize",
     ],
-    "application" => [
+    "sightsCCover" => [
+        'IW' => 130,
+        'IH' => 130,
+        'note' => "圖片請上傳寬 130pixel、高 130pixel之圖檔。 $maxFileSize",
+    ],
+    "sights" => [
         'IW' => 1024,
         'IH' => 682,
         'note' => "圖片請上傳寬 1024pixel、高 682pixel之圖檔。 $maxFileSize",
     ],
-    "applicationCover" => [
-        'IW' => 1920,
-        'IH' => 980,
-        'note' => "圖片請上傳寬 1920pixel、高 980pixel之圖檔。 $maxFileSize",
+    "sightsCover" => [
+        'IW' => 768,
+        'IH' => 768,
+        'note' => "圖片請上傳寬 768pixel、高 768pixel之圖檔。 $maxFileSize",
     ],
-    "applicationContent" => [
-        'IW' => 1920,
-        'IH' => 980,
-        'note' => "圖片請上傳寬 1920pixel、高 980pixel之圖檔。 $maxFileSize",
+    "mapCCover" => [
+        'IW' => 58,
+        'IH' => 58,
+        'note' => "圖片請上傳寬 58pixel、高 58pixel之圖檔。 $maxFileSize",
     ],
-    "aboutCatCover" => [
-        'IW' => 604,
-        'IH' => 404,
-        'note' => "圖片請上傳寬 604pixel、高 404pixel之圖檔。 $maxFileSize",
+    "mapCover" => [
+        'IW' => 360,
+        'IH' => 360,
+        'note' => "圖片請上傳寬 360pixel、高 360pixel之圖檔。 $maxFileSize",
     ],
-    "certificationCover" => [
-        'IW' => 314,
-        'IH' => 442,
-        'note' => "圖片請上傳寬 314pixel、高 442pixel之圖檔。 $maxFileSize",
+    "tourCCover" => [
+        'IW' => 606,
+        'IH' => 584,
+        'note' => "圖片請上傳寬 606pixel、高 584pixel之圖檔。 $maxFileSize",
     ],
-    "amenitiessliderCover" => [
-        'IW' => 1920,
-        'IH' => 1200,
-        'note' => "圖片請上傳寬 1920pixel、高 1200pixel之圖檔。 $maxFileSize",
+    "tourCover" => [
+        'IW' => 420,
+        'IH' => 406,
+        'note' => "圖片請上傳寬 420pixel、高 406pixel之圖檔。 $maxFileSize",
     ],
-    "amenities" => [
-        'IW' => 1312,
-        'IH' => 980,
-        'note' => "圖片請上傳寬 1312pixel、高 980pixel之圖檔。 $maxFileSize",
+    "latestCCover" => [
+        'IW' => 750,
+        'IH' => 450,
+        'note' => "圖片請上傳寬 750pixel、高 450pixel之圖檔。 $maxFileSize",
     ],
-    "guest" => [
-        'IW' => 1700,
-        'IH' => 860,
-        'note' => "圖片請上傳寬 1700pixel、高 860pixel之圖檔。 $maxFileSize",
+    "latestCover" => [
+        'IW' => 768,
+        'IH' => 768,
+        'note' => "圖片請上傳寬 768pixel、高 768pixel之圖檔。 $maxFileSize",
+    ],
+    "latest" => [
+        'IW' => 340,
+        'IH' => 340,
+        'note' => "圖片請上傳寬 340pixel、高 340pixel之圖檔。 $maxFileSize",
     ],
     "features" => [
         'IW' => 1700,

@@ -340,6 +340,50 @@ function autosliderHandler(el) {
 
 
 
+$("[data-share]").each((i, el) => {
+    var type = el.dataset.share
+    $(el).click(function(e) {
+        e.preventDefault();
+
+        var winHeight = 360;
+        var winWidth = 600;
+        var winTop = (screen.height / 2) - (winHeight / 2);
+        var winLeft = (screen.width / 2) - (winWidth / 2);
+        var url = $(this).attr("href");
+
+        if(type == "facebook") {
+            window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        } else if(type == "twitter") {
+            window.open('https://twitter.com/share?url=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        } else if(type == "pinterest") {
+            window.open('https://www.pinterest.com/pin/create/button/?url=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        } else if(type == "googleplus") {
+            window.open('https://plus.google.com/share?url=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        } else if(type == "linkedin") {
+            window.open('https://www.linkedin.com/cws/share?url=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        } else if(type == "weibo") {
+            window.open('https://service.weibo.com/share/share.php?url=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
+        } else if(type == "line") {
+            window.open('https://line.naver.jp/R/msg/text/?' + url);
+        } else if(type == "copy") {
+            copy(url)
+            alert("連結已複製完成!");
+        }
+    });
+});
+
+function copy(s) {
+    var clip_area = document.createElement('textarea');
+    clip_area.textContent = s;
+
+    document.body.appendChild(clip_area);
+    clip_area.select();
+
+    document.execCommand('copy');
+    clip_area.remove();
+}
+    
+
 $(window).on("load", function() {
 
 	$("#preload").fadeOut(300)

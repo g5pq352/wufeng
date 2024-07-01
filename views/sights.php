@@ -1,3 +1,9 @@
+<?php
+require_once 'Connections/connect2data.php';
+require_once 'paginator.class.php';
+
+$catlist = $DB->query("SELECT * FROM class_set, file_set WHERE c_parent='sightsC' AND c_id=file_d_id AND file_type='sightsCCover' AND c_active=1 ORDER BY c_sort ASC");
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -21,77 +27,26 @@
 			</div>
 
 			<section v-scope="{
-				posts: [{
-					title: '在地美食',
-					tags: [
-						'益全香米',
-						'黑翅鳶',
-						'初露純米吟釀',
-						'有機米',
-					],
-					pic: 'images/sights-deco-1.svg',
-					link: `cuisine`,
-				}, {
-					title: '霧峰商圈',
-					tags: [
-						'流行時尚',
-						'舊城區',
-						'最在地的商圈',
-					],
-					pic: 'images/sights-deco-2.svg',
-					link: `cuisine`,
-				}, {
-					title: '民宿飯店',
-					tags: [
-						'乾淨整潔',
-						'便利',
-						'老屋新生',
-						'最古老',
-					],
-					pic: 'images/sights-deco-3.svg',
-					link: `cuisine`,
-				}, {
-					title: '自然景點',
-					tags: [
-						'十分百岳',
-						'長步道',
-						'一覽無遺',
-						'貓頭鷹',
-					],
-					pic: 'images/sights-deco-4.svg',
-					link: `cuisine`,
-				}, {
-					title: '人文歷史',
-					tags: [
-						'最大戲台',
-						'九二一',
-						'菇類產學館',
-						'故事館',
-					],
-					pic: 'images/sights-deco-5.svg',
-					link: `cuisine`,
-				}, {
-					title: '熱門打卡',
-					tags: [
-						'老少咸宜',
-						'毛小孩',
-						'穿越歷史',
-						'民主發源地',
-					],
-					pic: 'images/sights-deco-6.svg',
-					link: `cuisine`,
-				}]
-			}" class="sightsList px-4 space-y-4 mb-[112px]">
+				posts: [
+					<?php foreach ($catlist as $c): ?>
+	                    {
+	                    	title: `<?= nl2br($c['c_title']) ?>`,
+	                    	tags: `<?= $c['c_content'] ?>`,
+							pic: `<?= $baseurl ?>/<?= $c['file_link1'] ?>`,
+	                        link: '<?= $baseurl ?>/sights/category/<?= $c['c_slug'] ?>',
+	                        slug: '<?= $c['c_slug'] ?>'
+	                    },
+	                <?php endforeach ?>
+				]
+			}" class="sightsList px-4 space-y-4 mb-[112px]" v-on:vue:mounted="sightsListHandler($el)">
 			<!-- 'bg-orange': i == 3*i+1, 'bg-green': i == 3*i+2, 'bg-blue': i == 3*i -->
 				<article v-for="(p, i) in posts" class="category-border-radius text-white p-7 bg-orange"><a :href="p.link">
 					<div class="flex items-center mr-4">
 						<div class="">
 							<div class="font-bold text-[26px] mb-2">{{p.title}}</div>
-							<ul class="text-sm flex flex-wrap items-center space-y-1 opacity-80">
-								<li v-for="tag in (p.tags)" class="rounded-full border border-white px-2 mr-1">#{{tag}}</li>
-							</ul>
+							<ul class="data-array text-sm flex flex-wrap items-center lg:space-y-1 opacity-80"><span>{{p.tags}}</span></ul>
 						</div>
-						<div class=""><img :src="p.pic" class="max-w-none"></div>
+						<div class=""><img :src="p.pic" class="max-w-none lg:max-w-[92px]"></div>
 					</div>
 					<div class="inline-block mt-3"><div class="flex items-center leading-none border-b border-dashed">
 						<div class="font-en font-light">read more</div>
@@ -113,5 +68,26 @@
 </html>
 
 <script>
+function sightsListHandler(el){
+	var _el = $("article", el);
 
+	_el.each(function(i, item){
+		var value = $(".data-array", item).text();
+		var code = value.split(/[(\r\n)\r\n]+/)
+
+		code.forEach((use, index) => {
+			use = '<li class="rounded-full border border-white px-2 mr-1">' + use + '</li>';
+			$(".data-array", item).append(use)
+		})
+
+		$(".data-array span", item).remove()
+	})
+
+}
+
+$(window).on("load", function() {
+
+
+	
+})
 </script>

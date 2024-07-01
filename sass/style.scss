@@ -95,8 +95,10 @@ input[name="search"]{
 	}
 }
 #last-child{
-	padding-bottom: 230px;
 	transition: all .5s;
+	@screen lg{
+		padding-bottom: 140px;
+	}
 	&.is-open{
 		padding-bottom: 0;
 	}

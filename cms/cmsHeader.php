@@ -2,7 +2,7 @@
     <tr>
         <td rowspan="2" align="left">
             <!-- <span class="cms-art-logo-name"><img src="../images/logo-green.svg" width="190"></span> -->
-            <span class="cms-art-logo-text">鉅怡智慧</span>
+            <span class="cms-art-logo-text">霧峰</span>
             <span class="cms-login-cms-text">後端內容管理系統</span>
         </td>
         <td width="100" align="right" valign="middle">

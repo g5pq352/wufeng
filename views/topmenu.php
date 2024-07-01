@@ -118,7 +118,7 @@ if(isset($now)){
 					},{
 						icon: 'images/recommend-4.svg',
 						title: '在地美食',
-						link: '<?= $baseurl ?>/cuisine',
+						link: '<?= $baseurl ?>/sights/category/在地美食',
 					},{
 						icon: 'images/recommend-5.svg',
 						title: '景點探索',
@@ -206,7 +206,7 @@ if(isset($now)){
 						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-5.svg" class="max-w-[46px] inline-block lg:max-w-none"></div>
 						<div class="text-center font-bold text-[21px] lg:text-sm">地圖搜尋</div>
 					</div></a>
-					<a class="" href="<?= $baseurl ?>/cuisine"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
+					<a class="" href="<?= $baseurl ?>/sights/category/在地美食"><div class="bg-orange-100 flex items-center justify-center py-1 border border-transparent rounded-[12px] h-[68px] duration-300 transition-all hover:border-white hover:bg-[#E2DED7]">
 						<div class="text-center w-[50px] mr-5"><img src="images/menu-logo-4.svg" class="max-w-[36px] inline-block lg:max-w-none"></div>
 						<div class="text-center font-bold text-[21px] lg:text-sm">在地美食</div>
 					</div></a>

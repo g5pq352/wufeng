@@ -39,8 +39,9 @@ function image_process(PDO $pdo, $FILES_A, $file_title, $file_name, $deal_type, 
 
     }
     //******如果是更新記錄的上傳圖片end*******/
+    if(isset($FILES_A['name'])){
 
-    for ($j = 0; $j < count($FILES_A['name']); $j++) {
+      for ($j = 0; $j < count($FILES_A['name']); $j++) {
         $tmp_name = $FILES_A['name'][$j];
 
         if ($tmp_name != '') //如果有上傳檔案
@@ -177,8 +178,8 @@ function image_process(PDO $pdo, $FILES_A, $file_title, $file_name, $deal_type, 
                 //縮小圖list用-正方形
                 //$destW = $image_width/2;
                 //$destH = $image_height/2;
-                $destW = 100;
-                $destH = 100;
+                $destW = 60;
+                $destH = 60;
 
                 $this_path3 = $image_path . "/" . $file_name . "_" . $photo_name . "_s100_2" . intval($destW) . "." . $image_type;
                 $this_image_path3 = "../" . $this_path3;
@@ -222,7 +223,10 @@ function image_process(PDO $pdo, $FILES_A, $file_title, $file_name, $deal_type, 
 
         }
 
+        }
+
     }
+    
 
     if ($no_image == 1) {
         $all_image_name[0][0] = 1;

@@ -27,42 +27,42 @@ if (isset($_REQUEST['type']) && $_REQUEST['type'] == 'newsCover') {
     $not = $imagesSize['newsCover']['note'];
     $IWidth = $imagesSize['newsCover']['IW'];
     $IHeight = $imagesSize['newsCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'applicationCover') {
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'sightsCCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='applicationCover' AND";
-    $not = $imagesSize['applicationCover']['note'];
-    $IWidth = $imagesSize['applicationCover']['IW'];
-    $IHeight = $imagesSize['applicationCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'applicationContent') {
+    $fileType = "file_type='sightsCCover' AND";
+    $not = $imagesSize['sightsCCover']['note'];
+    $IWidth = $imagesSize['sightsCCover']['IW'];
+    $IHeight = $imagesSize['sightsCCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'mapCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='applicationContent' AND";
-    $not = $imagesSize['applicationContent']['note'];
-    $IWidth = $imagesSize['applicationContent']['IW'];
-    $IHeight = $imagesSize['applicationContent']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'aboutCatCover') {
+    $fileType = "file_type='mapCover' AND";
+    $not = $imagesSize['mapCover']['note'];
+    $IWidth = $imagesSize['mapCover']['IW'];
+    $IHeight = $imagesSize['mapCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'tourCCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='aboutCatCover' AND";
-    $not = $imagesSize['aboutCatCover']['note'];
-    $IWidth = $imagesSize['aboutCatCover']['IW'];
-    $IHeight = $imagesSize['aboutCatCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'amenitiessliderCover') {
+    $fileType = "file_type='tourCCover' AND";
+    $not = $imagesSize['tourCCover']['note'];
+    $IWidth = $imagesSize['tourCCover']['IW'];
+    $IHeight = $imagesSize['tourCCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'tourCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='amenitiessliderCover' AND";
-    $not = $imagesSize['amenitiessliderCover']['note'];
-    $IWidth = $imagesSize['amenitiessliderCover']['IW'];
-    $IHeight = $imagesSize['amenitiessliderCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'galleryCover') {
+    $fileType = "file_type='tourCover' AND";
+    $not = $imagesSize['tourCover']['note'];
+    $IWidth = $imagesSize['tourCover']['IW'];
+    $IHeight = $imagesSize['tourCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'latestCCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='galleryCover' AND";
-    $not = $imagesSize['galleryCover']['note'];
-    $IWidth = $imagesSize['galleryCover']['IW'];
-    $IHeight = $imagesSize['galleryCover']['IH'];
-} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'storeCover') {
+    $fileType = "file_type='latestCCover' AND";
+    $not = $imagesSize['latestCCover']['note'];
+    $IWidth = $imagesSize['latestCCover']['IW'];
+    $IHeight = $imagesSize['latestCCover']['IH'];
+} elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'latestCover') {
     $type = $_REQUEST['type'];
-    $fileType = "file_type='storeCover' AND";
-    $not = $imagesSize['storeCover']['note'];
-    $IWidth = $imagesSize['storeCover']['IW'];
-    $IHeight = $imagesSize['storeCover']['IH'];
+    $fileType = "file_type='latestCover' AND";
+    $not = $imagesSize['latestCover']['note'];
+    $IWidth = $imagesSize['latestCover']['IW'];
+    $IHeight = $imagesSize['latestCover']['IH'];
 } elseif (isset($_REQUEST['type']) && $_REQUEST['type'] == 'neighborhoodsliderCover') {
     $type = $_REQUEST['type'];
     $fileType = "file_type='neighborhoodsliderCover' AND";
@@ -188,8 +188,10 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "form1")) {
     }
     //----------插入圖片資料到資料庫end----------
 
-    if ($_REQUEST['type'] == 'productsCatCover' || $_REQUEST['type'] == 'giftCatCover' || $_REQUEST['type'] == 'menuC_mobile') {
+    if ($_REQUEST['type'] == 'sightsCCover') {
         $updateGoTo = $_SESSION['nowPage'] . "?c_id=" . $_POST['file_d_id'] . "#imageEdit";
+    } else if ($_REQUEST['type'] == "latestCCover") {
+        $updateGoTo = $_SESSION['nowPage'] . "?l_id=" . $_POST['file_d_id']  . "#imageEdit";
     } else {
         $updateGoTo = $_SESSION['nowPage'] . "?d_id=" . $_POST['file_d_id'] . "#imageEdit";
     }

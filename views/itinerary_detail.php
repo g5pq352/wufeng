@@ -1,3 +1,21 @@
+<?php
+require_once 'Connections/connect2data.php';
+
+$cat = $DB->row("SELECT * FROM class_set WHERE c_parent='tourC' AND c_slug=?", [$slug]);
+
+$works = $DB->query("SELECT * FROM data_set, file_set WHERE d_class1='tour' AND d_class2=? AND d_id=file_d_id AND file_type='tourCover' ORDER BY d_sort ASC", [$cat['c_id']]);
+
+
+if (count($works) == 0) {
+    $host = $_SERVER['HTTP_HOST'];
+    $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+    $extra = '404.php';
+    header("Location: http://$host$uri/$extra");
+    exit;
+}
+
+$url = (isset($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+?>
 <html>
 <head>
 	<?php include 'html_head.php'; ?>
@@ -14,35 +32,24 @@
 			<!--  -->
 			<div class="px-4 mt-[66px] mb-[114px]">
 				<div class="category-border-radius relative bg-green text-white px-4 pt-[22px] pb-16 mb-10">
-					<div class="font-bold text-[70px] leading-none mb-3">農旅</div>
-					<div class="font-en">Agricultural<br>Tourism</div>
+					<div class="font-bold text-[70px] leading-none mb-3"><?= $cat['c_title'] ?></div>
+					<div class="font-en"><?= nl2br($cat['c_title_en']) ?></div>
 
-					<div class="absolute font-en text-4xl bottom-[22px] right-4"><span class="text-[15px] mr-2">TWD</span>5,000</div>
+					<div class="absolute font-en text-4xl bottom-[22px] right-4"><span class="text-[15px] mr-2">TWD</span><?= moneyFormat($cat['c_data1']) ?></div>
 				</div>
 
 				<div class="">
 					<ul v-scope="{
-						posts: [{
-							pic: 'images/itinerary-slider-3-1.jpg',
-							date: '08:00',
-							title: `霧峰公園`,
-							note: `蜿蜒步徑穿越樹影婆娑，湖泊映照天空之美。此地為心靈寧靜角落，盡情沉醉大自然恩賜。`,
-						}, {
-							pic: 'images/itinerary-slider-3-2.jpg',
-							date: '10:00',
-							title: `五福黑翅鳶`,
-							note: `五福社區設置棲架的緣由黑翅鳶1998年在台灣出現紀錄，2001年在雲林出現繁殖紀錄後，近年已在台灣平原成為普遍分布的猛禽。 這種體長約37cm，全身大致為醒目的黑白兩色，眼睛為紅色的猛禽除了會利用田間較高的樹枝作為覓食棲枝外，還會在空中定點振翅(又稱作懸停)尋找田間的獵物。`,
-						}, {
-							pic: 'images/itinerary-slider-3-3.jpg',
-							date: '12:30',
-							title: `肉尬`,
-							note: `位於台中新開幕的「肉尬雞滷飯」是一間復古中式餐廳。使用在地霧峰香米製作，使用霧峰在地原料，吃的到最健康最不一樣的滷肉飯。`,
-						}, {
-							pic: 'images/itinerary-slider-3-4.jpg',
-							date: '15:00',
-							title: `初露吟釀`,
-							note: `初霧吟釀清酒（如上圖），臺灣頂級清酒，以初霧燒酎為基酒釀造的清酒，生產具有代表性的台灣清酒，走黑色瓶身銀色的標籤，黑色字體，高檔質感，喝下一口，可感受清淡爽又帶香淳的風味，順口甘醇。`,
-						}]
+						posts: [
+							<?php foreach($works as $row) : ?>
+								{
+									pic: '<?= $baseurl ?>/<?= $row['file_link1'] ?>',
+									date: '<?= date("H:i", strtotime($row['d_date'])) ?>',
+									title: `<?= $row['d_title'] ?>`,
+									note: `<?= $row['d_content'] ?>`,
+								},
+							<?php endforeach ?>
+						]
 					}" class="space-y-4">
 						<li v-for="(p, i) in posts" class="category-border-radius bg-white px-4 py-3">
 							<div class="flex mb-3">
@@ -53,7 +60,7 @@
 								</div>
 							</div>
 							<div class="font-bold text-xl mb-2">{{p.title}}</div>
-							<div class="text-sm text-gray-300 text-justify">{{p.note}}</div>
+							<div class="text-sm text-gray-300 text-justify" v-html="p.note"></div>
 						</li>
 					</ul>
 				</div>

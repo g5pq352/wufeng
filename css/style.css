@@ -1820,9 +1820,12 @@ input[name="search"] {
     display: inline-block; }
 
 #last-child {
-  padding-bottom: 230px;
   -webkit-transition: all .5s;
   transition: all .5s; }
+
+@media (max-width: 1199px) {
+  #last-child {
+    padding-bottom: 140px; } }
   #last-child.is-open {
     padding-bottom: 0; }
 
@@ -1970,23 +1973,20 @@ input[name="search"] {
   .lg\:hidden{
     display: none;
   }
-  .lg\:h-\[53vh\]{
-    height: 53vh;
+  .lg\:h-\[120vw\]{
+    height: 120vw;
   }
   .lg\:h-auto{
     height: auto;
-  }
-  .lg\:h-\[100vw\]{
-    height: 100vw;
-  }
-  .lg\:h-\[120vw\]{
-    height: 120vw;
   }
   .lg\:w-auto{
     width: auto;
   }
   .lg\:w-full{
     width: 100%;
+  }
+  .lg\:max-w-\[92px\]{
+    max-width: 92px;
   }
   .lg\:max-w-full{
     max-width: 100%;
@@ -2008,6 +2008,11 @@ input[name="search"] {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+  .lg\:space-y-1 > :not([hidden]) ~ :not([hidden]){
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
   }
   .lg\:space-y-3 > :not([hidden]) ~ :not([hidden]){
     --tw-space-y-reverse: 0;
